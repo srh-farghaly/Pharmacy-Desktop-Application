@@ -23,7 +23,6 @@ public class Signup extends javax.swing.JFrame {
     public Signup() {
         initComponents();
         RegButton.setEnabled(false);
-        this.reshape(700, 100, 540, 790);
     }
         public boolean validateFields() {
             
@@ -345,9 +344,10 @@ public class Signup extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 350, 650));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/kk.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-830, 0, 1410, 1080));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-670, 0, 1250, 740));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNameActionPerformed

@@ -31,7 +31,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         tablePH.setCellAlignment(0, JLabel.CENTER);
         tablePH.setColumnAlignment(1, JLabel.CENTER);
         tablePH.setCellAlignment(1, JLabel.CENTER);
-        this.reshape(580, 240, 995, 550);
+       
     }
 
     public void show_table() {
@@ -305,6 +305,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeleteActionPerformed

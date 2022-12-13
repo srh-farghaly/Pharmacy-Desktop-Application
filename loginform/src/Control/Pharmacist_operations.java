@@ -16,7 +16,7 @@ public class Pharmacist_operations {
 
    public  static void insert_pharmacistData(String firstname,String lastname,String gender,String phonenumber,String email,String password,int salary, int age )
    {
-       DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+       DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
        LocalDateTime now = LocalDateTime.now();
    
        String query="insert into pharmacist (firstname,lastname,age,hired_date,gender,phoneNumber,email,password,salary,mng_id) values ('"+firstname+"' , '"+lastname+"' , '"+age+"' , '"+ dtf.format(now)+"' , '"+gender+"' , '"+phonenumber+"', '"+email+"', '"+password+"' ,'"+salary+"',1)";
