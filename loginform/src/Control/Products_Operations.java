@@ -5,7 +5,6 @@
 package Control;
 
 import Modeling.DBOperation;
-import Modeling.Pharmacist_Model;
 import Modeling.Products_Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
