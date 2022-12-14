@@ -12,5 +12,6 @@ public class Creat_Table {
       // String Query="alter table login_info add constraint fx foreign key(ph_id) references pharmacist(id)";
 
       DBOperation.setDataOrDelete(Query,"created");
+      //detected
     }
 }
