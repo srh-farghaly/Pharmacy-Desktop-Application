@@ -264,8 +264,11 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
+        int showConfirmDialog;
+        showConfirmDialog = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?","EXIT",0);
+        if(showConfirmDialog==0)
+            System.exit(0);
+        
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
