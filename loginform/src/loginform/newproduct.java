@@ -219,8 +219,8 @@ public class newproduct extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
-        int show;
-        show = JOptionPane.showConfirmDialog(null, "new product has been inserted");
+
+        JOptionPane.showMessageDialog(null, "new product has been inserted", "Message", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_mybutton1MouseClicked
 
     /**
