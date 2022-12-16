@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author Seifeldin Ahmed
  */
 
-public class pharmacist extends javax.swing.JFrame implements ActionListener {
+public class pharmacist extends javax.swing.JFrame {
 
     private ArrayList<Pharmacist_Model> arr;
     private int row_number = 0;
@@ -73,8 +73,6 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         row[6] = obj.getHired_date();
         row[7] = obj.getSalary();
         mm.insertRow(0, row);
-
-        
 
        // Mouse Event
         tablePH.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -306,7 +304,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
     private void ButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeleteActionPerformed
         int id = arr.get(row_number).getId();
         Pharmacist_operations.Delete_Pharmacist(id);
-        this.dispose(); // this.setVisible(false)
+        this.dispose(); 
         pharmacist gg = new pharmacist();
         gg.show_table();
         gg.setVisible(true);
@@ -321,7 +319,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
             Pharmacist_Model obj = Pharmacist_operations.Search_Pharmacist(Integer.parseInt(txtsearch.getText()));
 
             if (obj != null) {
-                this.setVisible(false);
+               this.dispose();
                 pharmacist gg = new pharmacist();
                 gg.show_id(obj);
                 gg.setVisible(true);
@@ -346,7 +344,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
     private void ButtonEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonEditMouseClicked
         Signup obj = new Signup();
         obj.setVisible(true);
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_ButtonEditMouseClicked
 
     private void tablePHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePHMouseClicked
@@ -402,8 +400,5 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JTextField txtsearch;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
-    }
 }

@@ -380,7 +380,7 @@ public class Signup extends javax.swing.JFrame {
             Pharmacist_operations.insert_pharmacistData(txtfName.getText(), txtlName.getText(), (String) jComboBox2.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), 1000, Integer.parseInt(txtage.getText().trim()));
             rond obj = new rond();
             obj.setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
         }

@@ -49,10 +49,10 @@ public class Products_Operations {
         
     }
 
-    public static Products_Model Search_Product(String med_name)
+    public static Products_Model Search_Product(String prod_name)
     {   
         Products_Model obj=null;
-        String Query="select *from products where med_name='"+med_name+"'";
+        String Query="select * from products where med_name='"+prod_name+"' ";
         ResultSet Pr=DBOperation.getData(Query);
         try {
             while(Pr.next())
