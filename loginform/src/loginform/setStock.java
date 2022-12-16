@@ -17,6 +17,7 @@ public class setStock extends javax.swing.JFrame {
      */
     public setStock() {
         initComponents();
+        
     }
 
     /**
@@ -40,7 +41,7 @@ public class setStock extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        mybutton1 = new button.mybutton();
+        SetButton = new button.mybutton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,18 +99,18 @@ public class setStock extends javax.swing.JFrame {
             }
         });
 
-        mybutton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        mybutton1.setForeground(new java.awt.Color(6, 107, 138));
-        mybutton1.setText("Set");
-        mybutton1.setBorderColor(new java.awt.Color(255, 255, 255));
-        mybutton1.setBorderPainted(false);
-        mybutton1.setColorClick(new java.awt.Color(153, 204, 255));
-        mybutton1.setColorOver(new java.awt.Color(204, 204, 204));
-        mybutton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        mybutton1.setRadius(10);
-        mybutton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        SetButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SetButton.setForeground(new java.awt.Color(6, 107, 138));
+        SetButton.setText("Set");
+        SetButton.setBorderColor(new java.awt.Color(255, 255, 255));
+        SetButton.setBorderPainted(false);
+        SetButton.setColorClick(new java.awt.Color(153, 204, 255));
+        SetButton.setColorOver(new java.awt.Color(204, 204, 204));
+        SetButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        SetButton.setRadius(10);
+        SetButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mybutton1MouseClicked(evt);
+                SetButtonMouseClicked(evt);
             }
         });
 
@@ -139,7 +140,7 @@ public class setStock extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
-                                .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -172,7 +173,7 @@ public class setStock extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                        .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30))))
         );
 
@@ -203,9 +204,9 @@ public class setStock extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
+    private void SetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SetButtonMouseClicked
         JOptionPane.showMessageDialog(null, "Data is updated", "Message", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_mybutton1MouseClicked
+    }//GEN-LAST:event_SetButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -243,6 +244,7 @@ public class setStock extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private button.mybutton SetButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -256,6 +258,5 @@ public class setStock extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private button.mybutton mybutton1;
     // End of variables declaration//GEN-END:variables
 }

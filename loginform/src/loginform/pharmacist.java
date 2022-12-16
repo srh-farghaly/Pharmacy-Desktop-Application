@@ -7,11 +7,11 @@ package loginform;
 
 import Modeling.Pharmacist_Model;
 import java.util.ArrayList;
-import javax.swing.JLabel;
-import javax.swing.table.DefaultTableModel;
 import Control.Pharmacist_operations;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,7 +39,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         arr = Pharmacist_operations.get_pharmacistData();
         Object[] row = new Object[8];
          for (int i = 0; i < arr.size(); i++) {
-            row[0] = arr.get(i).getId(); // arr[0] = arr.get(0)
+            row[0] = arr.get(i).getId(); 
             row[1] = arr.get(i).getFirstname();
             row[2] = arr.get(i).getLastname();
             row[3] = arr.get(i).getAge();
@@ -50,7 +50,6 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
             mm.insertRow(i, row);
           
         }
-         
 
          
         // Mouse Event
@@ -60,11 +59,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
                 row_number = tablePH.getSelectedRow();
             }
         }
-        );
-        
-        
-        
-        
+        );   
     }
 
     private void show_id(Pharmacist_Model obj) {
@@ -79,7 +74,9 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         row[6] = obj.getHired_date();
         row[7] = obj.getSalary();
         mm.insertRow(0, row);
-        // Mouse Event
+        
+
+       // Mouse Event
         tablePH.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {

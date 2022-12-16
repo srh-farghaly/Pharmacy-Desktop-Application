@@ -11,11 +11,11 @@ package Modeling;
 public class Products_Model {
     
     
-    private int med_id ,quantity,price;
+    private int quantity,price;
     private String med_name,expired_date,category,description;
 
-    public Products_Model(int med_id, String med_name, int price, String expired_date, int quantity, String category, String description) {
-        this.med_id = med_id;
+    public Products_Model( String med_name, int price, String expired_date, int quantity, String category, String description) {
+       
         this.med_name = med_name;
         this.price = price;
         this.expired_date = expired_date;
@@ -24,9 +24,7 @@ public class Products_Model {
         this.description = description;
     }
 
-    public int getMed_id() {
-        return med_id;
-    }
+    
 
     public String getMed_name() {
         return med_name;
@@ -52,9 +50,7 @@ public class Products_Model {
         return description;
     }
 
-    public void setMed_id(int med_id) {
-        this.med_id = med_id;
-    }
+   
 
     public void setMed_name(String med_name) {
         this.med_name = med_name;

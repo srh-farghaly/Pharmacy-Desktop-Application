@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  */
 public class Products_Operations {
     
-    public  static void insert_ProductData(int med_id ,String med_name,int price,String expired_date,int quantity,String category,String description )
+    public  static void insert_ProductData(String med_name,int price,String expired_date,int quantity,String category,String description )
    {
-       String query="insert into products (med_id,med_name,price,expired_date,quantity,category,description) values ('"+med_id+"' , '"+med_name+"' , '"+price+"' , '"+ expired_date+"' , '"+quantity+"' , '"+category+"', '"+description+"')";
+       String query="insert into products (med_name,price,expired_date,quantity,category,description) values ('"+med_name+"' , '"+price+"' , '"+ expired_date+"' , '"+quantity+"' , '"+category+"', '"+description+"')";
        DBOperation.setDataOrDelete(query, "New Product has been Inserted Successfully");
    }
    
@@ -32,7 +32,7 @@ public class Products_Operations {
         try {
             while(Pr.next())
             {
-                arr.add(new Products_Model(Pr.getInt("med_id"),Pr.getString("med_name"),Pr.getInt("price"),Pr.getString("expired_date"),Pr.getInt("quantity"),Pr.getString("category"),Pr.getString("description")));
+                arr.add(new Products_Model(Pr.getString("med_name"),Pr.getInt("price"),Pr.getString("expired_date"),Pr.getInt("quantity"),Pr.getString("category"),Pr.getString("description")));
             }
             return arr;
         } catch (SQLException ex) {
@@ -57,7 +57,7 @@ public class Products_Operations {
         try {
             while(Pr.next())
             {
-             obj= new Products_Model(Pr.getInt("med_id"),Pr.getString("med_name"),Pr.getInt("price"),Pr.getString("expired_date"),Pr.getInt("quantity"),Pr.getString("category"),Pr.getString("description"));     
+             obj= new Products_Model(Pr.getString("med_name"),Pr.getInt("price"),Pr.getString("expired_date"),Pr.getInt("quantity"),Pr.getString("category"),Pr.getString("description"));     
             }       
         } catch (SQLException ex) {
           JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
@@ -66,9 +66,9 @@ public class Products_Operations {
          return obj;    
     }
     
-    public static void Delete_Product(int med_id)
+    public static void Delete_Product(int med_name)
     {
-        String Query="delete from products where id='"+med_id+"'";
+        String Query="delete from products where med_name='"+med_name+"'";
         DBOperation.setDataOrDelete(Query, " Product has been Deleted Successfully ");
     }
     
