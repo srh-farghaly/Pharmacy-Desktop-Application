@@ -31,7 +31,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         tablePH.setCellAlignment(0, JLabel.CENTER);
         tablePH.setColumnAlignment(1, JLabel.CENTER);
         tablePH.setCellAlignment(1, JLabel.CENTER);
-        this.reshape(580, 240, 995, 550);
+       
     }
 
     public void show_table() {
@@ -196,9 +196,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         SearchButton.setBackground(new java.awt.Color(6, 107, 138));
         SearchButton.setForeground(new java.awt.Color(255, 255, 255));
         SearchButton.setText("Search");
-        SearchButton.setBorderColor(new java.awt.Color(255, 255, 255));
         SearchButton.setBorderPainted(false);
-        SearchButton.setColorClick(new java.awt.Color(0, 153, 153));
         SearchButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         SearchButton.setMaximumSize(new java.awt.Dimension(55, 25));
         SearchButton.setMinimumSize(new java.awt.Dimension(55, 25));
@@ -297,7 +295,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,6 +303,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeleteActionPerformed

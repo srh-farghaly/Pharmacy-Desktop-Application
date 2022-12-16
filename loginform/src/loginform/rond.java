@@ -17,7 +17,7 @@ public class rond extends javax.swing.JFrame {
      */
     public rond() {
         initComponents();
-        this.reshape(520, 130, 900, 700);
+       // this.reshape(520, 130, 900, 700);
     }
 
     /**
@@ -203,6 +203,7 @@ public class rond extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void pharmacistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pharmacistMouseClicked

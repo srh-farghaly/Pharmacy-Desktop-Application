@@ -4,6 +4,8 @@
  */
 package loginform;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LEGION
@@ -112,6 +114,11 @@ public class newproduct extends javax.swing.JFrame {
         mybutton1.setColorOver(new java.awt.Color(204, 204, 204));
         mybutton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mybutton1.setRadius(10);
+        mybutton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mybutton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -210,6 +217,11 @@ public class newproduct extends javax.swing.JFrame {
         ob.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
+        int show;
+        show = JOptionPane.showConfirmDialog(null, "new product has been inserted");
+    }//GEN-LAST:event_mybutton1MouseClicked
 
     /**
      * @param args the command line arguments
