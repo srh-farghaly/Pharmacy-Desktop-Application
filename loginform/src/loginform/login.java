@@ -280,14 +280,14 @@ public class login extends javax.swing.JFrame {
         { 
             rond obj=new rond();
             obj.setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         }
         
         else if(error_status == 0) // pharmacist
         {
             rond obj=new rond();
             obj.setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         }
         else
         {

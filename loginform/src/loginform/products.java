@@ -17,11 +17,10 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author LEGION
  */
-public  class products extends javax.swing.JFrame implements ActionListener {
+public  class products extends javax.swing.JFrame {
     
     private ArrayList<Products_Model> arr;
-    private int row_number;
-
+    private int row_number=0;
     /**
      * Creates new form products
      */
@@ -39,19 +38,17 @@ public  class products extends javax.swing.JFrame implements ActionListener {
         DefaultTableModel pr = (DefaultTableModel) TableDark1.getModel();
         arr = Products_Operations.get_ProductsData();
         Object[] row = new Object[6];
-         for (int i = 0; i < arr.size(); i++) {
-            row[0] = arr.get(i).getMed_name(); 
-            row[1] = arr.get(i).getPrice();
-            row[2] = arr.get(i).getExpired_date();
-            row[3] = arr.get(i).getQuantity();
-            row[4] = arr.get(i).getCategory();
-            row[5] = arr.get(i).getDescription();
-            
-            pr.insertRow(i, row);
-          
-        }
-    
-    
+         for (int i = 0; i < arr.size(); i++) 
+          {
+             row[0] = arr.get(i).getMed_name(); 
+             row[1] = arr.get(i).getPrice();
+             row[2] = arr.get(i).getQuantity();
+             row[3] = arr.get(i).getCategory();
+             row[4] = arr.get(i).getExpired_date();
+             row[5] = arr.get(i).getDescription();   
+             pr.insertRow(i, row);
+          }
+       
     TableDark1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -60,26 +57,18 @@ public  class products extends javax.swing.JFrame implements ActionListener {
         }
         );
     }
-       private void show_Product(Products_Model obj) {
+    
+ private void show_Product(Products_Model obj) 
+    {
         DefaultTableModel pr = (DefaultTableModel) TableDark1.getModel();
         Object[] row = new Object[6];
         row[0] = obj.getMed_name();
         row[1] = obj.getPrice();
-        row[2] = obj.getExpired_date();
-        row[3] = obj.getQuantity();
-        row[4] = obj.getCategory();
+        row[2] = obj.getQuantity();
+        row[3] = obj.getCategory();
+        row[4] = obj.getExpired_date();
         row[5] = obj.getDescription();
-       
-        
         pr.insertRow(0, row);
-        // Mouse Event
-        TableDark1.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
-            }
-        }
-        );
     }
     
     /**
@@ -97,7 +86,7 @@ public  class products extends javax.swing.JFrame implements ActionListener {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        search = new javax.swing.JTextField();
         mybutton1 = new button.mybutton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableDark1 = new tabledark.TableDark();
@@ -135,7 +124,7 @@ public  class products extends javax.swing.JFrame implements ActionListener {
             }
         });
 
-        jTextField2.setText("Enter Name");
+        search.setText("Enter Name");
 
         mybutton1.setBackground(new java.awt.Color(6, 107, 138));
         mybutton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,7 +152,7 @@ public  class products extends javax.swing.JFrame implements ActionListener {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Price", "Quantity", "Category", "Description", "Expired_date"
+                "Name", "Price", "Quantity", "Category", "Expired_date", "Description"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -239,7 +228,7 @@ public  class products extends javax.swing.JFrame implements ActionListener {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(273, 273, 273)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -268,7 +257,7 @@ public  class products extends javax.swing.JFrame implements ActionListener {
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,35 +294,34 @@ public  class products extends javax.swing.JFrame implements ActionListener {
     private void mybutton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton2MouseClicked
         setStock ob=new setStock();
         ob.setVisible(true);
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_mybutton2MouseClicked
 
     private void mybutton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton3MouseClicked
         newproduct obj=new newproduct();
         obj.setVisible(true);
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_mybutton3MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         rond obj=new rond();
         obj.setVisible(true);
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
 
     private void mybutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton1ActionPerformed
-        if (mybutton1.getText().isEmpty()) {
+        if (search.getText().isEmpty()) {
         } else {
-            Products_Model obj = Products_Operations.Search_Product(mybutton1.getText());
+            Products_Model obj = Products_Operations.Search_Product(search.getText());
 
             if (obj != null) {
-                this.setVisible(false);
+                this.dispose();
                 products pr = new products();
                 pr.show_Product(obj);
                 pr.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "This product does not exist", "Message", JOptionPane.WARNING_MESSAGE);
-
             }
         }
     }//GEN-LAST:event_mybutton1ActionPerformed
@@ -391,17 +379,11 @@ public  class products extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private button.mybutton mybutton1;
     private button.mybutton mybutton2;
     private button.mybutton mybutton3;
+    private javax.swing.JTextField search;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-   
   
 }

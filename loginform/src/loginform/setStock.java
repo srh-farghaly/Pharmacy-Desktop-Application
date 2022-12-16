@@ -202,7 +202,8 @@ public class setStock extends javax.swing.JFrame {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         products ob=new products();
         ob.setVisible(true);
-        setVisible(false);
+        ob.show_table();
+        this.dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void SetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SetButtonMouseClicked

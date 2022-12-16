@@ -208,7 +208,7 @@ public class rond extends javax.swing.JFrame {
 
     private void pharmacistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pharmacistMouseClicked
         pharmacist gg=new pharmacist();
-        this.setVisible(false);     
+        this.dispose();     
         gg.setVisible(true);
         gg.show_table();
     }//GEN-LAST:event_pharmacistMouseClicked
@@ -224,7 +224,8 @@ public class rond extends javax.swing.JFrame {
     private void productsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productsMouseClicked
         products ob=new products();
         ob.setVisible(true);
-        setVisible(false);
+        ob.show_table();
+        this.dispose();
     }//GEN-LAST:event_productsMouseClicked
 
     private void salesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salesMouseClicked

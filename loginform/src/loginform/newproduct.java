@@ -288,7 +288,8 @@ public class newproduct extends javax.swing.JFrame {
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         products ob=new products();
         ob.setVisible(true);
-        setVisible(false);
+        ob.show_table();
+        this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
@@ -298,10 +299,10 @@ public class newproduct extends javax.swing.JFrame {
         Products_Operations.insert_ProductData(jTextField1.getText(), Integer.parseInt(jTextField2.getText()), jTextField5.getText(), Integer.parseInt(jTextField3.getText()), jTextField4.getText(), jTextArea1.getText());
         products obj =new products();
         obj.setVisible(true);
-        this.setVisible(false);
+        obj.show_table();
+        this.dispose();
     }
       else {
-        //JOptionPane.showMessageDialog(null, "new product has been inserted", "Message", JOptionPane.INFORMATION_MESSAGE);
          JOptionPane.showMessageDialog(null, "Please Enter Correct information");
         }
     }//GEN-LAST:event_mybutton1MouseClicked
