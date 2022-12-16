@@ -20,12 +20,14 @@ public class TableDark extends JTable {
     private TableDarkCell cell;
 
     public TableDark() {
+        
         header = new TableDarkHeader();
         cell = new TableDarkCell();
         getTableHeader().setDefaultRenderer(header);
         getTableHeader().setPreferredSize(new Dimension(0, 35));
         setDefaultRenderer(Object.class, cell);
         setRowHeight(30);
+        
     }
 
     public void setColumnAlignment(int column, int align) {
