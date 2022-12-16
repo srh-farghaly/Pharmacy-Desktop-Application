@@ -50,8 +50,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
             mm.insertRow(i, row);
           
         }
-
-         
+    
         // Mouse Event
         tablePH.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -59,8 +58,8 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
                 row_number = tablePH.getSelectedRow();
             }
         }
-        );   
-    }
+);
+                }
 
     private void show_id(Pharmacist_Model obj) {
         DefaultTableModel mm = (DefaultTableModel) tablePH.getModel();
@@ -74,6 +73,7 @@ public class pharmacist extends javax.swing.JFrame implements ActionListener {
         row[6] = obj.getHired_date();
         row[7] = obj.getSalary();
         mm.insertRow(0, row);
+
         
 
        // Mouse Event
