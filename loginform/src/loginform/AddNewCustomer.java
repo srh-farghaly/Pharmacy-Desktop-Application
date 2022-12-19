@@ -5,6 +5,8 @@
  */
 package loginform;
 
+import Control.customers_operations;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Ahmed Sherif
@@ -14,10 +16,24 @@ public class AddNewCustomer extends javax.swing.JFrame {
     /**
      * Creates new form AddNewCustomer
      */
+    
+    public String mobileNumberPattern = "^01[0125][0-9]{8}$";
     public AddNewCustomer() {
         initComponents();
+         mybutton1.setEnabled(false);  
     }
-
+ public boolean validateFields() {
+            
+        String firstname = jTextField1.getText();
+        String lastname = jTextField2.getText();
+        String city = jTextField3.getText();
+        String street = jTextField4.getText();
+        String phoneNumber_1 =jTextField6.getText();
+        return phoneNumber_1.matches(mobileNumberPattern) && !firstname.equals("") && !lastname.equals("") && !city.equals("") && !street.equals("");
+    
+    }
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -222,6 +238,20 @@ public class AddNewCustomer extends javax.swing.JFrame {
 
     private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
 
+        if (validateFields()) {
+            customers_operations.insert_CustomerData(jTextField1.getText(), jTextField2.getText(),jTextField3.getText(), jTextField4.getText(),(String) jComboBox1.getSelectedItem(), jTextField6.getText());
+            Customers obj = new Customers();
+            obj.setVisible(true);
+            obj.show_table();
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        
+        
+        
+        
     }//GEN-LAST:event_mybutton1MouseClicked
 
     private void mybutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton1ActionPerformed

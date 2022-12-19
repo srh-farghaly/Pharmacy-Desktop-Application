@@ -5,7 +5,16 @@
  */
 package loginform;
 
+
+import Modeling.Customers_Model;
+import Control.customers_operations;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+        
 
 
 /**
@@ -17,13 +26,65 @@ public class Customers extends javax.swing.JFrame {
     /**
      * Creates new form Customers
      */
+     private ArrayList<Customers_Model> arr;
+    private int row_number = 0;
+    
     public Customers() {
         initComponents();
-         tableCu.fixTable(jScrollPane2);
+        tableCu.fixTable(jScrollPane2);
         tableCu.setColumnAlignment(0, JLabel.CENTER);
         tableCu.setCellAlignment(0, JLabel.CENTER);
         tableCu.setColumnAlignment(1, JLabel.CENTER);
         tableCu.setCellAlignment(1, JLabel.CENTER);
+    }
+    
+     public void show_table() {
+        DefaultTableModel mm = (DefaultTableModel) tableCu.getModel();
+        arr = customers_operations.get_customersData();
+        Object[] row = new Object[7];
+         for (int i = 0; i < arr.size(); i++) {
+            row[0] = arr.get(i).getCustomer_id(); 
+            row[1] = arr.get(i).getFirstname();
+            row[2] = arr.get(i).getLastname();
+            row[3] = arr.get(i).getCity();
+            row[4] = arr.get(i).getStreet();
+            row[5] = arr.get(i).getGender();
+            row[6] = arr.get(i).getPhoneNumber_1();
+            mm.insertRow(i, row);
+          
+        }
+    
+        // Mouse Event
+        tableCu.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                row_number = tableCu.getSelectedRow();
+            }
+        }
+);
+                }
+     
+      private void show_id(Customers_Model obj) {
+        DefaultTableModel mm = (DefaultTableModel) tableCu.getModel();
+        Object[] row = new Object[7];
+        row[0] = obj.getCustomer_id();
+        row[1] = obj.getFirstname();
+        row[2] = obj.getLastname();
+        row[3] = obj.getCity();
+        row[4] = obj.getStreet();
+        row[5] = obj.getGender();
+        row[6] = obj.getPhoneNumber_1();
+        
+        mm.insertRow(0, row);
+
+       // Mouse Event
+        tableCu.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                
+            }
+        }
+        );
     }
 
     /**
@@ -120,6 +181,11 @@ public class Customers extends javax.swing.JFrame {
         DeleteButton.setColorText(new java.awt.Color(0, 102, 102));
         DeleteButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DeleteButton.setRadius(10);
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 425, 100, 49));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 23)); // NOI18N
@@ -174,7 +240,36 @@ public class Customers extends javax.swing.JFrame {
 
     private void AddButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton1ActionPerformed
         // TODO add your handling code here:
+   if (jTextField1.getText().isEmpty()) {
+        } else {
+            Customers_Model obj = customers_operations.Search_customer(Integer.parseInt(jTextField1.getText()));
+
+            if (obj != null) {
+               this.dispose();
+                Customers gg = new Customers();
+                gg.show_id(obj);
+                gg.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "ID is Not Found", "Message", JOptionPane.WARNING_MESSAGE);
+
+            }
+        }     
+        
+        
+        
     }//GEN-LAST:event_AddButton1ActionPerformed
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        // TODO add your handling code here:
+        int id = arr.get(row_number).getCustomer_id();
+        customers_operations.Delete_customer(id);
+        this.dispose(); 
+        Customers gg = new Customers();
+        gg.show_table();
+        gg.setVisible(true);
+        JOptionPane.showMessageDialog(null, "customer has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
+        
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
     /**
      * @param args the command line arguments

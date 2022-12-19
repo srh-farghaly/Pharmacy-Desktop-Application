@@ -10,17 +10,21 @@ package Modeling;
  */
 public class Customers_Model {
     
-    private String firstname,lastname,city,street,gender,phoneNumber_1,phoneNumber_2;
+    private String firstname,lastname,city,street,gender,phoneNumber_1;
     private int customer_id; 
 
-    public Customers_Model(String firstname, String lastname, String city, String street, String gender, String phoneNumber_1, String phoneNumber_2, int customer_id) {
+    public Customers_Model(int customer_id,String firstname, String lastname, String city, String street, String gender, String phoneNumber_1) 
+    {
+        this.customer_id = customer_id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.city = city;
         this.street = street;
         this.gender = gender;
         this.phoneNumber_1 = phoneNumber_1;
-        this.phoneNumber_2 = phoneNumber_2;
+       
+    }
+    public void setCustomer_id(int customer_id) {
         this.customer_id = customer_id;
     }
 
@@ -48,14 +52,13 @@ public class Customers_Model {
         this.phoneNumber_1 = phoneNumber_1;
     }
 
-    public void setPhoneNumber_2(String phoneNumber_2) {
-        this.phoneNumber_2 = phoneNumber_2;
-    }
+   
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    
+public int getCustomer_id() {
+        return customer_id;
     }
-
+    
     public String getFirstname() {
         return firstname;
     }
@@ -80,13 +83,8 @@ public class Customers_Model {
         return phoneNumber_1;
     }
 
-    public String getPhoneNumber_2() {
-        return phoneNumber_2;
-    }
 
-    public int getCustomer_id() {
-        return customer_id;
-    }
+    
     
     
     
