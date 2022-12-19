@@ -43,7 +43,6 @@ public class AddNewCustomer extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField6 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,7 +88,7 @@ public class AddNewCustomer extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Gender");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +157,7 @@ public class AddNewCustomer extends javax.swing.JFrame {
                 mybutton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(mybutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 83, 41));
+        jPanel2.add(mybutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 83, 41));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +165,7 @@ public class AddNewCustomer extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,17 +179,7 @@ public class AddNewCustomer extends javax.swing.JFrame {
         jLabel9.setText("Phone Number");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 175, -1, -1));
 
-        jTextField5.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField5.setText("Optional phone number");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 140, -1));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 510, 410));
-        jPanel2.getAccessibleContext().setAccessibleName("Add New Customer");
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 510, 390));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/17973908.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 590));
@@ -254,10 +243,6 @@ public class AddNewCustomer extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -309,7 +294,6 @@ public class AddNewCustomer extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private button.mybutton mybutton1;
     // End of variables declaration//GEN-END:variables
