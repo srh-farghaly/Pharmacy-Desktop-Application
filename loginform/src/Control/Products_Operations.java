@@ -6,8 +6,10 @@ package Control;
 
 import Modeling.DBOperation;
 import Modeling.Products_Model;
+import java.util.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -17,8 +19,14 @@ import javax.swing.JOptionPane;
  */
 public class Products_Operations {
     
+    Date old_expired_date = new Date();
+    SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
+    String expired_date= DateFor.format(old_expired_date);
+
+    
     public  static void insert_ProductData(String med_name,int price,String expired_date,int quantity,String category,String description )
    {
+         
        String query="insert into products (med_name,price,expired_date,quantity,category,description) values ('"+med_name+"' , '"+price+"' , '"+ expired_date+"' , '"+quantity+"' , '"+category+"', '"+description+"')";
        DBOperation.setDataOrDelete(query, "New Product has been Inserted Successfully");
    }
@@ -66,7 +74,7 @@ public class Products_Operations {
          return obj;    
     }
     
-    public static void Delete_Product(int med_name)
+    public static void Delete_Product(String med_name)
     {
         String Query="delete from products where med_name='"+med_name+"'";
         DBOperation.setDataOrDelete(Query, " Product has been Deleted Successfully ");

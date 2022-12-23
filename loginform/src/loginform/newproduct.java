@@ -16,6 +16,9 @@ public class newproduct extends javax.swing.JFrame {
     /**
      * Creates new form newproduct
      */
+    
+    
+    
     public newproduct() {
         initComponents();
         mybutton1.setEnabled(false);
@@ -28,7 +31,7 @@ public class newproduct extends javax.swing.JFrame {
         String quantity = jTextField3.getText();
         String category = jTextField4.getText();
         String expired_date = jTextField5.getText();
-        return !med_name.equals("") && !price.equals("") && !quantity.equals("") && !expired_date.equals("") && !category.equals("");
+        return !med_name.equals("") && !price.equals("") && !quantity.equals("") && !expired_date.equals("")&& !category.equals("");
     
     }
     

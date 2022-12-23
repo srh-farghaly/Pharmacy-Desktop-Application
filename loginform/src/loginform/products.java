@@ -24,6 +24,7 @@ public  class products extends javax.swing.JFrame {
     /**
      * Creates new form products
      */
+    
     public products() {
         initComponents();
         TableDark1.fixTable(jScrollPane1);
@@ -92,6 +93,7 @@ public  class products extends javax.swing.JFrame {
         TableDark1 = new tabledark.TableDark();
         mybutton2 = new button.mybutton();
         mybutton3 = new button.mybutton();
+        mybutton4 = new button.mybutton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,6 +210,22 @@ public  class products extends javax.swing.JFrame {
             }
         });
 
+        mybutton4.setBackground(new java.awt.Color(6, 107, 138));
+        mybutton4.setForeground(new java.awt.Color(255, 255, 255));
+        mybutton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
+        mybutton4.setText("Delete");
+        mybutton4.setBorderColor(new java.awt.Color(255, 255, 255));
+        mybutton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        mybutton4.setMaximumSize(new java.awt.Dimension(121, 34));
+        mybutton4.setMinimumSize(new java.awt.Dimension(121, 34));
+        mybutton4.setPreferredSize(new java.awt.Dimension(121, 34));
+        mybutton4.setRadius(10);
+        mybutton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mybutton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -242,6 +260,8 @@ public  class products extends javax.swing.JFrame {
                 .addComponent(mybutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79)
                 .addComponent(mybutton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addComponent(mybutton4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -264,7 +284,8 @@ public  class products extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mybutton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mybutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mybutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mybutton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 36, Short.MAX_VALUE))
         );
 
@@ -335,6 +356,17 @@ public  class products extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mybutton3ActionPerformed
 
+    private void mybutton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton4ActionPerformed
+      String name = arr.get(row_number).getMed_name();
+        Products_Operations.Delete_Product(name);
+        this.dispose(); 
+        products gg = new products();
+        gg.show_table();
+        gg.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Product has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_mybutton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -382,6 +414,7 @@ public  class products extends javax.swing.JFrame {
     private button.mybutton mybutton1;
     private button.mybutton mybutton2;
     private button.mybutton mybutton3;
+    private button.mybutton mybutton4;
     private javax.swing.JTextField search;
     // End of variables declaration//GEN-END:variables
 
