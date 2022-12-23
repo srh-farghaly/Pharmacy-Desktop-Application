@@ -187,6 +187,11 @@ public class pharmacist extends javax.swing.JFrame {
         });
 
         txtsearch.setText("Enter ID");
+        txtsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsearchActionPerformed(evt);
+            }
+        });
 
         SearchButton.setBackground(new java.awt.Color(6, 107, 138));
         SearchButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -350,6 +355,10 @@ public class pharmacist extends javax.swing.JFrame {
     private void tablePHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePHMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tablePHMouseClicked
+
+    private void txtsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsearchActionPerformed
 
     /**
      * @param args the command line arguments

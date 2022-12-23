@@ -214,7 +214,9 @@ public class rond extends javax.swing.JFrame {
     }//GEN-LAST:event_pharmacistMouseClicked
 
     private void customersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customersMouseClicked
-        // TODO add your handling code here:
+        this.dispose();
+        Customers gg=new Customers();
+        gg.setVisible(true);
     }//GEN-LAST:event_customersMouseClicked
 
     private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
