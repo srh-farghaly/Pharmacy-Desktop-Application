@@ -4,6 +4,7 @@
  */
 package loginform;
 
+import Control.Products_Operations;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,11 +13,10 @@ import javax.swing.JOptionPane;
  */
 public class setStock extends javax.swing.JFrame {
 
-    /**
-     * Creates new form setStock
-     */
+   
     public setStock() {
         initComponents();
+         
         
     }
 
@@ -113,6 +113,11 @@ public class setStock extends javax.swing.JFrame {
                 SetButtonMouseClicked(evt);
             }
         });
+        SetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SetButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -207,8 +212,31 @@ public class setStock extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void SetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SetButtonMouseClicked
-        JOptionPane.showMessageDialog(null, "Data is updated", "Message", JOptionPane.INFORMATION_MESSAGE);
+      /* Products_Operations.Edit_Product(jTextField1.getText(),Integer.parseInt(jTextField2.getText()), jTextField4.getText());
+        products obj =new products();
+        obj.setVisible(true);
+        obj.show_table();
+        this.dispose();
+
+        JOptionPane.showMessageDialog(null, "Data is updated", "Message", JOptionPane.INFORMATION_MESSAGE);*/
     }//GEN-LAST:event_SetButtonMouseClicked
+
+    private void SetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetButtonActionPerformed
+        Products_Operations.Edit_Product(jTextField1.getText(),Integer.parseInt(jTextField2.getText()), jTextField4.getText());
+        /*-----FOR QUANTITY------*/
+        String new_quantity= jTextField3.getText();
+        int new_quantityy=Integer.parseInt(new_quantity);
+        int last_quantity=Products_Operations.get_QuanityProductsData(jTextField1.getText());
+        int  total_quantity=new_quantityy+last_quantity;
+        Products_Operations.insert_QuantityProductData(jTextField1.getText(),total_quantity);
+        /*-----------------------------------*/
+        products obj =new products();
+        obj.setVisible(true);
+        obj.show_table();
+        this.dispose();
+
+        JOptionPane.showMessageDialog(null, "Data is updated", "Message", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_SetButtonActionPerformed
 
     /**
      * @param args the command line arguments

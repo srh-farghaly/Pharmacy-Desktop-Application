@@ -24,8 +24,6 @@ public class Products_Model {
         this.description = description;
     }
 
-    
-
     public String getMed_name() {
         return med_name;
     }
@@ -75,28 +73,5 @@ public class Products_Model {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
 }
