@@ -7,8 +7,6 @@ import Modeling.DBOperation;
 import java.sql.ResultSet;
 import Modeling.Customers_Model;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 

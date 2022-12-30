@@ -9,8 +9,8 @@ DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 */
 public class DBOperation {
 
-    static Connection con;
-    static Statement st;
+   private static Connection con;
+   private static Statement st;
 
     public static void setDataOrDelete(String Query, String msg) {
 

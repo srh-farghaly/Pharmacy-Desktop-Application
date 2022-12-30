@@ -212,13 +212,7 @@ public class setStock extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void SetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SetButtonMouseClicked
-      /* Products_Operations.Edit_Product(jTextField1.getText(),Integer.parseInt(jTextField2.getText()), jTextField4.getText());
-        products obj =new products();
-        obj.setVisible(true);
-        obj.show_table();
-        this.dispose();
-
-        JOptionPane.showMessageDialog(null, "Data is updated", "Message", JOptionPane.INFORMATION_MESSAGE);*/
+      
     }//GEN-LAST:event_SetButtonMouseClicked
 
     private void SetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetButtonActionPerformed

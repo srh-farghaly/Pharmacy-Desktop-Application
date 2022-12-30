@@ -309,7 +309,7 @@ public  class products extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void mybutton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton2ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_mybutton2ActionPerformed
 
     private void mybutton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton2MouseClicked
@@ -363,7 +363,7 @@ public  class products extends javax.swing.JFrame {
         products gg = new products();
         gg.show_table();
         gg.setVisible(true);
-        JOptionPane.showMessageDialog(null, "Product has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
+       // JOptionPane.showMessageDialog(null, "Product has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_mybutton4ActionPerformed
 
