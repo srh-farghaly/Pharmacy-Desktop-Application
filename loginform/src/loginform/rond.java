@@ -217,6 +217,8 @@ public class rond extends javax.swing.JFrame {
         this.dispose();
         Customers gg=new Customers();
         gg.setVisible(true);
+        gg.show_table();
+       
     }//GEN-LAST:event_customersMouseClicked
 
     private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked

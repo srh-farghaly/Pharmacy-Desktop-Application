@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modeling;
 
 /**
  *
- * @author Dell
+ * @author Seifeldin Ahmed
  */
 public class Pharmacist_Model {
     private String Firstname,Lastname,gender,phonenumber,email,password,Hired_date;

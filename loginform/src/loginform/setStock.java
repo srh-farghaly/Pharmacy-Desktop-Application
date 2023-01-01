@@ -5,6 +5,10 @@
 package loginform;
 
 import Control.Products_Operations;
+import Modeling.Products_Model;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,11 +17,9 @@ import javax.swing.JOptionPane;
  */
 public class setStock extends javax.swing.JFrame {
 
-   
     public setStock() {
         initComponents();
-         
-        
+
     }
 
     /**
@@ -34,13 +36,13 @@ public class setStock extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        price = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        quan = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        exp = new javax.swing.JTextField();
         SetButton = new button.mybutton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -69,9 +71,17 @@ public class setStock extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Product Name:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        name.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nameMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nameMouseEntered(evt);
+            }
+        });
+        name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameActionPerformed(evt);
             }
         });
 
@@ -79,9 +89,9 @@ public class setStock extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Price:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                priceActionPerformed(evt);
             }
         });
 
@@ -93,9 +103,9 @@ public class setStock extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Expired Date:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        exp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                expActionPerformed(evt);
             }
         });
 
@@ -135,11 +145,11 @@ public class setStock extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4)
+                            .addComponent(exp)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(quan, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 6, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +159,7 @@ public class setStock extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -159,7 +169,7 @@ public class setStock extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -168,15 +178,15 @@ public class setStock extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(quan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(exp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                         .addComponent(SetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30))))
@@ -192,45 +202,159 @@ public class setStock extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        Products_Model obj = Products_Operations.Search_Product(name.getText());
+        if (obj != null) {
+            exp.setText(obj.getExpired_date());
+            price.setText(obj.getPrice() + "");
+            quan.setText(obj.getQuantity() + "");
+        }
+    }//GEN-LAST:event_nameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_priceActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void expActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_expActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        products ob=new products();
+        products ob = new products();
         ob.setVisible(true);
         ob.show_table();
         this.dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void SetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SetButtonMouseClicked
-      
+
     }//GEN-LAST:event_SetButtonMouseClicked
+    public String DatePattern = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
 
+    public boolean vaildate_fields() {
+        String Name = name.getText();
+        String Quantity = quan.getText();
+        String Price = price.getText();
+        String Expired = exp.getText();
+        return Expired.matches(DatePattern) && !Name.equals("") && !Quantity.equals("") && !Expired.equals("");
+    }
+
+    public boolean vaildate_ExpiredDate(Products_Model Product) {
+        boolean vaild=false;
+        String old_date = Product.getExpired_date();
+        StringTokenizer old = new StringTokenizer(old_date, "/");
+        StringTokenizer New = new StringTokenizer(exp.getText(), "/");
+        int DayOld = Integer.parseInt(old.nextToken());
+        int MonthOld = Integer.parseInt(old.nextToken());
+        int YearOld = Integer.parseInt(old.nextToken());    
+        int DayNew = Integer.parseInt(New.nextToken());
+        int MonthNew = Integer.parseInt(New.nextToken());
+        int YearNew = Integer.parseInt(New.nextToken());
+        if (YearNew > YearOld) // Expired
+        {
+            vaild = true;
+        } else if (YearNew == YearOld) {
+            if (MonthNew > MonthOld) {
+                vaild = true;
+            } else if (MonthNew == MonthOld) {
+                if (DayNew >= DayOld) {
+                    vaild = true;
+                }
+            }
+        }
+        return vaild;
+    }
+    
+    public boolean IsExpired(Products_Model Product) {
+        boolean expired = false;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDateTime now = LocalDateTime.now();
+        String old_date = Product.getExpired_date();
+        StringTokenizer old = new StringTokenizer(old_date, "/");
+        StringTokenizer Now = new StringTokenizer(dtf.format(now), "/");
+        int DayOld = Integer.parseInt(old.nextToken());
+        int MonthOld = Integer.parseInt(old.nextToken());
+        int YearOld = Integer.parseInt(old.nextToken());
+        int YearNow = Integer.parseInt(Now.nextToken());
+        int MonthNow = Integer.parseInt(Now.nextToken());
+        int DayNow = Integer.parseInt(Now.nextToken());
+        if (YearNow > YearOld) // Expired
+        {
+            expired = true;
+        } else if (YearNow == YearOld) {
+            if (MonthNow > MonthOld) {
+                expired = true;
+            } else if (MonthNow == MonthOld) {
+                if (DayNow >= DayOld) {
+                    expired = true;
+                }
+            }
+        }
+        return expired;
+    }
+    
     private void SetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetButtonActionPerformed
-        Products_Operations.Edit_Product(jTextField1.getText(),Integer.parseInt(jTextField2.getText()), jTextField4.getText());
-        /*-----FOR QUANTITY------*/
-        String new_quantity= jTextField3.getText();
-        int new_quantityy=Integer.parseInt(new_quantity);
-        int last_quantity=Products_Operations.get_QuanityProductsData(jTextField1.getText());
-        int  total_quantity=new_quantityy+last_quantity;
-        Products_Operations.insert_QuantityProductData(jTextField1.getText(),total_quantity);
-        /*-----------------------------------*/
-        products obj =new products();
-        obj.setVisible(true);
-        obj.show_table();
-        this.dispose();
+        if (vaildate_fields()) {
+            Products_Model SelectedProduct = Products_Operations.Search_Product(name.getText());
+            if (SelectedProduct != null) {
+                int Price, new_quantity, last_quantity;
+                String NewExpiredDate;
+                if (!price.getText().isEmpty()) {
+                    Price = Integer.parseInt(price.getText());
+                } else {
+                    Price = SelectedProduct.getPrice();
+                }
+                /*-----FOR QUANTITY------*/
+                new_quantity = Integer.parseInt(quan.getText());
+                if (IsExpired(SelectedProduct)) {
+                    last_quantity = 0;
+                } else {
+                    last_quantity = SelectedProduct.getQuantity();
+                }
+                int total_quantity = new_quantity + last_quantity;
+                /*-----FOR Expired Date------*/
+                if(vaildate_ExpiredDate(SelectedProduct))
+                {
+                   NewExpiredDate = exp.getText();
+                }
+                else
+                {
+                   NewExpiredDate=SelectedProduct.getExpired_date();
+                }
+                Products_Operations.Edit_Product(name.getText(), Price, NewExpiredDate, total_quantity);
+                /*-----------------------------------*/
+                products obj = new products();
+                obj.setVisible(true);
+                obj.show_table();
+                this.dispose();
 
-        JOptionPane.showMessageDialog(null, "Data is updated", "Message", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Data is updated", "Message", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Product Is Not Found", "Message", JOptionPane.WARNING_MESSAGE);
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter Correct information", "Message", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_SetButtonActionPerformed
+
+    private void nameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameMouseClicked
+        Products_Model obj = Products_Operations.Search_Product(name.getText());
+        if (obj != null) {
+            exp.setText(obj.getExpired_date());
+            price.setText(obj.getPrice() + "");
+            quan.setText(obj.getQuantity() + "");
+        }
+    }//GEN-LAST:event_nameMouseClicked
+
+    private void nameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameMouseEntered
+        Products_Model obj = Products_Operations.Search_Product(name.getText());
+        if (obj != null) {
+            exp.setText(obj.getExpired_date());
+            price.setText(obj.getPrice() + "");
+            quan.setText(obj.getQuantity() + "");
+        }
+    }//GEN-LAST:event_nameMouseEntered
 
     /**
      * @param args the command line arguments
@@ -269,6 +393,7 @@ public class setStock extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private button.mybutton SetButton;
+    private javax.swing.JTextField exp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -278,9 +403,8 @@ public class setStock extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField price;
+    private javax.swing.JTextField quan;
     // End of variables declaration//GEN-END:variables
 }

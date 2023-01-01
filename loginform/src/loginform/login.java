@@ -285,7 +285,7 @@ public class login extends javax.swing.JFrame {
         
         else if(error_status == 0) // pharmacist
         {
-            rond obj=new rond();
+            phar_rond obj=new phar_rond();
             obj.setVisible(true);
             this.dispose();
         }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package loginform;
 
 import Control.Products_Operations;
@@ -70,6 +66,15 @@ public  class products extends javax.swing.JFrame {
         row[4] = obj.getExpired_date();
         row[5] = obj.getDescription();
         pr.insertRow(0, row);
+        
+            arr = Products_Operations.get_ProductsData();
+            TableDark1.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                row_number = TableDark1.getSelectedRow();
+            }
+        }
+        );
     }
     
     /**
@@ -335,7 +340,6 @@ public  class products extends javax.swing.JFrame {
         if (search.getText().isEmpty()) {
         } else {
             Products_Model obj = Products_Operations.Search_Product(search.getText());
-
             if (obj != null) {
                 this.dispose();
                 products pr = new products();

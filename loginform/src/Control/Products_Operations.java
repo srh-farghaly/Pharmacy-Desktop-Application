@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Control;
 
 import Modeling.DBOperation;
@@ -21,9 +17,7 @@ public class Products_Operations {
 
     
     public  static void insert_ProductData(String med_name,int price,String expired_date,int quantity,String category,String description )
-   {
-       
-         
+   {    
        String query="insert into products (med_name,price,expired_date,quantity,category,description) values ('"+med_name+"' , '"+price+"' , '"+expired_date +"' , '"+quantity+"' , '"+category+"', '"+description+"')";
        DBOperation.setDataOrDelete(query, "New Product has been Inserted Successfully");
    }
@@ -76,44 +70,12 @@ public class Products_Operations {
         String Query="delete from products where med_name='"+med_name+"'";
         DBOperation.setDataOrDelete(Query, " Product has been Deleted Successfully ");
     }
+   
     
-    
-    public static void Edit_Product(String med_name,int new_price,String new_expired_date)
-    {
-        
-        String query="UPDATE products set price='"+new_price+"',expired_date='"+new_expired_date+"' where med_name='"+med_name+"'";
-        DBOperation.setDataOrDelete(query, "New Product has been Edited Successfully");
+    public static void Edit_Product(String med_name,int new_price,String new_expired_date,int quantity)
+    {        
+        String query="UPDATE products set price='"+new_price+"',quantity='"+quantity+"', expired_date='"+new_expired_date+"' where med_name='"+med_name+"'";
+        DBOperation.setDataOrDelete(query, "");
     }
-
-    public  static int get_QuanityProductsData(String med_name)
-    {
-        int qq=0;
-          String query="select * from products where med_name='"+med_name+"'";
-          ResultSet Pr=DBOperation.getData(query);
-          Products_Model obj=null;
-
-        try {
-            while(Pr.next())
-            {
-            obj= new Products_Model(Pr.getString("med_name"),Pr.getInt("price"),Pr.getString("expired_date"),Pr.getInt("quantity"),Pr.getString("category"),Pr.getString("description"));     
-            }
-            qq=obj.getQuantity();
-        } catch (SQLException ex) {
-          JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
-        }
-        finally{
-            try {
-                Pr.close();
-            } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-       return qq;
-    }
-    
-     public  static void insert_QuantityProductData(String med_name,int total_quantity)
-   {
-       String query="update  products set quantity = '"+total_quantity+"'where med_name='"+med_name+"'" ;
-       DBOperation.setDataOrDelete(query, " Product has been Edited Successfully");
-   }
 }
+   

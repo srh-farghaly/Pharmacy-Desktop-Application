@@ -1,11 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package loginform;
 
 import Control.Products_Operations;
-import java.text.SimpleDateFormat;
+import Modeling.Products_Model;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,28 +13,23 @@ import javax.swing.JOptionPane;
  */
 public class newproduct extends javax.swing.JFrame {
 
-    /**
-     * Creates new form newproduct
-     */
-    
-           
+    public String DatePattern = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
 
-    
     public newproduct() {
         initComponents();
         mybutton1.setEnabled(false);
     }
 
     public boolean validateFields() {
-            
+
         String med_name = jTextField1.getText();
         String price = jTextField2.getText();
         String quantity = jTextField3.getText();
-        String expired_date = jTextField5.getText();
-        return !med_name.equals("") && !price.equals("") && !quantity.equals("") && !expired_date.equals("")/*&& !category.equals("")*/;
-    
+        String expired_date = date.getText();
+        return expired_date.matches(DatePattern) && !med_name.equals("") && !price.equals("") && !quantity.equals("") && !expired_date.equals("")/*&& !category.equals("")*/;
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,7 +52,7 @@ public class newproduct extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        date = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         mybutton1 = new button.mybutton();
@@ -144,14 +138,14 @@ public class newproduct extends javax.swing.JFrame {
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                dateActionPerformed(evt);
             }
         });
-        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+        date.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField5KeyReleased(evt);
+                dateKeyReleased(evt);
             }
         });
 
@@ -217,7 +211,7 @@ public class newproduct extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTextField1)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                                .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                                 .addComponent(jTextField3)
                                 .addComponent(jTextField2))
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -252,10 +246,10 @@ public class newproduct extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11)
                 .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,32 +269,64 @@ public class newproduct extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_dateActionPerformed
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        products ob=new products();
+        products ob = new products();
         ob.setVisible(true);
         ob.show_table();
         this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
-
-    private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
-    
-        if(validateFields())
-    {
-        Products_Operations.insert_ProductData(jTextField1.getText(), Integer.parseInt(jTextField2.getText()), jTextField5.getText(), Integer.parseInt(jTextField3.getText()),(String) jComboBox1.getSelectedItem(), jTextArea1.getText());
-        products obj =new products();
-        obj.setVisible(true);
-        obj.show_table();
-        this.dispose();
+    public boolean IsVaildExpiredDate() {
+        boolean vaild = true;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDateTime now = LocalDateTime.now();
+        String entered_date = date.getText();
+        StringTokenizer entered = new StringTokenizer(entered_date, "/");
+        StringTokenizer Now = new StringTokenizer(dtf.format(now), "/");
+        int DayEntered = Integer.parseInt(entered.nextToken());
+        int MonthEntered = Integer.parseInt(entered.nextToken());
+        int YearEntered = Integer.parseInt(entered.nextToken());
+        int YearNow = Integer.parseInt(Now.nextToken());
+        int MonthNow = Integer.parseInt(Now.nextToken());
+        int DayNow = Integer.parseInt(Now.nextToken());
+        if (YearNow > YearEntered) // not vaild
+        {
+            vaild = false;
+        } else if (YearNow == YearEntered) {
+            if (MonthNow > MonthEntered) {
+                vaild = false;
+            } else if (MonthNow == MonthEntered) {
+                if (DayNow >= DayEntered) {
+                    vaild = false;
+                }
+            }
+        }
+        return vaild;
     }
-      else {
-         JOptionPane.showMessageDialog(null, "Please Enter Correct information");
+    private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
+
+        if (validateFields()) {
+            if (IsVaildExpiredDate() && date.getText().matches(DatePattern)) {
+                Products_Operations.insert_ProductData(jTextField1.getText(), Integer.parseInt(jTextField2.getText()), date.getText(), Integer.parseInt(jTextField3.getText()), (String) jComboBox1.getSelectedItem(), jTextArea1.getText());
+
+                products obj = new products();
+                obj.setVisible(true);
+                obj.show_table();
+                this.dispose();
+            }
+            else 
+            {
+              JOptionPane.showMessageDialog(null, "Expired Date is not Vaild", "Message", JOptionPane.WARNING_MESSAGE);
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter Correct information", "Message", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_mybutton1MouseClicked
-    
+
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1KeyReleased
@@ -313,9 +339,9 @@ public class newproduct extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3KeyReleased
 
-    private void jTextField5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyReleased
+    private void dateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dateKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5KeyReleased
+    }//GEN-LAST:event_dateKeyReleased
 
     private void jTextArea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyReleased
         // TODO add your handling code here:
@@ -336,7 +362,7 @@ public class newproduct extends javax.swing.JFrame {
     private void mybutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mybutton1ActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
@@ -373,6 +399,7 @@ public class newproduct extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField date;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -391,7 +418,6 @@ public class newproduct extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
     private button.mybutton mybutton1;
     // End of variables declaration//GEN-END:variables
 }

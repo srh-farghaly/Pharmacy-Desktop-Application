@@ -61,8 +61,8 @@ public class Customers extends javax.swing.JFrame {
                 row_number = tableCu.getSelectedRow();
             }
         }
-);
-                }
+       );
+ }
      
       private void show_id(Customers_Model obj) {
         DefaultTableModel mm = (DefaultTableModel) tableCu.getModel();
@@ -74,17 +74,17 @@ public class Customers extends javax.swing.JFrame {
         row[4] = obj.getStreet();
         row[5] = obj.getGender();
         row[6] = obj.getPhoneNumber_1();
-        
         mm.insertRow(0, row);
+        arr = customers_operations.get_customersData();
 
-       // Mouse Event
+        // Mouse Event
         tableCu.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
+                row_number = tableCu.getSelectedRow();
             }
         }
-        );
+       );
     }
 
     /**
