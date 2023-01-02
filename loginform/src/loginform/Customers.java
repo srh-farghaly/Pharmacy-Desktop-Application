@@ -264,9 +264,7 @@ public class Customers extends javax.swing.JFrame {
 
             }
         }     
-        
-        
-        
+                
     }//GEN-LAST:event_AddButton1ActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
