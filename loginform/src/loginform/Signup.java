@@ -55,62 +55,72 @@ public class Signup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        logo = new javax.swing.JLabel();
-        password = new javax.swing.JLabel();
-        txtfName = new javax.swing.JTextField();
-        name1 = new javax.swing.JLabel();
-        txtpass = new javax.swing.JPasswordField();
-        pass = new javax.swing.JLabel();
-        icon2 = new javax.swing.JLabel();
-        emailicon = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
-        txtlName = new javax.swing.JTextField();
-        phone_number = new javax.swing.JLabel();
-        phone = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
-        age = new javax.swing.JLabel();
-        txtphone = new javax.swing.JTextField();
-        gender = new javax.swing.JLabel();
-        hireddate = new javax.swing.JLabel();
-        txtage = new javax.swing.JTextField();
-        ageicon1 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        RegButton = new button.mybutton();
-        icon3 = new javax.swing.JLabel();
-        txtsalary = new javax.swing.JTextField();
-        age1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtfName = new javax.swing.JTextField();
+        txtlName = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        txtsalary = new javax.swing.JTextField();
+        RegButton = new button.mybutton();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        txtphone = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtpass = new javax.swing.JPasswordField();
+        txtAge = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                jLabel5MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255,80));
+        jPanel2.setBackground(new java.awt.Color(6, 107, 138,80));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add New Pharmacist", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Wide Latin", 3, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 238, 249));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Create Account");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Untitled-1 (2).png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(122, 115));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 122, -1, 127));
 
-        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pharmacy (12).png"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("First Name");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
-        password.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        password.setForeground(new java.awt.Color(255, 255, 255));
-        password.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        password.setText("Password");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Last name");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 68, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("E-mail");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 96, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Password");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 131, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Gender");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
 
         txtfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,32 +132,7 @@ public class Signup extends javax.swing.JFrame {
                 txtfNameKeyReleased(evt);
             }
         });
-
-        name1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        name1.setForeground(new java.awt.Color(255, 255, 255));
-        name1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        name1.setText("First Name");
-
-        txtpass.setToolTipText("enter at least 6 digits");
-        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtpassKeyReleased(evt);
-            }
-        });
-
-        pass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/padlock (1).png"))); // NOI18N
-
-        icon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        icon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user (3).png"))); // NOI18N
-
-        emailicon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        emailicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/email.png"))); // NOI18N
-
-        Email.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        Email.setForeground(new java.awt.Color(255, 255, 255));
-        Email.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Email.setText("Email");
+        jPanel2.add(txtfName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 139, -1));
 
         txtlName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,14 +144,7 @@ public class Signup extends javax.swing.JFrame {
                 txtlNameKeyReleased(evt);
             }
         });
-
-        phone_number.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        phone_number.setForeground(new java.awt.Color(255, 255, 255));
-        phone_number.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        phone_number.setText("Phone number");
-
-        phone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        phone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/phone-call.png"))); // NOI18N
+        jPanel2.add(txtlName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 139, -1));
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,52 +156,28 @@ public class Signup extends javax.swing.JFrame {
                 txtEmailKeyReleased(evt);
             }
         });
+        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 139, -1));
 
-        age.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        age.setForeground(new java.awt.Color(255, 255, 255));
-        age.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        age.setText("Age");
-
-        txtphone.addActionListener(new java.awt.event.ActionListener() {
+        txtsalary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtphoneActionPerformed(evt);
+                txtsalaryActionPerformed(evt);
             }
         });
-
-        gender.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        gender.setForeground(new java.awt.Color(255, 255, 255));
-        gender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        gender.setText("Gender");
-
-        hireddate.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        hireddate.setForeground(new java.awt.Color(255, 255, 255));
-        hireddate.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        hireddate.setText("Last Name");
-
-        txtage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtageActionPerformed(evt);
+        txtsalary.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtsalaryKeyReleased(evt);
             }
         });
+        jPanel2.add(txtsalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 139, -1));
 
-        ageicon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ageicon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/age-group.png"))); // NOI18N
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", " " }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-
+        RegButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         RegButton.setForeground(new java.awt.Color(6, 107, 138));
-        RegButton.setText("SignUp");
+        RegButton.setText("Register");
         RegButton.setBorderColor(new java.awt.Color(255, 255, 255));
         RegButton.setBorderPainted(false);
-        RegButton.setColorClick(new java.awt.Color(179, 229, 216));
-        RegButton.setColorOver(new java.awt.Color(255, 255, 255));
-        RegButton.setColorText(new java.awt.Color(255, 255, 255));
-        RegButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RegButton.setColorClick(new java.awt.Color(153, 204, 255));
+        RegButton.setColorOver(new java.awt.Color(204, 204, 204));
+        RegButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         RegButton.setRadius(10);
         RegButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -235,224 +189,131 @@ public class Signup extends javax.swing.JFrame {
                 RegButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(RegButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 83, 41));
 
-        icon3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        icon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user (3).png"))); // NOI18N
-
-        txtsalary.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsalaryActionPerformed(evt);
+                jComboBox2ActionPerformed(evt);
             }
         });
+        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
 
-        age1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        age1.setForeground(new java.awt.Color(255, 255, 255));
-        age1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        age1.setText("Salary");
+        txtphone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtphoneActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtphone, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 139, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(308, 308, 308)
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(icon2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(icon3))
-                            .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(emailicon))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(pass))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(phone))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(ageicon1))
-                            .addComponent(age1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtphone, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtlName, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtsalary, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(117, 117, 117)
-                            .addComponent(RegButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hireddate, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phone_number, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(name1))))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(name1)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(icon2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(hireddate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtlName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(icon3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Email)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(emailicon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(password)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(phone_number)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(age)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtsalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(age1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(gender))
-                        .addGap(31, 31, 31)
-                        .addComponent(RegButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ageicon1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Age");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 350, 690));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Phone Number");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
+        jPanel2.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 140, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/kk.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-670, 0, 1190, 780));
+        txtAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAgeActionPerformed(evt);
+            }
+        });
+        txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAgeKeyReleased(evt);
+            }
+        });
+        jPanel2.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 139, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Salary");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 510, 390));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/17973908.jpg"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 800, 590));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        pharmacist gg =new pharmacist();
+        this.dispose();
+        gg.setVisible(true);
+
+    }//GEN-LAST:event_jLabel5MouseClicked
+
     private void txtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfNameActionPerformed
+
+    private void txtfNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfNameKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfNameKeyReleased
 
     private void txtlNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtlNameActionPerformed
 
+    private void txtlNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtlNameKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtlNameKeyReleased
+
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void txtphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtphoneActionPerformed
+    private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtphoneActionPerformed
+    }//GEN-LAST:event_txtEmailKeyReleased
 
-    private void txtageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtageActionPerformed
+    private void txtsalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsalaryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtageActionPerformed
+    }//GEN-LAST:event_txtsalaryActionPerformed
+
+    private void txtsalaryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsalaryKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsalaryKeyReleased
+
+    private void RegButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegButtonMouseClicked
+        if (validateFields()) {
+            Pharmacist_operations.insert_pharmacistData(txtfName.getText(), txtlName.getText(), (String)jComboBox2.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
+            pharmacist obj = new pharmacist();
+            obj.setVisible(true);
+            obj.show_table();
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
+        }
+
+    }//GEN-LAST:event_RegButtonMouseClicked
+
+    private void RegButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegButtonActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void RegButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegButtonMouseClicked
-
-        if (validateFields()) {
-            if(password_vaildate())
-            {  
-               Pharmacist_operations.insert_pharmacistData(txtfName.getText(), txtlName.getText(), (String) jComboBox2.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()), Integer.parseInt(txtage.getText().trim()));
-               pharmacist gg = new pharmacist();
-               gg.show_table();
-               gg.setVisible(true);
-               this.dispose();
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_RegButtonMouseClicked
-
-    private void RegButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegButtonActionPerformed
-
-    }//GEN-LAST:event_RegButtonActionPerformed
-
-    private void txtfNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfNameKeyReleased
-       // validateFields();
-    }//GEN-LAST:event_txtfNameKeyReleased
-
-    private void txtlNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtlNameKeyReleased
-        //validateFields();
-    }//GEN-LAST:event_txtlNameKeyReleased
-
-    private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
-        //validateFields();
-    }//GEN-LAST:event_txtEmailKeyReleased
-
-    private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
-        //validateFields();
-    }//GEN-LAST:event_txtpassKeyReleased
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        pharmacist gg = new pharmacist();
-        gg.show_table();
-        gg.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void txtsalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsalaryActionPerformed
+    private void txtphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtphoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtsalaryActionPerformed
+    }//GEN-LAST:event_txtphoneActionPerformed
+
+    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgeActionPerformed
+
+    private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgeKeyReleased
 
     /**
      * @param args the command line arguments
@@ -489,29 +350,22 @@ public class Signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Email;
     private button.mybutton RegButton;
-    private javax.swing.JLabel age;
-    private javax.swing.JLabel age1;
-    private javax.swing.JLabel ageicon1;
-    private javax.swing.JLabel emailicon;
-    private javax.swing.JLabel gender;
-    private javax.swing.JLabel hireddate;
-    private javax.swing.JLabel icon2;
-    private javax.swing.JLabel icon3;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel logo;
-    private javax.swing.JLabel name1;
-    private javax.swing.JLabel pass;
-    private javax.swing.JLabel password;
-    private javax.swing.JLabel phone;
-    private javax.swing.JLabel phone_number;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtfName;
     private javax.swing.JTextField txtlName;
     private javax.swing.JPasswordField txtpass;
