@@ -70,7 +70,6 @@ public class Products_Operations {
         String Query="delete from products where med_name='"+med_name+"'";
         DBOperation.setDataOrDelete(Query, " Product has been Deleted Successfully ");
     }
-   
     
     public static void Edit_Product(String med_name,int new_price,String new_expired_date,int quantity)
     {        

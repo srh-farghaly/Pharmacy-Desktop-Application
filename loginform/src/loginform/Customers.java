@@ -227,9 +227,19 @@ public class Customers extends javax.swing.JFrame {
     }//GEN-LAST:event_tableCuMouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    if(login.Manager)
+     {
         rond obj = new rond();
         obj.setVisible(true);
         this.dispose();
+     }
+     else
+     {
+        phar_rond obj = new phar_rond();
+        obj.setVisible(true);
+        this.dispose();
+     }
+
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed

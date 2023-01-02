@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package loginform;
 import Control.Pharmacist_operations;
 import javax.swing.JOptionPane;
@@ -11,6 +7,7 @@ import javax.swing.JOptionPane;
  */
 public class login extends javax.swing.JFrame {
 
+     public static Boolean Manager;
     /**
      * Creates new form login
      */
@@ -281,6 +278,7 @@ public class login extends javax.swing.JFrame {
             rond obj=new rond();
             obj.setVisible(true);
             this.dispose();
+            Manager=true;
         }
         
         else if(error_status == 0) // pharmacist
@@ -288,6 +286,7 @@ public class login extends javax.swing.JFrame {
             phar_rond obj=new phar_rond();
             obj.setVisible(true);
             this.dispose();
+            Manager=false;
         }
         else
         {

@@ -45,8 +45,7 @@ public class pharmacist extends javax.swing.JFrame {
             row[5] = arr.get(i).getPhonenumber();
             row[6] = arr.get(i).getHired_date();
             row[7] = arr.get(i).getSalary();
-            mm.insertRow(i, row);
-          
+            mm.insertRow(i, row);         
         }
     
         // Mouse Event
@@ -339,9 +338,18 @@ public class pharmacist extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonEditActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+     if(login.Manager)
+     {
         rond obj = new rond();
         obj.setVisible(true);
         this.dispose();
+     }
+     else
+     {
+        phar_rond obj = new phar_rond();
+        obj.setVisible(true);
+        this.dispose();
+     }
 
     }//GEN-LAST:event_jLabel2MouseClicked
 

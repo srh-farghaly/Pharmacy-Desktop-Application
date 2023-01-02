@@ -6,6 +6,8 @@
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/loginform/setStock.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/Control/Pharmacist_operations.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/loginform/Customers.java</file>
+            <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/Modeling/Products_Model.java</file>
+            <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/loginform/phar_rond.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/loginform/Signup.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/Modeling/Customers_Model.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/loginform/login.java</file>
@@ -17,6 +19,7 @@
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/loginform/rond.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/Modeling/Pharmacist_Model.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/Modeling/DBOperation.java</file>
+            <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/Control/customers_operations.java</file>
             <file>file:/E:/Courses/git/Pharmacy-Project/loginform/src/loginform/pharmacist.java</file>
         </group>
     </open-files>

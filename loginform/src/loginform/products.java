@@ -330,9 +330,19 @@ public  class products extends javax.swing.JFrame {
     }//GEN-LAST:event_mybutton3MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        rond obj=new rond();
+    if(login.Manager)
+     {
+        rond obj = new rond();
         obj.setVisible(true);
         this.dispose();
+     }
+     else
+     {
+        phar_rond obj = new phar_rond();
+        obj.setVisible(true);
+        this.dispose();
+     }
+
     }//GEN-LAST:event_jLabel2MouseClicked
 
 
