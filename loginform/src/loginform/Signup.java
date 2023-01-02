@@ -35,21 +35,6 @@ public class Signup extends javax.swing.JFrame {
            String Password = txtpass.getText();
            return Password.length()>=6;
         }
-/*
-    public void validateFields() {
-        String firstname = txtfName.getText();
-        String lastname = txtlName.getText();
-        String email = txtEmail.getText();
-        String phonenumber = txtphone.getText();
-        String Password = txtpass.getText();
-        if (email.matches(emailPattern) && !firstname.equals("") && !lastname.equals("") && phonenumber.matches(mobileNumberPattern) && !Password.equals("")) {
-            RegButton.setEnabled(true);
-        } else {
-            RegButton.setEnabled(false);
-        }
-    
-    }
-*/
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -215,6 +200,8 @@ public class Signup extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Phone Number");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
+
+        txtpass.setToolTipText("enter at least 6 digits");
         jPanel2.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 140, -1));
 
         txtAge.addActionListener(new java.awt.event.ActionListener() {
@@ -284,11 +271,17 @@ public class Signup extends javax.swing.JFrame {
 
     private void RegButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegButtonMouseClicked
         if (validateFields()) {
-            Pharmacist_operations.insert_pharmacistData(txtfName.getText(), txtlName.getText(), (String)jComboBox2.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
-            pharmacist obj = new pharmacist();
-            obj.setVisible(true);
-            obj.show_table();
-            this.dispose();
+            if(password_vaildate())
+            {   
+                Pharmacist_operations.insert_pharmacistData(txtfName.getText(), txtlName.getText(), (String)jComboBox2.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
+                pharmacist obj = new pharmacist();
+                obj.setVisible(true);
+                obj.show_table();
+                this.dispose();
+            }
+            else {
+            JOptionPane.showMessageDialog(null, "Password Is Weak","Message", JOptionPane.WARNING_MESSAGE);
+        }
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
         }
