@@ -280,7 +280,6 @@ public class login extends javax.swing.JFrame {
             this.dispose();
             Manager=true;
         }
-        
         else if(error_status == 0) // pharmacist
         {
             phar_rond obj=new phar_rond();
