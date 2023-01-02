@@ -234,10 +234,10 @@ public class Signup extends javax.swing.JFrame {
         jLabel11.setText("Salary");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 510, 390));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 510, 390));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/17973908.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 800, 590));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 800, 590));
 
         pack();
         setLocationRelativeTo(null);

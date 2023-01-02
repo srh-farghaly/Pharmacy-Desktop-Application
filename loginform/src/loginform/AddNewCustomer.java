@@ -195,7 +195,7 @@ public class AddNewCustomer extends javax.swing.JFrame {
         jLabel9.setText("Phone Number");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 175, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 510, 390));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 510, 390));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/17973908.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 590));
