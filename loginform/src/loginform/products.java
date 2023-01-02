@@ -89,16 +89,16 @@ public  class products extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        search = new javax.swing.JTextField();
-        mybutton1 = new button.mybutton();
+        txtsearch = new javax.swing.JTextField();
+        Search = new button.mybutton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableDark1 = new tabledark.TableDark();
-        mybutton2 = new button.mybutton();
-        mybutton3 = new button.mybutton();
-        mybutton4 = new button.mybutton();
+        Stock = new button.mybutton();
+        Add = new button.mybutton();
+        Delete = new button.mybutton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,10 +108,10 @@ public  class products extends javax.swing.JFrame {
         jLabel1.setRequestFocusEnabled(false);
         jLabel1.setVerifyInputWhenFocusTarget(false);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
 
@@ -131,19 +131,19 @@ public  class products extends javax.swing.JFrame {
             }
         });
 
-        search.setText("Enter Name");
+        txtsearch.setText("Enter Name");
 
-        mybutton1.setBackground(new java.awt.Color(6, 107, 138));
-        mybutton1.setForeground(new java.awt.Color(255, 255, 255));
-        mybutton1.setText("Search");
-        mybutton1.setBorderColor(new java.awt.Color(255, 255, 255));
-        mybutton1.setBorderPainted(false);
-        mybutton1.setColorClick(new java.awt.Color(0, 153, 153));
-        mybutton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        mybutton1.setRadius(10);
-        mybutton1.addActionListener(new java.awt.event.ActionListener() {
+        Search.setBackground(new java.awt.Color(6, 107, 138));
+        Search.setForeground(new java.awt.Color(255, 255, 255));
+        Search.setText("Search");
+        Search.setBorderColor(new java.awt.Color(255, 255, 255));
+        Search.setBorderPainted(false);
+        Search.setColorClick(new java.awt.Color(0, 153, 153));
+        Search.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Search.setRadius(10);
+        Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mybutton1ActionPerformed(evt);
+                SearchActionPerformed(evt);
             }
         });
 
@@ -179,55 +179,55 @@ public  class products extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TableDark1);
 
-        mybutton2.setBackground(new java.awt.Color(6, 107, 138));
-        mybutton2.setForeground(new java.awt.Color(255, 255, 255));
-        mybutton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/box.png"))); // NOI18N
-        mybutton2.setText("Set Stock");
-        mybutton2.setBorderColor(new java.awt.Color(255, 255, 255));
-        mybutton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        mybutton2.setRadius(10);
-        mybutton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Stock.setBackground(new java.awt.Color(6, 107, 138));
+        Stock.setForeground(new java.awt.Color(255, 255, 255));
+        Stock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/box.png"))); // NOI18N
+        Stock.setText("Set Stock");
+        Stock.setBorderColor(new java.awt.Color(255, 255, 255));
+        Stock.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Stock.setRadius(10);
+        Stock.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mybutton2MouseClicked(evt);
+                StockMouseClicked(evt);
             }
         });
-        mybutton2.addActionListener(new java.awt.event.ActionListener() {
+        Stock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mybutton2ActionPerformed(evt);
+                StockActionPerformed(evt);
             }
         });
 
-        mybutton3.setBackground(new java.awt.Color(6, 107, 138));
-        mybutton3.setForeground(new java.awt.Color(255, 255, 255));
-        mybutton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-product.png"))); // NOI18N
-        mybutton3.setText("Add new product");
-        mybutton3.setBorderColor(new java.awt.Color(255, 255, 255));
-        mybutton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        mybutton3.setRadius(10);
-        mybutton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Add.setBackground(new java.awt.Color(6, 107, 138));
+        Add.setForeground(new java.awt.Color(255, 255, 255));
+        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-product.png"))); // NOI18N
+        Add.setText("Add new product");
+        Add.setBorderColor(new java.awt.Color(255, 255, 255));
+        Add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Add.setRadius(10);
+        Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mybutton3MouseClicked(evt);
+                AddMouseClicked(evt);
             }
         });
-        mybutton3.addActionListener(new java.awt.event.ActionListener() {
+        Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mybutton3ActionPerformed(evt);
+                AddActionPerformed(evt);
             }
         });
 
-        mybutton4.setBackground(new java.awt.Color(6, 107, 138));
-        mybutton4.setForeground(new java.awt.Color(255, 255, 255));
-        mybutton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
-        mybutton4.setText("Delete");
-        mybutton4.setBorderColor(new java.awt.Color(255, 255, 255));
-        mybutton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        mybutton4.setMaximumSize(new java.awt.Dimension(121, 34));
-        mybutton4.setMinimumSize(new java.awt.Dimension(121, 34));
-        mybutton4.setPreferredSize(new java.awt.Dimension(121, 34));
-        mybutton4.setRadius(10);
-        mybutton4.addActionListener(new java.awt.event.ActionListener() {
+        Delete.setBackground(new java.awt.Color(6, 107, 138));
+        Delete.setForeground(new java.awt.Color(255, 255, 255));
+        Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
+        Delete.setText("Delete");
+        Delete.setBorderColor(new java.awt.Color(255, 255, 255));
+        Delete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Delete.setMaximumSize(new java.awt.Dimension(121, 34));
+        Delete.setMinimumSize(new java.awt.Dimension(121, 34));
+        Delete.setPreferredSize(new java.awt.Dimension(121, 34));
+        Delete.setRadius(10);
+        Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mybutton4ActionPerformed(evt);
+                DeleteActionPerformed(evt);
             }
         });
 
@@ -241,7 +241,7 @@ public  class products extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel2))
+                                .addComponent(back))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(69, 69, 69)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,9 +251,9 @@ public  class products extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(273, 273, 273)
-                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -262,11 +262,11 @@ public  class products extends javax.swing.JFrame {
                 .addGap(68, 68, 68))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(192, 192, 192)
-                .addComponent(mybutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stock, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79)
-                .addComponent(mybutton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
-                .addComponent(mybutton4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -274,7 +274,7 @@ public  class products extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(back)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -282,15 +282,15 @@ public  class products extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mybutton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mybutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mybutton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Stock, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 36, Short.MAX_VALUE))
         );
 
@@ -313,23 +313,23 @@ public  class products extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void mybutton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton2ActionPerformed
+    private void StockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockActionPerformed
 
-    }//GEN-LAST:event_mybutton2ActionPerformed
+    }//GEN-LAST:event_StockActionPerformed
 
-    private void mybutton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton2MouseClicked
+    private void StockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StockMouseClicked
         setStock ob=new setStock();
         ob.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_mybutton2MouseClicked
+    }//GEN-LAST:event_StockMouseClicked
 
-    private void mybutton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton3MouseClicked
+    private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         newproduct obj=new newproduct();
         obj.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_mybutton3MouseClicked
+    }//GEN-LAST:event_AddMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
     if(login.Manager)
      {
         rond obj = new rond();
@@ -343,13 +343,13 @@ public  class products extends javax.swing.JFrame {
         this.dispose();
      }
 
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
 
-    private void mybutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton1ActionPerformed
-        if (search.getText().isEmpty()) {
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
+        if (txtsearch.getText().isEmpty()) {
         } else {
-            Products_Model obj = Products_Operations.Search_Product(search.getText());
+            Products_Model obj = Products_Operations.Search_Product(txtsearch.getText());
             if (obj != null) {
                 this.dispose();
                 products pr = new products();
@@ -359,18 +359,18 @@ public  class products extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "This product does not exist", "Message", JOptionPane.WARNING_MESSAGE);
             }
         }
-    }//GEN-LAST:event_mybutton1ActionPerformed
+    }//GEN-LAST:event_SearchActionPerformed
 
     private void TableDark1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableDark1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_TableDark1MouseClicked
 
 
-    private void mybutton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton3ActionPerformed
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mybutton3ActionPerformed
+    }//GEN-LAST:event_AddActionPerformed
 
-    private void mybutton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton4ActionPerformed
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
       String name = arr.get(row_number).getMed_name();
         Products_Operations.Delete_Product(name);
         this.dispose(); 
@@ -379,7 +379,7 @@ public  class products extends javax.swing.JFrame {
         gg.setVisible(true);
        // JOptionPane.showMessageDialog(null, "Product has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
 
-    }//GEN-LAST:event_mybutton4ActionPerformed
+    }//GEN-LAST:event_DeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -418,18 +418,18 @@ public  class products extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private button.mybutton Add;
+    private button.mybutton Delete;
+    private button.mybutton Search;
+    private button.mybutton Stock;
     private tabledark.TableDark TableDark1;
+    private javax.swing.JLabel back;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private button.mybutton mybutton1;
-    private button.mybutton mybutton2;
-    private button.mybutton mybutton3;
-    private button.mybutton mybutton4;
-    private javax.swing.JTextField search;
+    private javax.swing.JTextField txtsearch;
     // End of variables declaration//GEN-END:variables
 
   

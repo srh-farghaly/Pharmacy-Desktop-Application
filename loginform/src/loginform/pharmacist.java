@@ -96,11 +96,11 @@ public class pharmacist extends javax.swing.JFrame {
         tablePH = new tabledark.TableDark();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        ButtonDelete = new button.mybutton();
-        ButtonEdit = new button.mybutton();
+        Delete = new button.mybutton();
+        Add = new button.mybutton();
         txtsearch = new javax.swing.JTextField();
-        SearchButton = new button.mybutton();
-        jLabel2 = new javax.swing.JLabel();
+        Search = new button.mybutton();
+        back = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -145,42 +145,42 @@ public class pharmacist extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pharmacist (3).png"))); // NOI18N
 
-        ButtonDelete.setBackground(new java.awt.Color(6, 107, 138));
-        ButtonDelete.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
-        ButtonDelete.setText("Delete");
-        ButtonDelete.setBorderColor(new java.awt.Color(255, 255, 255));
-        ButtonDelete.setBorderPainted(false);
-        ButtonDelete.setColor(new java.awt.Color(6, 107, 138));
-        ButtonDelete.setColorClick(new java.awt.Color(0, 153, 153));
-        ButtonDelete.setColorText(new java.awt.Color(0, 102, 102));
-        ButtonDelete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ButtonDelete.setRadius(10);
-        ButtonDelete.addActionListener(new java.awt.event.ActionListener() {
+        Delete.setBackground(new java.awt.Color(6, 107, 138));
+        Delete.setForeground(new java.awt.Color(255, 255, 255));
+        Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
+        Delete.setText("Delete");
+        Delete.setBorderColor(new java.awt.Color(255, 255, 255));
+        Delete.setBorderPainted(false);
+        Delete.setColor(new java.awt.Color(6, 107, 138));
+        Delete.setColorClick(new java.awt.Color(0, 153, 153));
+        Delete.setColorText(new java.awt.Color(0, 102, 102));
+        Delete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Delete.setRadius(10);
+        Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonDeleteActionPerformed(evt);
+                DeleteActionPerformed(evt);
             }
         });
 
-        ButtonEdit.setBackground(new java.awt.Color(6, 107, 138));
-        ButtonEdit.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-user.png"))); // NOI18N
-        ButtonEdit.setText("Add");
-        ButtonEdit.setBorderColor(new java.awt.Color(255, 255, 255));
-        ButtonEdit.setBorderPainted(false);
-        ButtonEdit.setColor(new java.awt.Color(6, 107, 138));
-        ButtonEdit.setColorClick(new java.awt.Color(0, 153, 153));
-        ButtonEdit.setColorText(new java.awt.Color(0, 102, 102));
-        ButtonEdit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ButtonEdit.setRadius(10);
-        ButtonEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+        Add.setBackground(new java.awt.Color(6, 107, 138));
+        Add.setForeground(new java.awt.Color(255, 255, 255));
+        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-user.png"))); // NOI18N
+        Add.setText("Add");
+        Add.setBorderColor(new java.awt.Color(255, 255, 255));
+        Add.setBorderPainted(false);
+        Add.setColor(new java.awt.Color(6, 107, 138));
+        Add.setColorClick(new java.awt.Color(0, 153, 153));
+        Add.setColorText(new java.awt.Color(0, 102, 102));
+        Add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Add.setRadius(10);
+        Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonEditMouseClicked(evt);
+                AddMouseClicked(evt);
             }
         });
-        ButtonEdit.addActionListener(new java.awt.event.ActionListener() {
+        Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonEditActionPerformed(evt);
+                AddActionPerformed(evt);
             }
         });
 
@@ -191,26 +191,26 @@ public class pharmacist extends javax.swing.JFrame {
             }
         });
 
-        SearchButton.setBackground(new java.awt.Color(6, 107, 138));
-        SearchButton.setForeground(new java.awt.Color(255, 255, 255));
-        SearchButton.setText("Search");
-        SearchButton.setBorderPainted(false);
-        SearchButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        SearchButton.setMaximumSize(new java.awt.Dimension(55, 25));
-        SearchButton.setMinimumSize(new java.awt.Dimension(55, 25));
-        SearchButton.setRadius(10);
-        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+        Search.setBackground(new java.awt.Color(6, 107, 138));
+        Search.setForeground(new java.awt.Color(255, 255, 255));
+        Search.setText("Search");
+        Search.setBorderPainted(false);
+        Search.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Search.setMaximumSize(new java.awt.Dimension(55, 25));
+        Search.setMinimumSize(new java.awt.Dimension(55, 25));
+        Search.setRadius(10);
+        Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchButtonActionPerformed(evt);
+                SearchActionPerformed(evt);
             }
         });
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
 
@@ -220,11 +220,11 @@ public class pharmacist extends javax.swing.JFrame {
         jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(ButtonDelete, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(ButtonEdit, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(Delete, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(Add, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(txtsearch, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(SearchButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(Search, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(back, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -235,7 +235,7 @@ public class pharmacist extends javax.swing.JFrame {
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
@@ -249,7 +249,7 @@ public class pharmacist extends javax.swing.JFrame {
                                 .addGap(197, 197, 197)
                                 .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -257,9 +257,9 @@ public class pharmacist extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addGap(238, 238, 238)
-                .addComponent(ButtonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
-                .addComponent(ButtonEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -272,20 +272,20 @@ public class pharmacist extends javax.swing.JFrame {
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                            .addComponent(back)
                             .addComponent(jLabel4))
                         .addGap(12, 12, 12)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(15, 15, 15)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Search, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33))
         );
 
@@ -304,7 +304,7 @@ public class pharmacist extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeleteActionPerformed
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         int id = arr.get(row_number).getId();
         Pharmacist_operations.Delete_Pharmacist(id);
         this.dispose(); 
@@ -314,9 +314,9 @@ public class pharmacist extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Employee has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
 
 
-    }//GEN-LAST:event_ButtonDeleteActionPerformed
+    }//GEN-LAST:event_DeleteActionPerformed
 
-    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         if (txtsearch.getText().isEmpty()) {
         } else {
             Pharmacist_Model obj = Pharmacist_operations.Search_Pharmacist(Integer.parseInt(txtsearch.getText()));
@@ -331,13 +331,13 @@ public class pharmacist extends javax.swing.JFrame {
 
             }
         }
-    }//GEN-LAST:event_SearchButtonActionPerformed
+    }//GEN-LAST:event_SearchActionPerformed
 
-    private void ButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditActionPerformed
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonEditActionPerformed
+    }//GEN-LAST:event_AddActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
      if(login.Manager)
      {
         rond obj = new rond();
@@ -351,13 +351,13 @@ public class pharmacist extends javax.swing.JFrame {
         this.dispose();
      }
 
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
-    private void ButtonEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonEditMouseClicked
+    private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         Signup obj = new Signup();
         obj.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ButtonEditMouseClicked
+    }//GEN-LAST:event_AddMouseClicked
 
     private void tablePHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePHMouseClicked
         // TODO add your handling code here:
@@ -403,11 +403,11 @@ public class pharmacist extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private button.mybutton ButtonDelete;
-    private button.mybutton ButtonEdit;
-    private button.mybutton SearchButton;
+    private button.mybutton Add;
+    private button.mybutton Delete;
+    private button.mybutton Search;
+    private javax.swing.JLabel back;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLayeredPane jLayeredPane1;

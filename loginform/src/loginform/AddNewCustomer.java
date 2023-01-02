@@ -20,15 +20,15 @@ public class AddNewCustomer extends javax.swing.JFrame {
     public String mobileNumberPattern = "^01[0125][0-9]{8}$";
     public AddNewCustomer() {
         initComponents();
-         mybutton1.setEnabled(false);  
+         Add.setEnabled(false);  
     }
  public boolean validateFields() {
             
-        String firstname = jTextField1.getText();
-        String lastname = jTextField2.getText();
-        String city = jTextField3.getText();
-        String street = jTextField4.getText();
-        String phoneNumber_1 =jTextField6.getText();
+        String firstname = txtname1.getText();
+        String lastname = txtname2.getText();
+        String city = txtcity.getText();
+        String street = txtstreet.getText();
+        String phoneNumber_1 =txtphone.getText();
         return phoneNumber_1.matches(mobileNumberPattern) && !firstname.equals("") && !lastname.equals("") && !city.equals("") && !street.equals("");
     
     }
@@ -43,7 +43,7 @@ public class AddNewCustomer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel5 = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -51,26 +51,26 @@ public class AddNewCustomer extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        mybutton1 = new button.mybutton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField6 = new javax.swing.JTextField();
+        txtname1 = new javax.swing.JTextField();
+        txtname2 = new javax.swing.JTextField();
+        txtcity = new javax.swing.JTextField();
+        txtstreet = new javax.swing.JTextField();
+        Add = new button.mybutton();
+        gender = new javax.swing.JComboBox<>();
+        txtphone = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(6, 107, 138,80));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add New Customer", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -106,89 +106,89 @@ public class AddNewCustomer extends javax.swing.JFrame {
         jLabel7.setText("Gender");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtname1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtname1ActionPerformed(evt);
             }
         });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtname1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField1KeyReleased(evt);
+                txtname1KeyReleased(evt);
             }
         });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 30, 139, -1));
+        jPanel2.add(txtname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 30, 139, -1));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtname2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtname2ActionPerformed(evt);
             }
         });
-        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtname2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField2KeyReleased(evt);
+                txtname2KeyReleased(evt);
             }
         });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 65, 139, -1));
+        jPanel2.add(txtname2, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 65, 139, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtcity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtcityActionPerformed(evt);
             }
         });
-        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtcity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField3KeyReleased(evt);
+                txtcityKeyReleased(evt);
             }
         });
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 96, 139, -1));
+        jPanel2.add(txtcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 96, 139, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtstreet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtstreetActionPerformed(evt);
             }
         });
-        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtstreet.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField4KeyReleased(evt);
+                txtstreetKeyReleased(evt);
             }
         });
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 131, 139, -1));
+        jPanel2.add(txtstreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 131, 139, -1));
 
-        mybutton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        mybutton1.setForeground(new java.awt.Color(6, 107, 138));
-        mybutton1.setText("Add");
-        mybutton1.setBorderColor(new java.awt.Color(255, 255, 255));
-        mybutton1.setBorderPainted(false);
-        mybutton1.setColorClick(new java.awt.Color(153, 204, 255));
-        mybutton1.setColorOver(new java.awt.Color(204, 204, 204));
-        mybutton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        mybutton1.setRadius(10);
-        mybutton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Add.setForeground(new java.awt.Color(6, 107, 138));
+        Add.setText("Add");
+        Add.setBorderColor(new java.awt.Color(255, 255, 255));
+        Add.setBorderPainted(false);
+        Add.setColorClick(new java.awt.Color(153, 204, 255));
+        Add.setColorOver(new java.awt.Color(204, 204, 204));
+        Add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Add.setRadius(10);
+        Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mybutton1MouseClicked(evt);
+                AddMouseClicked(evt);
             }
         });
-        mybutton1.addActionListener(new java.awt.event.ActionListener() {
+        Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mybutton1ActionPerformed(evt);
+                AddActionPerformed(evt);
             }
         });
-        jPanel2.add(mybutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 83, 41));
+        jPanel2.add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 83, 41));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                genderActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
+        jPanel2.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtphone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtphoneActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 175, 139, -1));
+        jPanel2.add(txtphone, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 175, 139, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,42 +204,42 @@ public class AddNewCustomer extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtname1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtname1ActionPerformed
 
-    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+    private void txtname1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtname1KeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1KeyReleased
+    }//GEN-LAST:event_txtname1KeyReleased
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtname2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtname2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtname2ActionPerformed
 
-    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+    private void txtname2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtname2KeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2KeyReleased
+    }//GEN-LAST:event_txtname2KeyReleased
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtcityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtcityActionPerformed
 
-    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
+    private void txtcityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcityKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3KeyReleased
+    }//GEN-LAST:event_txtcityKeyReleased
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtstreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtstreetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtstreetActionPerformed
 
-    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+    private void txtstreetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtstreetKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4KeyReleased
+    }//GEN-LAST:event_txtstreetKeyReleased
 
-    private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
+    private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
 
         if (validateFields()) {
-            customers_operations.insert_CustomerData(jTextField1.getText(), jTextField2.getText(),jTextField3.getText(), jTextField4.getText(),(String) jComboBox1.getSelectedItem(), jTextField6.getText());
+            customers_operations.insert_CustomerData(txtname1.getText(), txtname2.getText(),txtcity.getText(), txtstreet.getText(),(String) gender.getSelectedItem(), txtphone.getText());
             Customers obj = new Customers();
             obj.setVisible(true);
             obj.show_table();
@@ -252,26 +252,26 @@ public class AddNewCustomer extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_mybutton1MouseClicked
+    }//GEN-LAST:event_AddMouseClicked
 
-    private void mybutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton1ActionPerformed
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mybutton1ActionPerformed
+    }//GEN-LAST:event_AddActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_genderActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtphoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtphoneActionPerformed
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         Customers gg =new Customers();
         this.dispose();
         gg.setVisible(true);
         
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
     /**
      * @param args the command line arguments
@@ -309,22 +309,22 @@ public class AddNewCustomer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private button.mybutton Add;
+    private javax.swing.JLabel back;
+    private javax.swing.JComboBox<String> gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private button.mybutton mybutton1;
+    private javax.swing.JTextField txtcity;
+    private javax.swing.JTextField txtname1;
+    private javax.swing.JTextField txtname2;
+    private javax.swing.JTextField txtphone;
+    private javax.swing.JTextField txtstreet;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,15 +17,15 @@ public class newproduct extends javax.swing.JFrame {
 
     public newproduct() {
         initComponents();
-        mybutton1.setEnabled(false);
+        Add.setEnabled(false);
     }
 
     public boolean validateFields() {
 
-        String med_name = jTextField1.getText();
-        String price = jTextField2.getText();
-        String quantity = jTextField3.getText();
-        String expired_date = date.getText();
+        String med_name = txtname.getText();
+        String price = txtprice.getText();
+        String quantity = txtquantity.getText();
+        String expired_date = txtexpireddate.getText();
         return expired_date.matches(DatePattern) && !med_name.equals("") && !price.equals("") && !quantity.equals("") && !expired_date.equals("")/*&& !category.equals("")*/;
 
     }
@@ -39,7 +39,7 @@ public class newproduct extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel10 = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -49,27 +49,27 @@ public class newproduct extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        date = new javax.swing.JTextField();
+        txtname = new javax.swing.JTextField();
+        txtprice = new javax.swing.JTextField();
+        txtquantity = new javax.swing.JTextField();
+        txtexpireddate = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        mybutton1 = new button.mybutton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txtdescription = new javax.swing.JTextArea();
+        Add = new button.mybutton();
+        category = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 40));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 40));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -105,80 +105,80 @@ public class newproduct extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Description:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtnameActionPerformed(evt);
             }
         });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField1KeyReleased(evt);
+                txtnameKeyReleased(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtprice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtpriceActionPerformed(evt);
             }
         });
-        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtprice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField2KeyReleased(evt);
+                txtpriceKeyReleased(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtquantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtquantityActionPerformed(evt);
             }
         });
-        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtquantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField3KeyReleased(evt);
+                txtquantityKeyReleased(evt);
             }
         });
 
-        date.addActionListener(new java.awt.event.ActionListener() {
+        txtexpireddate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dateActionPerformed(evt);
+                txtexpireddateActionPerformed(evt);
             }
         });
-        date.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtexpireddate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                dateKeyReleased(evt);
+                txtexpireddateKeyReleased(evt);
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtdescription.setColumns(20);
+        txtdescription.setRows(5);
+        txtdescription.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextArea1KeyReleased(evt);
+                txtdescriptionKeyReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTextArea1);
+        jScrollPane1.setViewportView(txtdescription);
 
-        mybutton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        mybutton1.setForeground(new java.awt.Color(6, 107, 138));
-        mybutton1.setText("Add");
-        mybutton1.setBorderColor(new java.awt.Color(255, 255, 255));
-        mybutton1.setBorderPainted(false);
-        mybutton1.setColorClick(new java.awt.Color(153, 204, 255));
-        mybutton1.setColorOver(new java.awt.Color(204, 204, 204));
-        mybutton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        mybutton1.setRadius(10);
-        mybutton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Add.setForeground(new java.awt.Color(6, 107, 138));
+        Add.setText("Add");
+        Add.setBorderColor(new java.awt.Color(255, 255, 255));
+        Add.setBorderPainted(false);
+        Add.setColorClick(new java.awt.Color(153, 204, 255));
+        Add.setColorOver(new java.awt.Color(204, 204, 204));
+        Add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Add.setRadius(10);
+        Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mybutton1MouseClicked(evt);
+                AddMouseClicked(evt);
             }
         });
-        mybutton1.addActionListener(new java.awt.event.ActionListener() {
+        Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mybutton1ActionPerformed(evt);
+                AddActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Other", "Syrup", "Tablet", "Topical medicines", "Drops", "Inhalers", "Injections", "Cosmetics", "Hair care", "Skin-care" }));
+        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Other", "Syrup", "Tablet", "Topical medicines", "Drops", "Inhalers", "Injections", "Cosmetics", "Hair care", "Skin-care" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -194,7 +194,7 @@ public class newproduct extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel6)
                                 .addComponent(jLabel7)))
@@ -210,11 +210,11 @@ public class newproduct extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1)
-                                .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                                .addComponent(jTextField3)
-                                .addComponent(jTextField2))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtname)
+                                .addComponent(txtexpireddate, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                                .addComponent(txtquantity)
+                                .addComponent(txtprice))
+                            .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
@@ -226,14 +226,14 @@ public class newproduct extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3))
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtquantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,17 +242,17 @@ public class newproduct extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtexpireddate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11)
-                .addComponent(mybutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
 
@@ -269,21 +269,21 @@ public class newproduct extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
+    private void txtexpireddateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtexpireddateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dateActionPerformed
+    }//GEN-LAST:event_txtexpireddateActionPerformed
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         products ob = new products();
         ob.setVisible(true);
         ob.show_table();
         this.dispose();
-    }//GEN-LAST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_backMouseClicked
     public boolean IsVaildExpiredDate() {
         boolean vaild = true;
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
-        String entered_date = date.getText();
+        String entered_date = txtexpireddate.getText();
         StringTokenizer entered = new StringTokenizer(entered_date, "/");
         StringTokenizer Now = new StringTokenizer(dtf.format(now), "/");
         int DayEntered = Integer.parseInt(entered.nextToken());
@@ -306,11 +306,11 @@ public class newproduct extends javax.swing.JFrame {
         }
         return vaild;
     }
-    private void mybutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mybutton1MouseClicked
+    private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
 
         if (validateFields()) {
-            if (IsVaildExpiredDate() && date.getText().matches(DatePattern)) {
-                Products_Operations.insert_ProductData(jTextField1.getText(), Integer.parseInt(jTextField2.getText()), date.getText(), Integer.parseInt(jTextField3.getText()), (String) jComboBox1.getSelectedItem(), jTextArea1.getText());
+            if (IsVaildExpiredDate() && txtexpireddate.getText().matches(DatePattern)) {
+                Products_Operations.insert_ProductData(txtname.getText(), Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Integer.parseInt(txtquantity.getText()), (String) category.getSelectedItem(), txtdescription.getText());
 
                 products obj = new products();
                 obj.setVisible(true);
@@ -325,43 +325,43 @@ public class newproduct extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Correct information", "Message", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_mybutton1MouseClicked
+    }//GEN-LAST:event_AddMouseClicked
 
-    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+    private void txtnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1KeyReleased
+    }//GEN-LAST:event_txtnameKeyReleased
 
-    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+    private void txtpriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpriceKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2KeyReleased
+    }//GEN-LAST:event_txtpriceKeyReleased
 
-    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
+    private void txtquantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtquantityKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3KeyReleased
+    }//GEN-LAST:event_txtquantityKeyReleased
 
-    private void dateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dateKeyReleased
+    private void txtexpireddateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtexpireddateKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_dateKeyReleased
+    }//GEN-LAST:event_txtexpireddateKeyReleased
 
-    private void jTextArea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyReleased
+    private void txtdescriptionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdescriptionKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextArea1KeyReleased
+    }//GEN-LAST:event_txtdescriptionKeyReleased
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtnameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtpriceActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtquantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtquantityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtquantityActionPerformed
 
-    private void mybutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybutton1ActionPerformed
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mybutton1ActionPerformed
+    }//GEN-LAST:event_AddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,10 +399,10 @@ public class newproduct extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField date;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private button.mybutton Add;
+    private javax.swing.JLabel back;
+    private javax.swing.JComboBox<String> category;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -414,10 +414,10 @@ public class newproduct extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private button.mybutton mybutton1;
+    private javax.swing.JTextArea txtdescription;
+    private javax.swing.JTextField txtexpireddate;
+    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtprice;
+    private javax.swing.JTextField txtquantity;
     // End of variables declaration//GEN-END:variables
 }

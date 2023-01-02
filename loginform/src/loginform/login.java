@@ -15,7 +15,7 @@ public class login extends javax.swing.JFrame {
         initComponents();
         /*txtusername.setBackground(new java.awt.Color(0,0,0,1));
         txtpassword.setBackground(new java.awt.Color(0,0,0,1));*/
-         login.setEnabled(false);
+         Login.setEnabled(false);
     }
  public void validateFields()
     {
@@ -23,11 +23,11 @@ public class login extends javax.swing.JFrame {
         String password=txtpassword.getText();
         if(!email.equals("")&&!password.equals(""))
         {
-            login.setEnabled(true);
+            Login.setEnabled(true);
         }
         else
         {
-            login.setEnabled(false);
+            Login.setEnabled(false);
         }    
     }
     /**
@@ -52,8 +52,8 @@ public class login extends javax.swing.JFrame {
         disable = new javax.swing.JLabel();
         show = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        login = new button.mybutton();
-        jLabel11 = new javax.swing.JLabel();
+        Login = new button.mybutton();
+        Exit = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -165,39 +165,39 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, -1, -1));
 
-        login.setForeground(new java.awt.Color(6, 107, 138));
-        login.setText(" Login");
-        login.setBorderColor(new java.awt.Color(255, 255, 255));
-        login.setBorderPainted(false);
-        login.setColorClick(new java.awt.Color(179, 225, 255));
-        login.setColorOver(new java.awt.Color(255, 255, 255));
-        login.setColorText(new java.awt.Color(255, 255, 255));
-        login.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        login.setRadius(10);
-        login.addMouseListener(new java.awt.event.MouseAdapter() {
+        Login.setForeground(new java.awt.Color(6, 107, 138));
+        Login.setText(" Login");
+        Login.setBorderColor(new java.awt.Color(255, 255, 255));
+        Login.setBorderPainted(false);
+        Login.setColorClick(new java.awt.Color(179, 225, 255));
+        Login.setColorOver(new java.awt.Color(255, 255, 255));
+        Login.setColorText(new java.awt.Color(255, 255, 255));
+        Login.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Login.setRadius(10);
+        Login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginMouseClicked(evt);
+                LoginMouseClicked(evt);
             }
         });
-        login.addActionListener(new java.awt.event.ActionListener() {
+        Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                LoginActionPerformed(evt);
             }
         });
-        jPanel2.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 110, 40));
+        jPanel2.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 110, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 320, 410));
 
-        jLabel11.setFont(new java.awt.Font("Malgun Gothic", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("X");
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        Exit.setFont(new java.awt.Font("Malgun Gothic", 1, 18)); // NOI18N
+        Exit.setForeground(new java.awt.Color(255, 255, 255));
+        Exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Exit.setText("X");
+        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                ExitMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 30, 40));
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 30, 40));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/kk.jpg"))); // NOI18N
@@ -260,15 +260,15 @@ public class login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
         int showConfirmDialog;
         showConfirmDialog = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?","EXIT",0);
         if(showConfirmDialog==0)
             System.exit(0);
         
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_ExitMouseClicked
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
      
          String email=txtusername.getText();
          String password=txtpassword.getText();
@@ -292,11 +292,11 @@ public class login extends javax.swing.JFrame {
           JOptionPane.showMessageDialog(null, "Wrong Email or Password!","Message", JOptionPane.ERROR_MESSAGE);
 
         }
-    }//GEN-LAST:event_loginActionPerformed
+    }//GEN-LAST:event_LoginActionPerformed
  
-    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
+    private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
 
-    }//GEN-LAST:event_loginMouseClicked
+    }//GEN-LAST:event_LoginMouseClicked
 
     private void txtusernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusernameKeyReleased
         validateFields();
@@ -342,10 +342,11 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Exit;
+    private button.mybutton Login;
     private javax.swing.JLabel disable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -355,7 +356,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private button.mybutton login;
     private javax.swing.JLabel show;
     private javax.swing.JPasswordField txtpassword;
     private javax.swing.JTextField txtusername;

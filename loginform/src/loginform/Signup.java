@@ -17,12 +17,12 @@ public class Signup extends javax.swing.JFrame {
 
     public Signup() {
         initComponents();
-        RegButton.setEnabled(false);
+        Add.setEnabled(false);
     }
         public boolean validateFields() {
             
-        String firstname = txtfName.getText();
-        String lastname = txtlName.getText();
+        String firstname = txtName1.getText();
+        String lastname = txtName2.getText();
         String email = txtEmail.getText();
         String phonenumber = txtphone.getText();
         String Password = txtpass.getText();
@@ -40,7 +40,7 @@ public class Signup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel5 = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -48,12 +48,12 @@ public class Signup extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtfName = new javax.swing.JTextField();
-        txtlName = new javax.swing.JTextField();
+        txtName1 = new javax.swing.JTextField();
+        txtName2 = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         txtsalary = new javax.swing.JTextField();
-        RegButton = new button.mybutton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        Add = new button.mybutton();
+        gender = new javax.swing.JComboBox<>();
         txtphone = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -65,13 +65,13 @@ public class Signup extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(6, 107, 138,80));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add New Pharmacist", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -107,29 +107,29 @@ public class Signup extends javax.swing.JFrame {
         jLabel7.setText("Gender");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
 
-        txtfName.addActionListener(new java.awt.event.ActionListener() {
+        txtName1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfNameActionPerformed(evt);
+                txtName1ActionPerformed(evt);
             }
         });
-        txtfName.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtName1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtfNameKeyReleased(evt);
+                txtName1KeyReleased(evt);
             }
         });
-        jPanel2.add(txtfName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 139, -1));
+        jPanel2.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 139, -1));
 
-        txtlName.addActionListener(new java.awt.event.ActionListener() {
+        txtName2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtlNameActionPerformed(evt);
+                txtName2ActionPerformed(evt);
             }
         });
-        txtlName.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtName2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtlNameKeyReleased(evt);
+                txtName2KeyReleased(evt);
             }
         });
-        jPanel2.add(txtlName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 139, -1));
+        jPanel2.add(txtName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 139, -1));
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,34 +155,34 @@ public class Signup extends javax.swing.JFrame {
         });
         jPanel2.add(txtsalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 139, -1));
 
-        RegButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        RegButton.setForeground(new java.awt.Color(6, 107, 138));
-        RegButton.setText("Register");
-        RegButton.setBorderColor(new java.awt.Color(255, 255, 255));
-        RegButton.setBorderPainted(false);
-        RegButton.setColorClick(new java.awt.Color(153, 204, 255));
-        RegButton.setColorOver(new java.awt.Color(204, 204, 204));
-        RegButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        RegButton.setRadius(10);
-        RegButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        Add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Add.setForeground(new java.awt.Color(6, 107, 138));
+        Add.setText("Register");
+        Add.setBorderColor(new java.awt.Color(255, 255, 255));
+        Add.setBorderPainted(false);
+        Add.setColorClick(new java.awt.Color(153, 204, 255));
+        Add.setColorOver(new java.awt.Color(204, 204, 204));
+        Add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Add.setRadius(10);
+        Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RegButtonMouseClicked(evt);
+                AddMouseClicked(evt);
             }
         });
-        RegButton.addActionListener(new java.awt.event.ActionListener() {
+        Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegButtonActionPerformed(evt);
+                AddActionPerformed(evt);
             }
         });
-        jPanel2.add(RegButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 83, 41));
+        jPanel2.add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 83, 41));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                genderActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+        jPanel2.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
 
         txtphone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,28 +230,28 @@ public class Signup extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         pharmacist gg =new pharmacist();
         this.dispose();
         gg.setVisible(true);
 
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
-    private void txtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNameActionPerformed
+    private void txtName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfNameActionPerformed
+    }//GEN-LAST:event_txtName1ActionPerformed
 
-    private void txtfNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfNameKeyReleased
+    private void txtName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtName1KeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfNameKeyReleased
+    }//GEN-LAST:event_txtName1KeyReleased
 
-    private void txtlNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlNameActionPerformed
+    private void txtName2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtlNameActionPerformed
+    }//GEN-LAST:event_txtName2ActionPerformed
 
-    private void txtlNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtlNameKeyReleased
+    private void txtName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtName2KeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtlNameKeyReleased
+    }//GEN-LAST:event_txtName2KeyReleased
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
@@ -269,11 +269,11 @@ public class Signup extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtsalaryKeyReleased
 
-    private void RegButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegButtonMouseClicked
+    private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         if (validateFields()) {
             if(password_vaildate())
             {   
-                Pharmacist_operations.insert_pharmacistData(txtfName.getText(), txtlName.getText(), (String)jComboBox2.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
+                Pharmacist_operations.insert_pharmacistData(txtName1.getText(), txtName2.getText(), (String)gender.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
                 pharmacist obj = new pharmacist();
                 obj.setVisible(true);
                 obj.show_table();
@@ -286,15 +286,15 @@ public class Signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_RegButtonMouseClicked
+    }//GEN-LAST:event_AddMouseClicked
 
-    private void RegButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegButtonActionPerformed
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegButtonActionPerformed
+    }//GEN-LAST:event_AddActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_genderActionPerformed
 
     private void txtphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtphoneActionPerformed
         // TODO add your handling code here:
@@ -343,15 +343,15 @@ public class Signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private button.mybutton RegButton;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private button.mybutton Add;
+    private javax.swing.JLabel back;
+    private javax.swing.JComboBox<String> gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -359,8 +359,8 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtfName;
-    private javax.swing.JTextField txtlName;
+    private javax.swing.JTextField txtName1;
+    private javax.swing.JTextField txtName2;
     private javax.swing.JPasswordField txtpass;
     private javax.swing.JTextField txtphone;
     private javax.swing.JTextField txtsalary;

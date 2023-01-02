@@ -98,13 +98,13 @@ public class Customers extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         tableCu = new tabledark.TableDark();
-        jLabel2 = new javax.swing.JLabel();
-        AddButton = new button.mybutton();
-        DeleteButton = new button.mybutton();
+        back = new javax.swing.JLabel();
+        Add = new button.mybutton();
+        Delete = new button.mybutton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        AddButton1 = new button.mybutton();
+        txtSearch = new javax.swing.JTextField();
+        Search = new button.mybutton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -144,49 +144,49 @@ public class Customers extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 162, 925, 217));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                backMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 34, -1));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 34, -1));
 
-        AddButton.setBackground(new java.awt.Color(6, 107, 138));
-        AddButton.setForeground(new java.awt.Color(255, 255, 255));
-        AddButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-user.png"))); // NOI18N
-        AddButton.setText("Add");
-        AddButton.setBorderColor(new java.awt.Color(255, 255, 255));
-        AddButton.setColor(new java.awt.Color(6, 107, 138));
-        AddButton.setColorClick(new java.awt.Color(0, 153, 153));
-        AddButton.setColorText(new java.awt.Color(0, 102, 102));
-        AddButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        AddButton.setRadius(10);
-        AddButton.addActionListener(new java.awt.event.ActionListener() {
+        Add.setBackground(new java.awt.Color(6, 107, 138));
+        Add.setForeground(new java.awt.Color(255, 255, 255));
+        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-user.png"))); // NOI18N
+        Add.setText("Add");
+        Add.setBorderColor(new java.awt.Color(255, 255, 255));
+        Add.setColor(new java.awt.Color(6, 107, 138));
+        Add.setColorClick(new java.awt.Color(0, 153, 153));
+        Add.setColorText(new java.awt.Color(0, 102, 102));
+        Add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Add.setRadius(10);
+        Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddButtonActionPerformed(evt);
+                AddActionPerformed(evt);
             }
         });
-        getContentPane().add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 425, 92, 49));
+        getContentPane().add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 425, 92, 49));
 
-        DeleteButton.setBackground(new java.awt.Color(6, 107, 138));
-        DeleteButton.setForeground(new java.awt.Color(255, 255, 255));
-        DeleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
-        DeleteButton.setText("Delete");
-        DeleteButton.setBorderColor(new java.awt.Color(255, 255, 255));
-        DeleteButton.setColor(new java.awt.Color(6, 107, 138));
-        DeleteButton.setColorClick(new java.awt.Color(0, 153, 153));
-        DeleteButton.setColorText(new java.awt.Color(0, 102, 102));
-        DeleteButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DeleteButton.setRadius(10);
-        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+        Delete.setBackground(new java.awt.Color(6, 107, 138));
+        Delete.setForeground(new java.awt.Color(255, 255, 255));
+        Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
+        Delete.setText("Delete");
+        Delete.setBorderColor(new java.awt.Color(255, 255, 255));
+        Delete.setColor(new java.awt.Color(6, 107, 138));
+        Delete.setColorClick(new java.awt.Color(0, 153, 153));
+        Delete.setColorText(new java.awt.Color(0, 102, 102));
+        Delete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Delete.setRadius(10);
+        Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteButtonActionPerformed(evt);
+                DeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 425, 100, 49));
+        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 425, 100, 49));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 23)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(6, 107, 138));
@@ -196,24 +196,24 @@ public class Customers extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/age-group.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 47, -1, -1));
 
-        jTextField1.setText("Enter Id");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 115, 168, 29));
+        txtSearch.setText("Enter Id");
+        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 115, 168, 29));
 
-        AddButton1.setBackground(new java.awt.Color(6, 107, 138));
-        AddButton1.setForeground(new java.awt.Color(255, 255, 255));
-        AddButton1.setText("Search");
-        AddButton1.setBorderColor(new java.awt.Color(255, 255, 255));
-        AddButton1.setColor(new java.awt.Color(6, 107, 138));
-        AddButton1.setColorClick(new java.awt.Color(0, 153, 153));
-        AddButton1.setColorText(new java.awt.Color(0, 102, 102));
-        AddButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        AddButton1.setRadius(10);
-        AddButton1.addActionListener(new java.awt.event.ActionListener() {
+        Search.setBackground(new java.awt.Color(6, 107, 138));
+        Search.setForeground(new java.awt.Color(255, 255, 255));
+        Search.setText("Search");
+        Search.setBorderColor(new java.awt.Color(255, 255, 255));
+        Search.setColor(new java.awt.Color(6, 107, 138));
+        Search.setColorClick(new java.awt.Color(0, 153, 153));
+        Search.setColorText(new java.awt.Color(0, 102, 102));
+        Search.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Search.setRadius(10);
+        Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddButton1ActionPerformed(evt);
+                SearchActionPerformed(evt);
             }
         });
-        getContentPane().add(AddButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 113, 92, 29));
+        getContentPane().add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 113, 92, 29));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/whitebg.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 500));
@@ -226,7 +226,7 @@ public class Customers extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tableCuMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
     if(login.Manager)
      {
         rond obj = new rond();
@@ -240,19 +240,19 @@ public class Customers extends javax.swing.JFrame {
         this.dispose();
      }
 
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
-    private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
+    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         this.dispose();
         AddNewCustomer gg=new AddNewCustomer();
         gg.setVisible(true);
-    }//GEN-LAST:event_AddButtonActionPerformed
+    }//GEN-LAST:event_AddActionPerformed
 
-    private void AddButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton1ActionPerformed
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         // TODO add your handling code here:
-   if (jTextField1.getText().isEmpty()) {
+   if (txtSearch.getText().isEmpty()) {
         } else {
-            Customers_Model obj = customers_operations.Search_customer(Integer.parseInt(jTextField1.getText()));
+            Customers_Model obj = customers_operations.Search_customer(Integer.parseInt(txtSearch.getText()));
 
             if (obj != null) {
                this.dispose();
@@ -265,9 +265,9 @@ public class Customers extends javax.swing.JFrame {
             }
         }     
                 
-    }//GEN-LAST:event_AddButton1ActionPerformed
+    }//GEN-LAST:event_SearchActionPerformed
 
-    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         // TODO add your handling code here:
         int id = arr.get(row_number).getCustomer_id();
         customers_operations.Delete_customer(id);
@@ -277,7 +277,7 @@ public class Customers extends javax.swing.JFrame {
         gg.setVisible(true);
         JOptionPane.showMessageDialog(null, "customer has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
         
-    }//GEN-LAST:event_DeleteButtonActionPerformed
+    }//GEN-LAST:event_DeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,15 +315,15 @@ public class Customers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private button.mybutton AddButton;
-    private button.mybutton AddButton1;
-    private button.mybutton DeleteButton;
+    private button.mybutton Add;
+    private button.mybutton Delete;
+    private button.mybutton Search;
+    private javax.swing.JLabel back;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private tabledark.TableDark tableCu;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
