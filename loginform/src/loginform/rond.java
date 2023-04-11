@@ -238,6 +238,10 @@ public class rond extends javax.swing.JFrame {
 
     private void suppliersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_suppliersMouseClicked
         // TODO add your handling code here:
+        Supplier s=new Supplier();
+        s.setVisible(true);
+    
+        this.dispose();
     }//GEN-LAST:event_suppliersMouseClicked
 
     /**
