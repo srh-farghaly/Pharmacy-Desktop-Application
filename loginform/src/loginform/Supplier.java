@@ -17,6 +17,7 @@ public class Supplier extends javax.swing.JFrame {
      */
     public Supplier() {
         initComponents();
+        setLocationRelativeTo(null);
        tablesup.fixTable(jScrollPane2);
        tablesup.setColumnAlignment(0, JLabel.CENTER);
        tablesup.setCellAlignment(0, JLabel.CENTER);
@@ -42,7 +43,7 @@ public class Supplier extends javax.swing.JFrame {
         tablesup = new tabledark.TableDark();
         search1 = new javax.swing.JTextField();
         sup_search = new button.mybutton();
-        Delete_supp = new button.mybutton();
+        view_supp = new button.mybutton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,19 +125,19 @@ public class Supplier extends javax.swing.JFrame {
             }
         });
 
-        Delete_supp.setBackground(new java.awt.Color(6, 107, 138));
-        Delete_supp.setForeground(new java.awt.Color(255, 255, 255));
-        Delete_supp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit.png"))); // NOI18N
-        Delete_supp.setText("View");
-        Delete_supp.setBorderColor(new java.awt.Color(255, 255, 255));
-        Delete_supp.setColor(new java.awt.Color(6, 107, 138));
-        Delete_supp.setColorClick(new java.awt.Color(0, 153, 153));
-        Delete_supp.setColorText(new java.awt.Color(0, 102, 102));
-        Delete_supp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Delete_supp.setRadius(10);
-        Delete_supp.addActionListener(new java.awt.event.ActionListener() {
+        view_supp.setBackground(new java.awt.Color(6, 107, 138));
+        view_supp.setForeground(new java.awt.Color(255, 255, 255));
+        view_supp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit.png"))); // NOI18N
+        view_supp.setText("View");
+        view_supp.setBorderColor(new java.awt.Color(255, 255, 255));
+        view_supp.setColor(new java.awt.Color(6, 107, 138));
+        view_supp.setColorClick(new java.awt.Color(0, 153, 153));
+        view_supp.setColorText(new java.awt.Color(0, 102, 102));
+        view_supp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        view_supp.setRadius(10);
+        view_supp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Delete_suppActionPerformed(evt);
+                view_suppActionPerformed(evt);
             }
         });
 
@@ -153,7 +154,7 @@ public class Supplier extends javax.swing.JFrame {
                         .addGap(252, 252, 252)
                         .addComponent(Add_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(161, 161, 161)
-                        .addComponent(Delete_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(view_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +193,7 @@ public class Supplier extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Add_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Delete_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(view_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43))
         );
 
@@ -234,11 +235,14 @@ public class Supplier extends javax.swing.JFrame {
         gg.setVisible(true);
     }//GEN-LAST:event_Add_suppActionPerformed
 
-    private void Delete_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_suppActionPerformed
+    private void view_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_suppActionPerformed
         // TODO add your handling code here:
+         this.dispose();
+        view_supp ss=new view_supp();
+        ss.setVisible(true);
      
 
-    }//GEN-LAST:event_Delete_suppActionPerformed
+    }//GEN-LAST:event_view_suppActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,7 +281,6 @@ public class Supplier extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private button.mybutton Add_supp;
-    private button.mybutton Delete_supp;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
@@ -286,5 +289,6 @@ public class Supplier extends javax.swing.JFrame {
     private javax.swing.JTextField search1;
     private button.mybutton sup_search;
     private tabledark.TableDark tablesup;
+    private button.mybutton view_supp;
     // End of variables declaration//GEN-END:variables
 }

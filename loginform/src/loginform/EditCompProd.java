@@ -46,7 +46,7 @@ public class EditCompProd extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
-        Add = new button.mybutton();
+        edit_button = new button.mybutton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
@@ -104,23 +104,23 @@ public class EditCompProd extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Expired Date:");
 
-        Add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Add.setForeground(new java.awt.Color(6, 107, 138));
-        Add.setText("Edit Info");
-        Add.setBorderColor(new java.awt.Color(255, 255, 255));
-        Add.setBorderPainted(false);
-        Add.setColorClick(new java.awt.Color(153, 204, 255));
-        Add.setColorOver(new java.awt.Color(204, 204, 204));
-        Add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Add.setRadius(10);
-        Add.addMouseListener(new java.awt.event.MouseAdapter() {
+        edit_button.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        edit_button.setForeground(new java.awt.Color(6, 107, 138));
+        edit_button.setText("Edit Info");
+        edit_button.setBorderColor(new java.awt.Color(255, 255, 255));
+        edit_button.setBorderPainted(false);
+        edit_button.setColorClick(new java.awt.Color(153, 204, 255));
+        edit_button.setColorOver(new java.awt.Color(204, 204, 204));
+        edit_button.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        edit_button.setRadius(10);
+        edit_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AddMouseClicked(evt);
+                edit_buttonMouseClicked(evt);
             }
         });
-        Add.addActionListener(new java.awt.event.ActionListener() {
+        edit_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddActionPerformed(evt);
+                edit_buttonActionPerformed(evt);
             }
         });
 
@@ -153,7 +153,7 @@ public class EditCompProd extends javax.swing.JFrame {
                             .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(216, 216, 216)
-                        .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(edit_button, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -191,7 +191,7 @@ public class EditCompProd extends javax.swing.JFrame {
                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edit_button, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
         );
 
@@ -224,7 +224,7 @@ public class EditCompProd extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
+    private void edit_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_edit_buttonMouseClicked
 
 //        if (validateFields()) {
 //            customers_operations.insert_CustomerData(txtname1.getText(), txtname2.getText(),txtcity.getText(), txtstreet.getText(),(String) gender.getSelectedItem(), txtphone.getText());
@@ -236,11 +236,11 @@ public class EditCompProd extends javax.swing.JFrame {
 //            JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
 //        }
 
-    }//GEN-LAST:event_AddMouseClicked
+    }//GEN-LAST:event_edit_buttonMouseClicked
 
-    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
+    private void edit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_buttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AddActionPerformed
+    }//GEN-LAST:event_edit_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,7 +278,7 @@ public class EditCompProd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private button.mybutton Add;
+    private button.mybutton edit_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
