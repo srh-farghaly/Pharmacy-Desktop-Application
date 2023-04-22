@@ -173,6 +173,7 @@
             <Property name="radius" type="int" value="10"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Add_suppMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Add_suppActionPerformed"/>
           </Events>
         </Component>
@@ -220,8 +221,11 @@
         </Container>
         <Component class="javax.swing.JTextField" name="search1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Enter company name"/>
+            <Property name="text" type="java.lang.String" value="Enter Company Name"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Supplier_search1"/>
+          </AuxValues>
         </Component>
         <Component class="button.mybutton" name="sup_search">
           <Properties>

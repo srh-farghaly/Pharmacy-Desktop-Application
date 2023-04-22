@@ -27,6 +27,7 @@ public class view_supp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
@@ -41,6 +42,14 @@ public class view_supp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,7 +88,6 @@ public class view_supp extends javax.swing.JFrame {
 
         company_name.setBackground(new java.awt.Color(255, 255, 255));
         company_name.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        company_name.setForeground(new java.awt.Color(0, 0, 0));
         company_name.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         company_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +102,6 @@ public class view_supp extends javax.swing.JFrame {
 
         supp_address.setBackground(new java.awt.Color(255, 255, 255));
         supp_address.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        supp_address.setForeground(new java.awt.Color(0, 0, 0));
         supp_address.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         supp_address.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +116,6 @@ public class view_supp extends javax.swing.JFrame {
 
         tele.setBackground(new java.awt.Color(255, 255, 255));
         tele.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        tele.setForeground(new java.awt.Color(0, 0, 0));
         tele.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         tele.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,6 +202,9 @@ public class view_supp extends javax.swing.JFrame {
 
     private void edit_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_suppActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        EditCompProd ss=new EditCompProd();
+        ss.setVisible(true);
     }//GEN-LAST:event_edit_suppActionPerformed
 
     private void company_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_company_nameActionPerformed
@@ -209,6 +218,13 @@ public class view_supp extends javax.swing.JFrame {
     private void teleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_teleActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        Supplier ss=new Supplier();
+        ss.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -251,6 +267,7 @@ public class view_supp extends javax.swing.JFrame {
     private javax.swing.JTextField company_name;
     private button.mybutton edit_supp;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logo;

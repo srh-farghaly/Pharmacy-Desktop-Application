@@ -4,7 +4,12 @@
  */
 package loginform;
 
+//import PlaceholderTextField.PlaceholderTextField;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import javax.swing.JLabel;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
  *
@@ -23,6 +28,7 @@ public class Supplier extends javax.swing.JFrame {
        tablesup.setCellAlignment(0, JLabel.CENTER);
        tablesup.setColumnAlignment(1, JLabel.CENTER);
        tablesup.setCellAlignment(1, JLabel.CENTER);
+       
     }
 
     /**
@@ -73,6 +79,11 @@ public class Supplier extends javax.swing.JFrame {
         Add_supp.setColorText(new java.awt.Color(0, 102, 102));
         Add_supp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Add_supp.setRadius(10);
+        Add_supp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Add_suppMouseClicked(evt);
+            }
+        });
         Add_supp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Add_suppActionPerformed(evt);
@@ -108,7 +119,7 @@ public class Supplier extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tablesup);
 
-        search1.setText("Enter company name");
+        search1.setText("Enter Company Name");
 
         sup_search.setBackground(new java.awt.Color(6, 107, 138));
         sup_search.setForeground(new java.awt.Color(255, 255, 255));
@@ -231,7 +242,7 @@ public class Supplier extends javax.swing.JFrame {
 
     private void Add_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_suppActionPerformed
         this.dispose();
-        AddNewCustomer gg=new AddNewCustomer();
+        newproduct gg=new newproduct();
         gg.setVisible(true);
     }//GEN-LAST:event_Add_suppActionPerformed
 
@@ -243,6 +254,10 @@ public class Supplier extends javax.swing.JFrame {
      
 
     }//GEN-LAST:event_view_suppActionPerformed
+
+    private void Add_suppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Add_suppMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Add_suppMouseClicked
 
     /**
      * @param args the command line arguments
@@ -275,6 +290,7 @@ public class Supplier extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Supplier().setVisible(true);
+                
             }
         });
     }
@@ -291,4 +307,5 @@ public class Supplier extends javax.swing.JFrame {
     private tabledark.TableDark tablesup;
     private button.mybutton view_supp;
     // End of variables declaration//GEN-END:variables
+
 }

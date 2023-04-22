@@ -360,9 +360,9 @@ public class newproduct extends javax.swing.JFrame {
     }//GEN-LAST:event_txtexpireddateActionPerformed
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
-        products ob = new products();
+        Supplier ob = new Supplier();
         ob.setVisible(true);
-        ob.show_table();
+//        ob.show_table();
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
     public boolean IsVaildExpiredDate() {

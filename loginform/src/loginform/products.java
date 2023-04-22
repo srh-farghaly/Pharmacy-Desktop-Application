@@ -97,7 +97,6 @@ public  class products extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableDark1 = new tabledark.TableDark();
         Stock = new button.mybutton();
-        Add = new button.mybutton();
         Delete = new button.mybutton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -197,24 +196,6 @@ public  class products extends javax.swing.JFrame {
             }
         });
 
-        Add.setBackground(new java.awt.Color(6, 107, 138));
-        Add.setForeground(new java.awt.Color(255, 255, 255));
-        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-product.png"))); // NOI18N
-        Add.setText("Add new product");
-        Add.setBorderColor(new java.awt.Color(255, 255, 255));
-        Add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Add.setRadius(10);
-        Add.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AddMouseClicked(evt);
-            }
-        });
-        Add.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddActionPerformed(evt);
-            }
-        });
-
         Delete.setBackground(new java.awt.Color(6, 107, 138));
         Delete.setForeground(new java.awt.Color(255, 255, 255));
         Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
@@ -261,11 +242,9 @@ public  class products extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(192, 192, 192)
+                .addGap(284, 284, 284)
                 .addComponent(Stock, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(158, 158, 158)
                 .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -288,7 +267,6 @@ public  class products extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Stock, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 36, Short.MAX_VALUE))
@@ -322,12 +300,6 @@ public  class products extends javax.swing.JFrame {
         ob.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_StockMouseClicked
-
-    private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
-        newproduct obj=new newproduct();
-        obj.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AddMouseClicked
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
     if(login.Manager)
@@ -365,10 +337,6 @@ public  class products extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TableDark1MouseClicked
 
-
-    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AddActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
       String name = arr.get(row_number).getMed_name();
@@ -418,7 +386,6 @@ public  class products extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private button.mybutton Add;
     private button.mybutton Delete;
     private button.mybutton Search;
     private button.mybutton Stock;
