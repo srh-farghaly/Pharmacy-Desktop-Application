@@ -310,8 +310,6 @@ public class EditCompProd extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private button.mybutton Edittt;
-    private button.mybutton edit_supp;
-    private button.mybutton edit_supp1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
