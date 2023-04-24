@@ -15,7 +15,7 @@ public class Pharmacist_operations {
        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
        LocalDateTime now = LocalDateTime.now();
    
-       String query="insert into pharmacist (firstname,lastname,age,hired_date,gender,phoneNumber,email,password,salary,mng_id) values ('"+firstname+"' , '"+lastname+"' , '"+age+"' , '"+ dtf.format(now)+"' , '"+gender+"' , '"+phonenumber+"', '"+email+"', '"+password+"' ,'"+salary+"',1)";
+       String query="insert into pharmacist (firstname,lastname,age,hired_date,pharmacist_gender,phoneNumber,email,password,salary,mng_id) values ('"+firstname+"' , '"+lastname+"' , '"+age+"' , '"+ dtf.format(now)+"' , '"+gender+"' , '"+phonenumber+"', '"+email+"', '"+password+"' ,'"+salary+"',1)";
        DBOperation.setDataOrDelete(query, "New employee has been Inserted Successfully");
    }
 
@@ -28,7 +28,7 @@ public class Pharmacist_operations {
         try {
             while(rs.next())
             {
-                arr.add(new Pharmacist_Model(rs.getInt("id"),rs.getString("hired_date"),rs.getString("firstname"),rs.getString("lastname"),rs.getString("gender"),rs.getString("phonenumber"),rs.getString("email"),rs.getString("password"),rs.getInt("salary"),rs.getInt("age")));
+                arr.add(new Pharmacist_Model(rs.getInt("id"),rs.getString("hired_date"),rs.getString("firstname"),rs.getString("lastname"),rs.getString("pharmacist_gender"),rs.getString("phonenumber"),rs.getString("email"),rs.getString("password"),rs.getInt("salary"),rs.getInt("age")));
             }
             return arr;
         } catch (SQLException ex) {
