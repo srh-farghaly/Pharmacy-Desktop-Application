@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
 
 public class Pharmacist_operations {
 
-   public  static void insert_pharmacistData(String firstname,String lastname,String gender,String phonenumber,String email,String password,int salary, int age )
+   public  static void insert_pharmacistData(int ID,String firstname,String lastname,String gender,String phonenumber,String email,String password,int salary, int age )
    {
        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
        LocalDateTime now = LocalDateTime.now();
    
-       String query="insert into pharmacist (firstname,lastname,age,hired_date,pharmacist_gender,phoneNumber,email,password,salary,mng_id) values ('"+firstname+"' , '"+lastname+"' , '"+age+"' , '"+ dtf.format(now)+"' , '"+gender+"' , '"+phonenumber+"', '"+email+"', '"+password+"' ,'"+salary+"',1)";
+       String query="insert into pharmacist (id,firstname,lastname,age,hired_date,pharmacist_gender,phoneNumber,email,password,salary,mng_id) values ('"+ID+"','"+firstname+"' , '"+lastname+"' , '"+age+"' , '"+ dtf.format(now)+"' , '"+gender+"' , '"+phonenumber+"', '"+email+"', '"+password+"' ,'"+salary+"',1)";
        DBOperation.setDataOrDelete(query, "New employee has been Inserted Successfully");
    }
 

@@ -99,7 +99,6 @@ public class Customers extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableCu = new tabledark.TableDark();
         back = new javax.swing.JLabel();
-        Add = new button.mybutton();
         Delete = new button.mybutton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -154,23 +153,6 @@ public class Customers extends javax.swing.JFrame {
         });
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 34, -1));
 
-        Add.setBackground(new java.awt.Color(6, 107, 138));
-        Add.setForeground(new java.awt.Color(255, 255, 255));
-        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-user.png"))); // NOI18N
-        Add.setText("Add");
-        Add.setBorderColor(new java.awt.Color(255, 255, 255));
-        Add.setColor(new java.awt.Color(6, 107, 138));
-        Add.setColorClick(new java.awt.Color(0, 153, 153));
-        Add.setColorText(new java.awt.Color(0, 102, 102));
-        Add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Add.setRadius(10);
-        Add.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 425, 92, 49));
-
         Delete.setBackground(new java.awt.Color(6, 107, 138));
         Delete.setForeground(new java.awt.Color(255, 255, 255));
         Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
@@ -186,7 +168,7 @@ public class Customers extends javax.swing.JFrame {
                 DeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 425, 100, 49));
+        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 410, 100, 49));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 23)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(6, 107, 138));
@@ -241,12 +223,6 @@ public class Customers extends javax.swing.JFrame {
      }
 
     }//GEN-LAST:event_backMouseClicked
-
-    private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        this.dispose();
-        AddNewCustomer gg=new AddNewCustomer();
-        gg.setVisible(true);
-    }//GEN-LAST:event_AddActionPerformed
 
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         // TODO add your handling code here:
@@ -315,7 +291,6 @@ public class Customers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private button.mybutton Add;
     private button.mybutton Delete;
     private button.mybutton Search;
     private javax.swing.JLabel back;

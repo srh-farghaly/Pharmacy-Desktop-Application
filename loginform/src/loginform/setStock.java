@@ -77,6 +77,9 @@ public class setStock extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtnameMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtnameMouseExited(evt);
+            }
         });
         txtname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -354,6 +357,15 @@ public class setStock extends javax.swing.JFrame {
             txtquantity.setText(obj.getQuantity() + "");
         }
     }//GEN-LAST:event_txtnameMouseEntered
+
+    private void txtnameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnameMouseExited
+               Products_Model obj = Products_Operations.Search_Product(txtname.getText());
+        if (obj != null) {
+            txtexpireddate.setText(obj.getExpired_date());
+            txtprice.setText(obj.getPrice() + "");
+            txtquantity.setText(obj.getQuantity() + "");
+        }
+    }//GEN-LAST:event_txtnameMouseExited
 
     /**
      * @param args the command line arguments

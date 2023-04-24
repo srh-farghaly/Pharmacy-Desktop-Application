@@ -11,6 +11,7 @@ public class Customers_Model {
 
     public Customers_Model(int customer_id,String firstname, String lastname, String city, String street, String gender, String phoneNumber_1) 
     {
+
         this.customer_id = customer_id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -18,7 +19,11 @@ public class Customers_Model {
         this.street = street;
         this.gender = gender;
         this.phoneNumber_1 = phoneNumber_1;
-       
+        if(firstname == null || lastname== null)
+        { 
+            this.firstname = "No";
+            this.lastname="Info";
+        }
     }
     public void setCustomer_id(int customer_id) {
         this.customer_id = customer_id;

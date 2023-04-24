@@ -331,12 +331,9 @@ public class Orders extends javax.swing.JFrame {
     }//GEN-LAST:event_OrderInfoActionPerformed
 
     private void MakeOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MakeOrderMouseClicked
-      /* 
-        ?????????????/
-        ?????????
-        ??????????/
-        ????
-        */
+     MakeOrder obj = new MakeOrder();
+     obj.setVisible(true);
+     this.dispose();
     }//GEN-LAST:event_MakeOrderMouseClicked
 
     private void MakeOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MakeOrderActionPerformed
