@@ -1,7 +1,10 @@
 package loginform;
 
 import Control.Orders_Operations;
+import Modeling.Customers_Model;
 import Modeling.Orders_Model;
+import Modeling.Pharmacist_Model;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,6 +43,7 @@ public class Orders extends javax.swing.JFrame {
         MakeOrder = new button.mybutton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -258,14 +262,14 @@ public class Orders extends javax.swing.JFrame {
          );
                 }
      
-     private void show_order(Orders_Model obj) 
+     private void show_order( ArrayList<Object> arr) 
     {
         DefaultTableModel pr = (DefaultTableModel) TableDark2.getModel();
         Object[] row = new Object[4];
-        row[0] = obj.getOrder_number();
-        row[1] = obj.getPrice();
-        row[2] = 0 ; // ??????????????????????????????????????????????? //
-        row[3] = obj.getDate();
+        row[0] = ((Orders_Model)arr.get(3)).getOrder_number();
+        row[1] = ((Orders_Model)arr.get(3)).getPrice();
+        row[2] = ((Customers_Model)arr.get(1)).getFirstname() + " " + ((Customers_Model)arr.get(1)).getLastname(); 
+        row[3] = ((Orders_Model)arr.get(3)).getDate();
         pr.insertRow(0, row);
         
         TableDark2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -304,7 +308,7 @@ public class Orders extends javax.swing.JFrame {
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
         if (search1.getText().isEmpty()) {
         } else {
-            Orders_Model obj = Orders_Operations.Search_Order(Integer.parseInt(search1.getText()));
+            ArrayList<Object> obj = Orders_Operations.Search_Order(Integer.parseInt(search1.getText()));
             if (obj != null) {
                 this.dispose();
                 Orders pr = new Orders();

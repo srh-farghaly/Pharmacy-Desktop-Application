@@ -1,9 +1,13 @@
 package loginform;
 
+import Control.Delivery_Operations;
 import Control.Orders_Operations;
+import Control.Pharmacist_operations;
 import Control.Products_Operations;
 import Control.customers_operations;
 import Modeling.Customers_Model;
+import Modeling.Delivery_Model;
+import Modeling.Pharmacist_Model;
 import Modeling.Products_Model;
 import javax.swing.JOptionPane;
 /**
@@ -103,6 +107,7 @@ public class MakeOrder extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
@@ -148,8 +153,14 @@ public class MakeOrder extends javax.swing.JFrame {
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
 
         txtname1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtname1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtname1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtname1MouseExited(evt);
             }
         });
         txtname1.addActionListener(new java.awt.event.ActionListener() {
@@ -165,8 +176,14 @@ public class MakeOrder extends javax.swing.JFrame {
         jPanel2.add(txtname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 90, 139, -1));
 
         txtname2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtname2MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtname2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtname2MouseExited(evt);
             }
         });
         txtname2.addActionListener(new java.awt.event.ActionListener() {
@@ -235,8 +252,14 @@ public class MakeOrder extends javax.swing.JFrame {
         jPanel2.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, -1, -1));
 
         txtphone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtphoneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtphoneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtphoneMouseExited(evt);
             }
         });
         txtphone.addActionListener(new java.awt.event.ActionListener() {
@@ -376,6 +399,17 @@ public class MakeOrder extends javax.swing.JFrame {
         });
         jPanel2.add(deliveryPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 139, -1));
 
+        deliveryID.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deliveryIDMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deliveryIDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deliveryIDMouseExited(evt);
+            }
+        });
         deliveryID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deliveryIDActionPerformed(evt);
@@ -471,45 +505,88 @@ public class MakeOrder extends javax.swing.JFrame {
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         if (validateFields()) {
             
-         ////////////////////////////////////////////////////////////// ORDER SECTION  ////////////////////////////////////////////////////////////////////////
-            // insert order data 
-           Orders_Operations.insert_OrderData(Integer.parseInt(price.getText().trim()),date.getText(),PaymentType.getText());
-            
-            // search order number 
-           int order_id= Orders_Operations.Return_Order_Number(Integer.parseInt(price.getText()),date.getText(),PaymentType.getText());
-         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-         
-         
-           
-         //////////////////////////////////////////////////////////// PRODUCT SECTION ////////////////////////////////////////////////////////////////////////
+            boolean terminated = false;
+            int order_id=0;
+            int delivery_id=0;
+         ///////////////////////////////////////////////////////////////// PRODUCT SECTION ////////////////////////////////////////////////////////////////////////////////
            // search product 
            Products_Model product_object =Products_Operations.Search_Product(product.getText());
-           int stored_quantity = product_object.getQuantity();
-           int entered_quantity =Integer.parseInt(quantity1.getText().trim());
-           int remaining_quantity;
-           if(stored_quantity<entered_quantity) 
-                 remaining_quantity = 0 ;
-            else
-                 remaining_quantity= stored_quantity - entered_quantity;
-            Products_Operations.Edit_Product(product.getText(), product_object.getPrice(), product_object.getExpired_date(), remaining_quantity);
-         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+           if(product_object!=null)
+           {
+                int stored_quantity = product_object.getQuantity();
+                int entered_quantity =Integer.parseInt(quantity1.getText().trim());
+                int remaining_quantity;
+                if(stored_quantity<entered_quantity) 
+                     remaining_quantity = 0 ;
+                else
+                     remaining_quantity= stored_quantity - entered_quantity;
+                Products_Operations.Edit_Product(product.getText(), product_object.getPrice(), product_object.getExpired_date(), remaining_quantity);
+           }
+           else
+           {
+                JOptionPane.showMessageDialog(null, "Product Name is Wrong ", "Message", JOptionPane.WARNING_MESSAGE);
+                terminated = true;
+           }
+         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+         
+         
+         //////////////////////////////////////////////////////////////// PHARMACIST SECTION //////////////////////////////////////////////////////////////////////////////
+             int id =Integer.parseInt(pharmacistID.getText().trim());
+             // search pharmacist 
+             Pharmacist_Model pharmacist_opbect = Pharmacist_operations.Search_Pharmacist(id);
+             if ( pharmacist_opbect == null)
+             {
+                JOptionPane.showMessageDialog(null, "There's No Pharmacist with This ID", "Message", JOptionPane.WARNING_MESSAGE);
+                 terminated = true;
+             }
+         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                  
+         
+          //////////////////////////////////////////////////////////////// Delivery Option//////////////////////////////////////////////////////////////////////////////////             
+          if(!terminated)  
+          {  
+             if(DeliveryOption.getSelectedIndex()==1) // means yes 
+                {
+                     delivery_id = Integer.parseInt(deliveryID.getText().trim());
+                     Delivery_Model delivrey_object = Delivery_Operations.Search(Integer.parseInt(deliveryID.getText().trim()));
+                     if(delivrey_object==null)
+                      Delivery_Operations.insert_OrderData(delivery_id, deliveryPhone.getText(), deliveryName.getText());   
+                       
+                }
+          }
+         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+
+         
+         
+         
+         /////////////////////////////////////////////////////////////////// ORDER SECTION  ////////////////////////////////////////////////////////////////////////////////     
+          if(!terminated)  
+          { 
+            // insert order data  
+             Orders_Operations.insert_OrderData(Integer.parseInt(price.getText().trim()),date.getText(),PaymentType.getText(),delivery_id);
+             // search order number 
+             order_id= Orders_Operations.Return_Order_Number(Integer.parseInt(price.getText()),date.getText(),PaymentType.getText());
+          }         
+         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       
 
          
            
-         /////////////////////////////////////////////////////////////// CUSTOMER SECTION ////////////////////////////////////////////////////////////////////////
-          boolean customer_data_inserted = false;       
-          int Customer_id=0;
-
-          if(txtphone.getText().matches(mobileNumberPattern) && !txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtcity.getText().equals("") && !Street.getText().equals(""))  
-          {      // search customer ID 
-                            System.out.println(" no no no no no no");
-
+         /////////////////////////////////////////////////////////////// CUSTOMER SECTION ////////////////////////////////////////////////////////////////////////////////////
+          int Customer_id=1; // restricted 
+          if(!terminated)  
+          { 
+            if(txtphone.getText().matches(mobileNumberPattern) && !txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtcity.getText().equals("") && !Street.getText().equals(""))  
+             { 
+                 // search customer ID 
                 Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
                 if(Customer_object != null)
                     {
                         Customer_id= Customer_object.getCustomer_id();
                     }        
-                if(Customer_id==0) // means customer not found 
+                if(Customer_id==1) // means customer not found 
                   // insert customer data 
                    { 
                         customers_operations.insert_CustomerData(txtname1.getText(), txtname2.getText(),txtcity.getText(), Street.getText(),(String) gender.getSelectedItem(), txtphone.getText());
@@ -517,31 +594,27 @@ public class MakeOrder extends javax.swing.JFrame {
                          Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
                          Customer_id= Customer_object.getCustomer_id();
                     }
-            customer_data_inserted= true;
+               }
           }
          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
          
          
+         
           /////////////////////////////////////////////////////////////////////////////// INSERT ORDER RELATION //////////////////////////////////////////////////////////// 
-          if( customer_data_inserted )
-          {  
-           // insert to data to order_relation table with customer information
-            Orders_Operations.insert_Order_Relation(Integer.parseInt(pharmacistID.getText()), Customer_id,product.getText(), order_id);
-          }
-          else
+          if(!terminated)
           {
-            // insert to data to order_relation table without customer information
-              Orders_Operations.insert_Order_Relation(Integer.parseInt(pharmacistID.getText()),product.getText(), order_id);
-              System.out.println("we get here");
-          }         
+             // insert to data to order_relation table with customer information
+             Orders_Operations.insert_Order_Relation(Integer.parseInt(pharmacistID.getText()), Customer_id,product.getText(), order_id);      
+             Orders obj = new Orders();
+             rond.order_object= obj;
+             obj.setVisible(true);
+             obj.show_table();
+             this.dispose();
+          }
           ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-          
-          
-            Orders obj = new Orders();
-            obj.setVisible(true);
-            obj.show_table();
-            this.dispose();
+               
+
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
         }
@@ -663,43 +736,157 @@ public class MakeOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_PaymentTypeKeyReleased
 
     private void txtname1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtname1MouseEntered
-           Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
-           if(Customer_object != null)
-           {
-             if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
              {
-              txtcity.setText(Customer_object.getCity());
-              Street.setText(Customer_object.getStreet());
-              gender.setSelectedItem(Customer_object.getGender());
-             }
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
            }
     }//GEN-LAST:event_txtname1MouseEntered
 
     private void txtname2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtname2MouseEntered
-           Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
-           if(Customer_object != null)
-           {
-             if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
              {
-              txtcity.setText(Customer_object.getCity());
-              Street.setText(Customer_object.getStreet());
-              gender.setSelectedItem(Customer_object.getGender());
-             }
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
            }
     }//GEN-LAST:event_txtname2MouseEntered
 
     private void txtphoneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtphoneMouseEntered
-           Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
-           if(Customer_object != null)
-           {
-             if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
              {
-              txtcity.setText(Customer_object.getCity());
-              Street.setText(Customer_object.getStreet());
-              gender.setSelectedItem(Customer_object.getGender());
-             }
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
            }
     }//GEN-LAST:event_txtphoneMouseEntered
+
+    private void deliveryIDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryIDMouseEntered
+            if(!deliveryID.getText().trim().isEmpty())
+            { 
+                Delivery_Model delivrey_object = Delivery_Operations.Search(Integer.parseInt(deliveryID.getText().trim()));
+                if(delivrey_object!=null)
+                 {
+                    deliveryName.setText(delivrey_object.getName());
+                    deliveryPhone.setText(delivrey_object.getPhonenumber());
+                 }
+            }
+    }//GEN-LAST:event_deliveryIDMouseEntered
+
+    private void deliveryIDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryIDMouseExited
+            if(!deliveryID.getText().trim().isEmpty())
+            { 
+                Delivery_Model delivrey_object = Delivery_Operations.Search(Integer.parseInt(deliveryID.getText().trim()));
+                if(delivrey_object!=null)
+                 {
+                    deliveryName.setText(delivrey_object.getName());
+                    deliveryPhone.setText(delivrey_object.getPhonenumber());
+                 }
+            }
+    }//GEN-LAST:event_deliveryIDMouseExited
+
+    private void deliveryIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryIDMouseClicked
+            if(!deliveryID.getText().trim().isEmpty())
+            { 
+                Delivery_Model delivrey_object = Delivery_Operations.Search(Integer.parseInt(deliveryID.getText().trim()));
+                if(delivrey_object!=null)
+                 {
+                    deliveryName.setText(delivrey_object.getName());
+                    deliveryPhone.setText(delivrey_object.getPhonenumber());
+                 }
+            }
+    }//GEN-LAST:event_deliveryIDMouseClicked
+
+    private void txtname1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtname1MouseClicked
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+             {
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
+           }
+    }//GEN-LAST:event_txtname1MouseClicked
+
+    private void txtname1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtname1MouseExited
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+             {
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
+           }
+    }//GEN-LAST:event_txtname1MouseExited
+
+    private void txtname2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtname2MouseExited
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+             {
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
+           }
+    }//GEN-LAST:event_txtname2MouseExited
+
+    private void txtphoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtphoneMouseExited
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+             {
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
+           }
+    }//GEN-LAST:event_txtphoneMouseExited
+
+    private void txtphoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtphoneMouseClicked
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+             {
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
+           }
+    }//GEN-LAST:event_txtphoneMouseClicked
+
+    private void txtname2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtname2MouseClicked
+            if(!txtname1.getText().equals("") && !txtname2.getText().equals("") && !txtphone.getText().equals(""))  
+             {
+               Customers_Model Customer_object = customers_operations.Return_Customer_ID(txtname1.getText(), txtname2.getText(),txtphone.getText());
+               if(Customer_object != null)
+                {
+                    txtcity.setText(Customer_object.getCity());
+                    Street.setText(Customer_object.getStreet());
+                    gender.setSelectedItem(Customer_object.getGender());
+                }  
+           }
+    }//GEN-LAST:event_txtname2MouseClicked
 
     /**
      * @param args the command line arguments

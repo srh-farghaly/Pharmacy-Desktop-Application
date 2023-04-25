@@ -1,6 +1,7 @@
 package loginform;
 
 import Control.Pharmacist_operations;
+import Modeling.Pharmacist_Model;
 import javax.swing.JOptionPane;
 
 /**
@@ -293,11 +294,20 @@ public class Signup extends javax.swing.JFrame {
         if (validateFields()) {
             if(password_vaildate())
             {   
-                Pharmacist_operations.insert_pharmacistData(Integer.parseInt(ph_id.getText()),txtName1.getText(), txtName2.getText(), (String)gender.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
-                pharmacist obj = new pharmacist();
-                obj.setVisible(true);
-                obj.show_table();
-                this.dispose();
+                Pharmacist_Model pharmacist_obj = Pharmacist_operations.Search_Pharmacist(Integer.parseInt(ph_id.getText()));
+                if(pharmacist_obj == null)
+                {   
+                    Pharmacist_operations.insert_pharmacistData(Integer.parseInt(ph_id.getText()),txtName1.getText(), txtName2.getText(), (String)gender.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
+                    pharmacist obj = new pharmacist();
+                    obj.setVisible(true);
+                    obj.show_table();
+                    this.dispose();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "There is a Pharmacist with This ID","Message", JOptionPane.WARNING_MESSAGE);
+
+                }
             }
             else {
             JOptionPane.showMessageDialog(null, "Password Is Weak","Message", JOptionPane.WARNING_MESSAGE);

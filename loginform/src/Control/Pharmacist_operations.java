@@ -71,7 +71,7 @@ public class Pharmacist_operations {
         try {
             while(rs.next())
             {
-                obj= new Pharmacist_Model(rs.getInt("id"),rs.getString("hired_date"),rs.getString("firstname"),rs.getString("lastname"),rs.getString("gender"),rs.getString("phonenumber"),rs.getString("email"),rs.getString("password"),rs.getInt("salary"),rs.getInt("age"));  
+                obj= new Pharmacist_Model(rs.getInt("id"),rs.getString("hired_date"),rs.getString("firstname"),rs.getString("lastname"),rs.getString("pharmacist_gender"),rs.getString("phonenumber"),rs.getString("email"),rs.getString("password"),rs.getInt("salary"),rs.getInt("age"));  
             }       
         } catch (SQLException ex) {
           JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);

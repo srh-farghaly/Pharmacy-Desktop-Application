@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package loginform;
 
 import Control.Products_Operations;
@@ -13,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author LEGION
+ * @author Seifeldin Ahmed
  */
 public class setStock extends javax.swing.JFrame {
 
@@ -359,7 +355,7 @@ public class setStock extends javax.swing.JFrame {
     }//GEN-LAST:event_txtnameMouseEntered
 
     private void txtnameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnameMouseExited
-               Products_Model obj = Products_Operations.Search_Product(txtname.getText());
+        Products_Model obj = Products_Operations.Search_Product(txtname.getText());
         if (obj != null) {
             txtexpireddate.setText(obj.getExpired_date());
             txtprice.setText(obj.getPrice() + "");

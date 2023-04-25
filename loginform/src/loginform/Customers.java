@@ -42,7 +42,7 @@ public class Customers extends javax.swing.JFrame {
         DefaultTableModel mm = (DefaultTableModel) tableCu.getModel();
         arr = customers_operations.get_customersData();
         Object[] row = new Object[7];
-         for (int i = 0; i < arr.size(); i++) {
+         for (int i = 1; i < arr.size(); i++) {
             row[0] = arr.get(i).getCustomer_id(); 
             row[1] = arr.get(i).getFirstname();
             row[2] = arr.get(i).getLastname();
@@ -50,7 +50,7 @@ public class Customers extends javax.swing.JFrame {
             row[4] = arr.get(i).getStreet();
             row[5] = arr.get(i).getGender();
             row[6] = arr.get(i).getPhoneNumber_1();
-            mm.insertRow(i, row);
+            mm.insertRow(i-1, row);
           
         }
     
