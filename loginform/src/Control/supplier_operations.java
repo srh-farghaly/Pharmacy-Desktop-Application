@@ -116,12 +116,17 @@ public class supplier_operations {
       /* to check company name exist or not */
       public static ArrayList<Object> SearchToCheck(int Company_ID)
     {   
-        String Query="select supplier.*, supplier_prod_rel.date from supplier,supplier_prod_rel,products, pharmacist where supplier_prod_rel.supp_id='"+Company_ID+"'";
+        String Query="select supplier.*, supplier_prod_rel.date from supplier,supplier_prod_rel,products where supplier.supplier_id='"+Company_ID+"'";
         ResultSet rs=DBOperation.getData(Query);
         ArrayList<Object> arr= new ArrayList();
         try {
+            if(!rs.isBeforeFirst())
+            {
+                return null;
+            }
             while(rs.next())
             {
+                
                 arr.add(new Suppliers_Model(rs.getString("Company_name"),
                       rs.getString("city"),
                       rs.getString("region"),
@@ -144,6 +149,7 @@ public class supplier_operations {
         }
          return null;    
     }
+      
      public static void edit_Supplier(int id,String Company_name, String Telephone, String address)
      {
          StringTokenizer addr= new StringTokenizer(address,",");
@@ -194,6 +200,35 @@ public class supplier_operations {
          return null;    
     }
       
+     public static ArrayList<Suppliers_Model> view_Supplier(int company_id)
+     {
+         String Query="SELECT Company_name, phone , city, region, postal_code FROM supplier, products where supplier.supplier_id='"+company_id+"'";
+         ResultSet rs=DBOperation.getData(Query); 
+         ArrayList<Suppliers_Model> arr= new ArrayList();
+
+        try {
+            while(rs.next())
+            {
+                arr.add(new Suppliers_Model(
+                        rs.getString("Company_name"),
+                        rs.getString("city"),
+                        rs.getString("region"),
+                        rs.getString("postal_code"),
+                        rs.getString("phone")));
+            }
+            return arr;
+        } catch (SQLException ex) {
+          JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
+        }
+        finally{
+            try {
+                rs.close();
+            } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+       return null;
+     }
 
       
      

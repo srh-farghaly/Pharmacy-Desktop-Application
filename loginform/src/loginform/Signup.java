@@ -1,6 +1,7 @@
 package loginform;
 
 import Control.Pharmacist_operations;
+import Modeling.Pharmacist_Model;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,14 +21,15 @@ public class Signup extends javax.swing.JFrame {
         Add.setEnabled(false);
     }
         public boolean validateFields() {
-            
+        
+        String ID = ph_id.getText();
         String firstname = txtName1.getText();
         String lastname = txtName2.getText();
         String email = txtEmail.getText();
         String phonenumber = txtphone.getText();
         String Password = txtpass.getText();
         String salary= txtsalary.getText();
-        return email.matches(emailPattern) && !firstname.equals("") && !lastname.equals("") && phonenumber.matches(mobileNumberPattern) && !Password.equals("") && !salary.equals("");
+        return !ID.equals("") && email.matches(emailPattern) && !firstname.equals("") && !lastname.equals("") && phonenumber.matches(mobileNumberPattern) && !Password.equals("") && !salary.equals("");
     
     }
         public boolean password_vaildate()
@@ -60,6 +62,8 @@ public class Signup extends javax.swing.JFrame {
         txtpass = new javax.swing.JPasswordField();
         txtAge = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        ph_id = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,17 +99,17 @@ public class Signup extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("E-mail");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Password");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 131, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Gender");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
 
         txtName1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +145,7 @@ public class Signup extends javax.swing.JFrame {
                 txtEmailKeyReleased(evt);
             }
         });
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 139, -1));
+        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 139, -1));
 
         txtsalary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +157,7 @@ public class Signup extends javax.swing.JFrame {
                 txtsalaryKeyReleased(evt);
             }
         });
-        jPanel2.add(txtsalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 139, -1));
+        jPanel2.add(txtsalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 139, -1));
 
         Add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Add.setForeground(new java.awt.Color(6, 107, 138));
@@ -174,7 +178,7 @@ public class Signup extends javax.swing.JFrame {
                 AddActionPerformed(evt);
             }
         });
-        jPanel2.add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 83, 41));
+        jPanel2.add(Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 83, 41));
 
         gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
         gender.addActionListener(new java.awt.event.ActionListener() {
@@ -182,27 +186,27 @@ public class Signup extends javax.swing.JFrame {
                 genderActionPerformed(evt);
             }
         });
-        jPanel2.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+        jPanel2.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, -1));
 
         txtphone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtphoneActionPerformed(evt);
             }
         });
-        jPanel2.add(txtphone, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 139, -1));
+        jPanel2.add(txtphone, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 139, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Age");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Phone Number");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
         txtpass.setToolTipText("enter at least 6 digits");
-        jPanel2.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 140, -1));
+        jPanel2.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 140, -1));
 
         txtAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,14 +218,31 @@ public class Signup extends javax.swing.JFrame {
                 txtAgeKeyReleased(evt);
             }
         });
-        jPanel2.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 139, -1));
+        jPanel2.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 139, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Salary");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 510, 390));
+        ph_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ph_idActionPerformed(evt);
+            }
+        });
+        ph_id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ph_idKeyReleased(evt);
+            }
+        });
+        jPanel2.add(ph_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 139, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Pharmacist ID");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 510, 420));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/17973908.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 800, 590));
@@ -273,11 +294,20 @@ public class Signup extends javax.swing.JFrame {
         if (validateFields()) {
             if(password_vaildate())
             {   
-                Pharmacist_operations.insert_pharmacistData(txtName1.getText(), txtName2.getText(), (String)gender.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
-                pharmacist obj = new pharmacist();
-                obj.setVisible(true);
-                obj.show_table();
-                this.dispose();
+                Pharmacist_Model pharmacist_obj = Pharmacist_operations.Search_Pharmacist(Integer.parseInt(ph_id.getText()));
+                if(pharmacist_obj == null)
+                {   
+                    Pharmacist_operations.insert_pharmacistData(Integer.parseInt(ph_id.getText()),txtName1.getText(), txtName2.getText(), (String)gender.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
+                    pharmacist obj = new pharmacist();
+                    obj.setVisible(true);
+                    obj.show_table();
+                    this.dispose();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "There is a Pharmacist with This ID","Message", JOptionPane.WARNING_MESSAGE);
+
+                }
             }
             else {
             JOptionPane.showMessageDialog(null, "Password Is Weak","Message", JOptionPane.WARNING_MESSAGE);
@@ -307,6 +337,14 @@ public class Signup extends javax.swing.JFrame {
     private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgeKeyReleased
+
+    private void ph_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ph_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ph_idActionPerformed
+
+    private void ph_idKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ph_idKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ph_idKeyReleased
 
     /**
      * @param args the command line arguments
@@ -352,11 +390,13 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField ph_id;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtName1;

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package loginform;
 
 import Control.Products_Operations;
@@ -13,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author LEGION
+ * @author Seifeldin Ahmed
  */
 public class setStock extends javax.swing.JFrame {
 
@@ -76,6 +72,9 @@ public class setStock extends javax.swing.JFrame {
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtnameMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtnameMouseExited(evt);
             }
         });
         txtname.addActionListener(new java.awt.event.ActionListener() {
@@ -354,6 +353,15 @@ public class setStock extends javax.swing.JFrame {
             txtquantity.setText(obj.getQuantity() + "");
         }
     }//GEN-LAST:event_txtnameMouseEntered
+
+    private void txtnameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtnameMouseExited
+        Products_Model obj = Products_Operations.Search_Product(txtname.getText());
+        if (obj != null) {
+            txtexpireddate.setText(obj.getExpired_date());
+            txtprice.setText(obj.getPrice() + "");
+            txtquantity.setText(obj.getQuantity() + "");
+        }
+    }//GEN-LAST:event_txtnameMouseExited
 
     /**
      * @param args the command line arguments

@@ -61,7 +61,6 @@ public class Supplier extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Error displaying data:", "Message", JOptionPane.WARNING_MESSAGE);
                 }
         
-         
         tablesup.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -327,11 +326,15 @@ public class Supplier extends javax.swing.JFrame {
 
     private void view_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_suppActionPerformed
         // TODO add your handling code here:
-         this.dispose();
-        view_supp ss=new view_supp();
-        ss.setVisible(true);
-     
-
+       int Company_id = ((Suppliers_Model)arr.get(row_number*3)).getSupplier_id();
+        ArrayList<Suppliers_Model> array =supplier_operations.view_Supplier(Company_id);
+        String Company_name = ((Suppliers_Model)array.get(0)).getCompany_name();
+        String address=(((Suppliers_Model)array.get(0)).getCity()+','+((Suppliers_Model)array.get(0)).getRegion()+','+((Suppliers_Model)array.get(0)).getPostal_code());
+        String phone=((Suppliers_Model)array.get(0)).getPhone();
+        
+        this.dispose();
+        view_supp view=new view_supp(Company_name, address, phone);
+        view.setVisible(true);
     }//GEN-LAST:event_view_suppActionPerformed
 
     private void Add_suppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Add_suppMouseClicked

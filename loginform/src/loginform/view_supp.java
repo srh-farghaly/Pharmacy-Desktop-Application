@@ -17,6 +17,16 @@ public class view_supp extends javax.swing.JFrame {
         initComponents();
       setLocationRelativeTo(null);
     }
+    public view_supp(String company_name,String address, String phone)
+    {
+        
+        initComponents();
+      setLocationRelativeTo(null);
+      this.company_name.setText(company_name);
+      this.supp_address.setText(address);
+      this.tele.setText(phone);
+     
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -189,15 +199,6 @@ public class view_supp extends javax.swing.JFrame {
 
     private void edit_suppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_edit_suppMouseClicked
 
-        //        if (validateFields()) {
-            //            customers_operations.insert_CustomerData(txtname1.getText(), txtname2.getText(),txtcity.getText(), txtstreet.getText(),(String) gender.getSelectedItem(), txtphone.getText());
-            //            Customers obj = new Customers();
-            //            obj.setVisible(true);
-            //            obj.show_table();
-            //            this.dispose();
-            //        } else {
-            //            JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
-            //        }
     }//GEN-LAST:event_edit_suppMouseClicked
 
     private void edit_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_suppActionPerformed
@@ -223,6 +224,7 @@ public class view_supp extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
         Supplier ss=new Supplier();
+        ss.show_table();
         ss.setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
 

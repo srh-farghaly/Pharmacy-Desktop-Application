@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package loginform;
 
 import javax.swing.ImageIcon;
@@ -11,7 +7,9 @@ import javax.swing.ImageIcon;
  * @author ASUS
  */
 public class rond extends javax.swing.JFrame {
-
+     
+   public static Orders order_object;
+   
     /**
      * Creates new form rond
      */
@@ -49,8 +47,8 @@ public class rond extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         products = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        sales = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        orders1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,7 +87,7 @@ public class rond extends javax.swing.JFrame {
         });
         jPanel2.add(suppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 240, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 240, 180));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 240, 180));
 
         jPanel3.setBackground(new java.awt.Color(255,255,255,80));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -169,27 +167,27 @@ public class rond extends javax.swing.JFrame {
         });
         jPanel6.add(products, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 240, -1));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 240, 180));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 240, 180));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255,80));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sales2.png"))); // NOI18N
-        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 130));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/orders_1.jpg"))); // NOI18N
+        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 130));
 
-        sales.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        sales.setForeground(new java.awt.Color(255, 228, 207));
-        sales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sales.setText("Sales");
-        sales.addMouseListener(new java.awt.event.MouseAdapter() {
+        orders1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        orders1.setForeground(new java.awt.Color(255, 228, 207));
+        orders1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        orders1.setText("Reservations");
+        orders1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                salesMouseClicked(evt);
+                orders1MouseClicked(evt);
             }
         });
-        jPanel7.add(sales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 240, -1));
+        jPanel7.add(orders1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 240, -1));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 240, 180));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -222,7 +220,11 @@ public class rond extends javax.swing.JFrame {
     }//GEN-LAST:event_customersMouseClicked
 
     private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
-        // TODO add your handling code here:
+        this.dispose();
+        Orders gg=new Orders();
+        this.order_object=gg;
+        gg.setVisible(true);
+        gg.show_table();
     }//GEN-LAST:event_ordersMouseClicked
 
     private void productsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productsMouseClicked
@@ -232,10 +234,6 @@ public class rond extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_productsMouseClicked
 
-    private void salesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_salesMouseClicked
-
     private void suppliersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_suppliersMouseClicked
         // TODO add your handling code here:
         Supplier s=new Supplier();
@@ -244,6 +242,10 @@ public class rond extends javax.swing.JFrame {
     
         this.dispose();
     }//GEN-LAST:event_suppliersMouseClicked
+
+    private void orders1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orders1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orders1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -271,6 +273,7 @@ public class rond extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(rond.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -284,13 +287,13 @@ public class rond extends javax.swing.JFrame {
     private javax.swing.JLabel customers;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -299,9 +302,9 @@ public class rond extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel orders;
+    private javax.swing.JLabel orders1;
     private javax.swing.JLabel pharmacist;
     private javax.swing.JLabel products;
-    private javax.swing.JLabel sales;
     private javax.swing.JLabel suppliers;
     // End of variables declaration//GEN-END:variables
 }
