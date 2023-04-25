@@ -10,9 +10,6 @@ public class Creat_Table {
       //String Query="create table orders (order_number int not null,order_price int not null,date varchar(50) not null,Payment_Type varchar(50) not null,delivery_ID int not null)";     
       //String Query="create table order_relation(Ph_ID int not null, C_ID int not null, ProductName varchar(255) not null , order_ID int not null )";
       //String Query="create table delivery (delivery_ID int not null, delivery_phoneNumber varchar(50) not null, name varchar(100) not null)";
-      
-      /****  Constrains ****/
-
      
 
        /*** DataBase Configurations ***/ 
