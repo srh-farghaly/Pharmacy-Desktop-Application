@@ -39,6 +39,7 @@ public class reservationAdd extends javax.swing.JFrame {
         Quantity = new javax.swing.JSpinner();
         jLabel5 = new javax.swing.JLabel();
         addButton = new button.mybutton();
+        back = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +64,8 @@ public class reservationAdd extends javax.swing.JFrame {
         jLabel3.setText("Product Name");
 
         jLabel4.setText("Quantity");
+
+        Quantity.setModel(new javax.swing.SpinnerNumberModel(0, 0, 20, 1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Untitled-1 (2).png"))); // NOI18N
 
@@ -102,7 +105,7 @@ public class reservationAdd extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                         .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60))))
         );
@@ -135,18 +138,42 @@ public class reservationAdd extends javax.swing.JFrame {
                         .addGap(20, 20, 20))))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 480, 390));
-        jPanel1.getAccessibleContext().setAccessibleName("Add new reservation");
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 450, 390));
+
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/back-button.png"))); // NOI18N
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backMouseClicked(evt);
+            }
+        });
+        back.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                backKeyPressed(evt);
+            }
+        });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 40));
+        back.getAccessibleContext().setAccessibleDescription("");
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginform/17973908.jpg"))); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 540));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CustomerIDActionPerformed
+
+    private void backKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_backKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backKeyPressed
+
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+     Reservations obj=new Reservations();
+     obj.setVisible(true);
+     this.dispose();
+    }//GEN-LAST:event_backMouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,6 +216,7 @@ public class reservationAdd extends javax.swing.JFrame {
     private javax.swing.JTextField Product;
     private javax.swing.JSpinner Quantity;
     private button.mybutton addButton;
+    private javax.swing.JLabel back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;

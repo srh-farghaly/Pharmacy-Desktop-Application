@@ -18,7 +18,7 @@ public class Reservations extends javax.swing.JFrame {
      */
     public Reservations() {
         initComponents();
-         tableDark1.fixTable(jScrollPane1);
+        tableDark1.fixTable(jScrollPane1);
         tableDark1.setColumnAlignment(0, JLabel.CENTER);
         tableDark1.setCellAlignment(0, JLabel.CENTER);
         tableDark1.setColumnAlignment(1, JLabel.CENTER);
@@ -91,6 +91,19 @@ public class Reservations extends javax.swing.JFrame {
         addButton.setMinimumSize(new java.awt.Dimension(75, 25));
         addButton.setPreferredSize(new java.awt.Dimension(75, 25));
         addButton.setRadius(10);
+        addButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addButtonMouseClicked(evt);
+            }
+        });
+        addButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                addButtonKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                addButtonKeyReleased(evt);
+            }
+        });
         jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, -1, 30));
 
         searchButton.setBackground(new java.awt.Color(6, 107, 138));
@@ -124,6 +137,11 @@ public class Reservations extends javax.swing.JFrame {
         editButton.setMinimumSize(new java.awt.Dimension(75, 25));
         editButton.setPreferredSize(new java.awt.Dimension(75, 25));
         editButton.setRadius(10);
+        editButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editButtonMouseClicked(evt);
+            }
+        });
         jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,6 +158,7 @@ public class Reservations extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -147,20 +166,37 @@ public class Reservations extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-  if(login.Manager)
-     {
-        rond obj = new rond();
-        obj.setVisible(true);
-        this.dispose();
-     }
-     else
-     {
-        phar_rond obj = new phar_rond();
-        obj.setVisible(true);
-        this.dispose();
-     }
+        if (login.Manager) {
+            rond obj = new rond();
+            obj.setVisible(true);
+            this.dispose();
+        } else {
+            phar_rond obj = new phar_rond();
+            obj.setVisible(true);
+            this.dispose();
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void addButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addButtonKeyPressed
+
+    }//GEN-LAST:event_addButtonKeyPressed
+
+    private void addButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addButtonKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addButtonKeyReleased
+
+    private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
+        reservationAdd obj = new reservationAdd();
+        obj.setVisible(true);
+        this.dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_addButtonMouseClicked
+
+    private void editButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseClicked
+        reservationEdit obj = new reservationEdit();
+        obj.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_editButtonMouseClicked
 
     /**
      * @param args the command line arguments
