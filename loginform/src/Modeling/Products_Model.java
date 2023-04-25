@@ -12,8 +12,9 @@ public class Products_Model {
     
     
     private int quantity,price;
-    private String med_name,expired_date,category,description;
-
+    public String med_name;
+    private String expired_date,category,description;
+    
     public Products_Model( String med_name, int price, String expired_date, int quantity, String category, String description) {
        
         this.med_name = med_name;
@@ -23,7 +24,26 @@ public class Products_Model {
         this.category = category;
         this.description = description;
     }
-
+    public Products_Model(String med_name, int price, int quantity, String expired_date)
+    {
+        this.med_name=med_name;
+        this.price=price;
+        this.quantity=quantity;
+        this.expired_date=expired_date;
+    }
+    public Products_Model(String prod_name)
+    {
+        this.med_name = prod_name;
+    }
+    public Products_Model(String prod_name,String expired_date)
+    {
+        this.med_name = prod_name;
+        this.expired_date=expired_date;
+    }
+    public Products_Model()
+    {
+        
+    }
     public String getMed_name() {
         return med_name;
     }

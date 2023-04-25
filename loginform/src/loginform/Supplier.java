@@ -5,21 +5,31 @@
 package loginform;
 
 //import PlaceholderTextField.PlaceholderTextField;
+import Modeling.supp_prod_rel_Model;
+import Control.supplier_operations;
+import Modeling.DBOperation;
+import Modeling.Suppliers_Model;
+import Modeling.Products_Model;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.JLabel;
 import javax.swing.*;
 import java.awt.event.*;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ASUS
  */
 public class Supplier extends javax.swing.JFrame {
-
+    private ArrayList<Object> arr;
+    private int row_number=0;
     /**
      * Creates new form Supplier
      */
+    
     public Supplier() {
         initComponents();
         setLocationRelativeTo(null);
@@ -29,6 +39,57 @@ public class Supplier extends javax.swing.JFrame {
        tablesup.setColumnAlignment(1, JLabel.CENTER);
        tablesup.setCellAlignment(1, JLabel.CENTER);
        
+    }
+    public void show_table() {
+        DefaultTableModel pr = (DefaultTableModel) tablesup.getModel();
+        try
+        {
+             arr = supplier_operations.get_PRodSuppData();
+                Object[] row = new Object[4];
+                int c=0;
+                 for (int i = 0; i < arr.size(); i+=3) 
+                    {
+                       row[0] = ((Suppliers_Model)arr.get(i)).getSupplier_id();
+                       row[1] = ((Suppliers_Model)arr.get(i)).getCompany_name();
+                       row[2] = ((Products_Model)arr.get(i+1)).getMed_name();
+                       row[3] = ((supp_prod_rel_Model)arr.get(i+2)).getDate();   
+                       pr.insertRow(c, row);
+                       c++;
+                }
+        }catch(Exception ex)
+                {
+                    JOptionPane.showMessageDialog(null, "Error displaying data:", "Message", JOptionPane.WARNING_MESSAGE);
+                }
+        
+         
+        tablesup.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                row_number = tablesup.getSelectedRow();
+            }
+        }
+        );
+    }
+    private void show_Supplier(String comName) 
+    {
+        DefaultTableModel pr = (DefaultTableModel) tablesup.getModel();
+        Object[] row = new Object[4];
+        
+        arr=supplier_operations.Search_supplier(comName);
+        row[0] = ((Suppliers_Model)arr.get(0)).getSupplier_id();
+        row[1] = ((Suppliers_Model)arr.get(0)).getCompany_name();
+        row[2] = ((Products_Model)arr.get(1)).getMed_name(); 
+        row[3] = ((supp_prod_rel_Model)arr.get(2)).getDate(); 
+        pr.insertRow(0, row);
+        
+            arr = supplier_operations.get_PRodSuppData();
+            tablesup.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                row_number = tablesup.getSelectedRow();
+            }
+        }
+        );
     }
 
     /**
@@ -92,19 +153,26 @@ public class Supplier extends javax.swing.JFrame {
 
         tablesup.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Company name", "Product name"
+                "Company ID", "Company name", "Product name", "Date"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -236,6 +304,17 @@ public class Supplier extends javax.swing.JFrame {
 
     private void sup_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sup_searchActionPerformed
         // TODO add your handling code here:
+        if (search1.getText().isEmpty()) {
+        } else {
+            if (supplier_operations.Search_supplier(search1.getText()) != null) {
+                this.dispose();
+                Supplier pr = new Supplier();
+                pr.show_Supplier(search1.getText());
+                pr.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "This product does not exist", "Message", JOptionPane.WARNING_MESSAGE);
+            }
+        }
        
 
     }//GEN-LAST:event_sup_searchActionPerformed
@@ -257,6 +336,7 @@ public class Supplier extends javax.swing.JFrame {
 
     private void Add_suppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Add_suppMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_Add_suppMouseClicked
 
     /**

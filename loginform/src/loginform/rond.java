@@ -240,6 +240,7 @@ public class rond extends javax.swing.JFrame {
         // TODO add your handling code here:
         Supplier s=new Supplier();
         s.setVisible(true);
+        s.show_table();  
     
         this.dispose();
     }//GEN-LAST:event_suppliersMouseClicked
