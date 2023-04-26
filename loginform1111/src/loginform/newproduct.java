@@ -560,17 +560,15 @@ public class newproduct extends javax.swing.JFrame {
                ArrayList<Object> supplier_op = supplier_operations.SearchToCheck(supplier_id);
                String med_name=txtname.getText();
                Products_Model prod_op=Products_Operations.Search_Product(med_name);
-               if( supplier_op == null)
+                if( supplier_op == null) // supplier not exist 
                {
-                    supplier_operations.insert_SupplierData(Integer.parseInt(jTextField3.getText()),jTextField1.getText(), (String)jComboBox1.getSelectedItem(), jTextField4.getText(), jTextField5.getText(), jTextField2.getText());
-                    Products_Operations.insert_ProductData(txtname.getText(), Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Integer.parseInt(txtquantity.getText()), (String) category.getSelectedItem(), txtdescription.getText());
-
+                   supplier_operations.insert_SupplierData(Integer.parseInt(jTextField3.getText()),jTextField1.getText(), (String)jComboBox1.getSelectedItem(), jTextField4.getText(), jTextField5.getText(), jTextField2.getText());
                }
-               else if(supplier_op != null && prod_op == null)
+                if(prod_op == null) // product not exist
                {
                     Products_Operations.insert_ProductData(txtname.getText(), Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Integer.parseInt(txtquantity.getText()), (String) category.getSelectedItem(), txtdescription.getText());
                }
-               else if( supplier_op != null && prod_op != null)
+               else 
                {
                    Products_Operations.Edit_Product(txtname.getText(),  Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Integer.parseInt(txtquantity.getText()));
                }
@@ -588,7 +586,7 @@ public class newproduct extends javax.swing.JFrame {
                
             else 
             {
-              JOptionPane.showMessageDialog(null, "Expired Date is not Vaild", "Message", JOptionPane.WARNING_MESSAGE);
+              JOptionPane.showMessageDialog(null, "Expired Date or Date is not Vaild", "Message", JOptionPane.WARNING_MESSAGE);
 
             }
         } else {

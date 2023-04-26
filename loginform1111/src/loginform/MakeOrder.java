@@ -607,9 +607,9 @@ public class MakeOrder extends javax.swing.JFrame {
              // insert to data to order_relation table with customer information
              Orders_Operations.insert_Order_Relation(Integer.parseInt(pharmacistID.getText()), Customer_id,product.getText(), order_id);      
              Orders obj = new Orders();
+             obj.show_table();
              rond.order_object= obj;
              obj.setVisible(true);
-             obj.show_table();
              this.dispose();
           }
           ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

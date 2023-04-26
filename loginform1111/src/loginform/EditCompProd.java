@@ -233,15 +233,6 @@ public class EditCompProd extends javax.swing.JFrame {
 
     private void EditttMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditttMouseClicked
 
-//                if (validateFields()) {
-//                        supplier_operations.editData(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(), jTextField4.getText(), Integer.parseInt(jTextField5.getText()), Integer.parseInt(jTextField6.getText()), jTextField7.getText());
-//                        Supplier obj = new Supplier();
-//                        obj.setVisible(true);
-//                        obj.show_table();
-//                        this.dispose();
-//                    } else {
-//                        JOptionPane.showMessageDialog(null, "Please Enter Correct information","Message", JOptionPane.WARNING_MESSAGE);
-//                    }
     }//GEN-LAST:event_EditttMouseClicked
 
     private void EditttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditttActionPerformed
@@ -258,9 +249,6 @@ public class EditCompProd extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Correct information", "Message", JOptionPane.WARNING_MESSAGE);
         }
-//        this.dispose();
-//        EditCompProd ss=new EditCompProd();
-//        ss.setVisible(true);
     }//GEN-LAST:event_EditttActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -278,6 +266,13 @@ public class EditCompProd extends javax.swing.JFrame {
             String postal_code=((Suppliers_Model)obj.get(0)).getPostal_code();
             jTextField3.setText(city+","+region+","+postal_code);
           
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No data for this id ", "Message", JOptionPane.WARNING_MESSAGE);
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
         }
     }//GEN-LAST:event_jTextField8ActionPerformed
 

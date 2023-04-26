@@ -26,12 +26,21 @@ public class OrderInfo extends javax.swing.JFrame {
          
          // customer info 
          Customers_Model obj2=  rond.order_object.All_data.Customers_arr.get(Orders.getRow_number()); // from the same page of (rond.order_object) access (All_data) then access array of Customers and return the selected object
-           customer_ID.setText(obj2.getCustomer_id()+" ");
-           FirstName.setText(obj2.getFirstname());
-           LastName.setText(obj2.getLastname());
+           if(obj2.getCustomer_id() == 1)
+               customer_ID.setText("No Info");
+           else
+               customer_ID.setText(obj2.getCustomer_id()+" ");
+           FirstName.setText(obj2.getFirstname()); 
+           if(obj2.getLastname().equals(" "))
+                 LastName.setText("No Info"); 
+            else
+                 LastName.setText(obj2.getLastname()); 
            PhoneNumber.setText(obj2.getPhoneNumber_1());
-           Customer_Gender.setText(obj2.getGender());
-           Address.setText(obj2.getStreet()+" , "+obj2.getCity());
+           customer_gender.setText(obj2.getGender());
+           if(obj2.getStreet().equals("No Info"))
+               Address.setText("No Info");
+           else
+               Address.setText(obj2.getStreet()+" , "+obj2.getCity());
            
          // product info 
           Products_Model obj3=  rond.order_object.All_data.Products_arr.get(Orders.getRow_number()); // from the same page of (rond.order_object) access (All_data) then access array of Products and return the selected object
@@ -49,9 +58,12 @@ public class OrderInfo extends javax.swing.JFrame {
 
           //delivery info
           Delivery_Model obj5 = rond.order_object.All_data.Delivery_arr.get(Orders.getRow_number());
-          delivery_id.setText(obj5.getId()+"");
-          delivery_name.setText(obj5.getName());
-          delivery_phone.setText(obj5.getPhonenumber());
+          if(obj5.getId()==0)
+              delivery_id.setText("NO INFO");
+          else
+              delivery_id.setText(obj5.getId()+"");
+          deliveryname.setText(obj5.getName());
+          deliveryphone.setText(obj5.getPhonenumber());
            
          
     }
@@ -79,7 +91,7 @@ public class OrderInfo extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        ProductCategory = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -93,25 +105,25 @@ public class OrderInfo extends javax.swing.JFrame {
         PaymentType = new javax.swing.JLabel();
         customer_ID = new javax.swing.JLabel();
         FirstName = new javax.swing.JLabel();
-        LastName = new javax.swing.JLabel();
-        PhoneNumber = new javax.swing.JLabel();
-        Customer_Gender = new javax.swing.JLabel();
-        Address = new javax.swing.JLabel();
         ProductName = new javax.swing.JLabel();
         Quantity = new javax.swing.JLabel();
         Product_Price = new javax.swing.JLabel();
-        Expired_Date = new javax.swing.JLabel();
-        ProductCategory = new javax.swing.JLabel();
         phar_id = new javax.swing.JLabel();
         phar_name = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         email = new javax.swing.JLabel();
         Price1 = new javax.swing.JLabel();
         Price2 = new javax.swing.JLabel();
-        Price3 = new javax.swing.JLabel();
         delivery_id = new javax.swing.JLabel();
-        delivery_name = new javax.swing.JLabel();
-        delivery_phone = new javax.swing.JLabel();
+        Address = new javax.swing.JLabel();
+        customer_gender = new javax.swing.JLabel();
+        Expired_Date = new javax.swing.JLabel();
+        Price4 = new javax.swing.JLabel();
+        deliveryphone = new javax.swing.JLabel();
+        deliveryname = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        LastName = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -194,9 +206,8 @@ public class OrderInfo extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Quantity : ");
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Price : ");
+        ProductCategory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ProductCategory.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -244,18 +255,6 @@ public class OrderInfo extends javax.swing.JFrame {
         FirstName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         FirstName.setForeground(new java.awt.Color(255, 255, 255));
 
-        LastName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        LastName.setForeground(new java.awt.Color(255, 255, 255));
-
-        PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
-
-        Customer_Gender.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Customer_Gender.setForeground(new java.awt.Color(255, 255, 255));
-
-        Address.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Address.setForeground(new java.awt.Color(255, 255, 255));
-
         ProductName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         ProductName.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -264,12 +263,6 @@ public class OrderInfo extends javax.swing.JFrame {
 
         Product_Price.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Product_Price.setForeground(new java.awt.Color(255, 255, 255));
-
-        Expired_Date.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Expired_Date.setForeground(new java.awt.Color(255, 255, 255));
-
-        ProductCategory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        ProductCategory.setForeground(new java.awt.Color(255, 255, 255));
 
         phar_id.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         phar_id.setForeground(new java.awt.Color(255, 255, 255));
@@ -292,18 +285,37 @@ public class OrderInfo extends javax.swing.JFrame {
         Price2.setForeground(new java.awt.Color(255, 255, 255));
         Price2.setText("Delivery Name :");
 
-        Price3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Price3.setForeground(new java.awt.Color(255, 255, 255));
-        Price3.setText("Delivery Phone Number :");
-
         delivery_id.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         delivery_id.setForeground(new java.awt.Color(255, 255, 255));
 
-        delivery_name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        delivery_name.setForeground(new java.awt.Color(255, 255, 255));
+        Address.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Address.setForeground(new java.awt.Color(255, 255, 255));
 
-        delivery_phone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        delivery_phone.setForeground(new java.awt.Color(255, 255, 255));
+        customer_gender.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        customer_gender.setForeground(new java.awt.Color(255, 255, 255));
+
+        Expired_Date.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Expired_Date.setForeground(new java.awt.Color(255, 255, 255));
+
+        Price4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Price4.setForeground(new java.awt.Color(255, 255, 255));
+        Price4.setText("Delivery Phone Number :");
+
+        deliveryphone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deliveryphone.setForeground(new java.awt.Color(255, 255, 255));
+
+        deliveryname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deliveryname.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("Price : ");
+
+        LastName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        LastName.setForeground(new java.awt.Color(255, 255, 255));
+
+        PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout CustomerIDLayout = new javax.swing.GroupLayout(CustomerID);
         CustomerID.setLayout(CustomerIDLayout);
@@ -312,125 +324,134 @@ public class OrderInfo extends javax.swing.JFrame {
             .addGroup(CustomerIDLayout.createSequentialGroup()
                 .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CustomerIDLayout.createSequentialGroup()
-                        .addGap(131, 131, 131)
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(price))
+                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addGap(118, 118, 118)
+                                        .addComponent(PaymentType))
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Address))
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(FirstName))
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(customer_ID))))
                             .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addGap(15, 15, 15)
+                                .addComponent(Price1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Date))
+                                .addComponent(delivery_id))
                             .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(customer_gender))
+                            .addGroup(CustomerIDLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(OrderNumber))
-                            .addComponent(Price))
-                        .addGap(122, 122, 122)
-                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addComponent(Price2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(deliveryname))
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addComponent(Price4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(deliveryphone))))
                             .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addComponent(jLabel25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(email))
-                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(phar_name))
-                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(phar_id))))
+                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LastName)
+                                        .addGap(31, 31, 31))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CustomerIDLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addComponent(PhoneNumber))))
                     .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel22))
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel21)))
+                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addGap(109, 109, 109)
-                                .addComponent(jLabel21))
-                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(CustomerIDLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(jLabel9)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(customer_ID))
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(jLabel11)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(FirstName))
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(jLabel13)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(LastName))
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(jLabel12)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(PhoneNumber))
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(jLabel14)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Customer_Gender))
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addGap(118, 118, 118)
-                                                .addComponent(PaymentType))
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(jLabel15)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Address))))
-                                    .addGroup(CustomerIDLayout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(Price1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(delivery_id))
-                                    .addGroup(CustomerIDLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(Price2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(delivery_name))
-                                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                                .addComponent(Price3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(delivery_phone))))))
-                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addComponent(jLabel22)))
-                        .addGap(49, 49, 49)
-                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CustomerIDLayout.createSequentialGroup()
-                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(CustomerIDLayout.createSequentialGroup()
-                                        .addComponent(jLabel19)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ProductCategory))
-                                    .addComponent(jLabel23)
-                                    .addComponent(jLabel24))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Expired_Date)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(179, Short.MAX_VALUE))
                             .addGroup(CustomerIDLayout.createSequentialGroup()
                                 .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(CustomerIDLayout.createSequentialGroup()
                                         .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(18, 18, 18)
                                         .addComponent(Quantity))
+                                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                                        .addComponent(jLabel26)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Product_Price))
                                     .addGroup(CustomerIDLayout.createSequentialGroup()
                                         .addComponent(jLabel16)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ProductName))
                                     .addGroup(CustomerIDLayout.createSequentialGroup()
-                                        .addComponent(jLabel20)
+                                        .addComponent(jLabel19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Expired_Date))
-                                    .addGroup(CustomerIDLayout.createSequentialGroup()
-                                        .addComponent(jLabel18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Product_Price)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(85, Short.MAX_VALUE))
+                                        .addComponent(ProductCategory)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel23))
+                        .addGap(0, 70, Short.MAX_VALUE))))
+            .addGroup(CustomerIDLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(price))
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Date))
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(OrderNumber))
+                    .addComponent(Price))
+                .addGap(154, 154, 154)
+                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(email))
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(phar_name))
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(phar_id)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CustomerIDLayout.setVerticalGroup(
             CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -439,7 +460,7 @@ public class OrderInfo extends javax.swing.JFrame {
                 .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel21))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
@@ -468,14 +489,14 @@ public class OrderInfo extends javax.swing.JFrame {
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Price1)
                             .addComponent(delivery_id))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(12, 12, 12)
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Price2)
-                            .addComponent(delivery_name))
+                            .addComponent(deliveryname))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Price3)
-                            .addComponent(delivery_phone)))
+                            .addComponent(Price4)
+                            .addComponent(deliveryphone)))
                     .addGroup(CustomerIDLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -486,44 +507,53 @@ public class OrderInfo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CustomerIDLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(CustomerIDLayout.createSequentialGroup()
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel9)
-                                .addComponent(customer_ID)))
+                                .addComponent(customer_ID)
+                                .addComponent(jLabel16)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel11)
-                                .addComponent(FirstName)
-                                .addComponent(jLabel17)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel13)
-                                .addComponent(LastName)
-                                .addComponent(jLabel18))
-                            .addComponent(Product_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(PhoneNumber)
-                            .addComponent(jLabel20)
-                            .addComponent(Expired_Date))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FirstName))
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Product_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(CustomerIDLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel26)
+                                    .addComponent(LastName))))
+                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CustomerIDLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel20)
+                                    .addComponent(Expired_Date))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(CustomerIDLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(PhoneNumber))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(Customer_Gender)
                             .addComponent(jLabel19)
-                            .addComponent(ProductCategory)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(Address))
-                .addGap(25, 25, 25))
+                            .addComponent(customer_gender)
+                            .addComponent(ProductCategory))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CustomerIDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(Address))
+                        .addGap(65, 65, 65))))
         );
 
         getContentPane().add(CustomerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 680, 480));
@@ -588,7 +618,6 @@ public class OrderInfo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Address;
     private javax.swing.JPanel CustomerID;
-    private javax.swing.JLabel Customer_Gender;
     private javax.swing.JLabel Date;
     private javax.swing.JLabel Expired_Date;
     private javax.swing.JLabel FirstName;
@@ -599,15 +628,16 @@ public class OrderInfo extends javax.swing.JFrame {
     private javax.swing.JLabel Price;
     private javax.swing.JLabel Price1;
     private javax.swing.JLabel Price2;
-    private javax.swing.JLabel Price3;
+    private javax.swing.JLabel Price4;
     private javax.swing.JLabel ProductCategory;
     private javax.swing.JLabel ProductName;
     private javax.swing.JLabel Product_Price;
     private javax.swing.JLabel Quantity;
     private javax.swing.JLabel customer_ID;
+    private javax.swing.JLabel customer_gender;
     private javax.swing.JLabel delivery_id;
-    private javax.swing.JLabel delivery_name;
-    private javax.swing.JLabel delivery_phone;
+    private javax.swing.JLabel deliveryname;
+    private javax.swing.JLabel deliveryphone;
     private javax.swing.JLabel email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -618,7 +648,6 @@ public class OrderInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -627,6 +656,7 @@ public class OrderInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -202,6 +202,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="company_name">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
                 </Property>
@@ -232,6 +233,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="supp_address">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
                 </Property>
@@ -262,6 +264,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="tele">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
                 </Property>

@@ -244,7 +244,9 @@ public class rond extends javax.swing.JFrame {
     }//GEN-LAST:event_suppliersMouseClicked
 
     private void orders1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orders1MouseClicked
-        // TODO add your handling code here:
+    Reservations obj=new Reservations();
+    obj.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_orders1MouseClicked
 
     /**

@@ -311,7 +311,7 @@ public class Supplier extends javax.swing.JFrame {
                 pr.show_Supplier(search1.getText());
                 pr.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(null, "This product does not exist", "Message", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "This company name does not exist", "Message", JOptionPane.WARNING_MESSAGE);
             }
         }
        

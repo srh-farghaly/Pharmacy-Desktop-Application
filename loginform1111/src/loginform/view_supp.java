@@ -96,6 +96,7 @@ public class view_supp extends javax.swing.JFrame {
         com_adress.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         com_adress.setText("Address:");
 
+        company_name.setEditable(false);
         company_name.setBackground(new java.awt.Color(255, 255, 255));
         company_name.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         company_name.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -110,6 +111,7 @@ public class view_supp extends javax.swing.JFrame {
         comp_name1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         comp_name1.setText("Company Name:");
 
+        supp_address.setEditable(false);
         supp_address.setBackground(new java.awt.Color(255, 255, 255));
         supp_address.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         supp_address.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -124,6 +126,7 @@ public class view_supp extends javax.swing.JFrame {
         telephone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         telephone.setText("Telephone");
 
+        tele.setEditable(false);
         tele.setBackground(new java.awt.Color(255, 255, 255));
         tele.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         tele.setBorder(javax.swing.BorderFactory.createEtchedBorder());

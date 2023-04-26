@@ -176,6 +176,10 @@ public class supplier_operations {
         ResultSet rs=DBOperation.getData(Query);
         ArrayList<Object> arr= new ArrayList();
         try {
+            if(!rs.isBeforeFirst())
+            {
+                return null;
+            }
             while(rs.next())
             {
                 arr.add(new Suppliers_Model(rs.getString("Company_name"),
