@@ -5,7 +5,14 @@
  */
 package loginform;
 
+import Control.Reservation_Operations;
+import Control.customers_operations;
+import Modeling.Customers_Model;
+import Modeling.Reservation_Model;
+import java.util.ArrayList;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,6 +23,8 @@ public class Reservations extends javax.swing.JFrame {
     /**
      * Creates new form Reservations
      */
+    private ArrayList<Reservation_Model> arr;
+    private int row_number = 0;
     public Reservations() {
         initComponents();
         tableDark1.fixTable(jScrollPane1);
@@ -24,7 +33,50 @@ public class Reservations extends javax.swing.JFrame {
         tableDark1.setColumnAlignment(1, JLabel.CENTER);
         tableDark1.setCellAlignment(1, JLabel.CENTER);
     }
-
+    public void show_table() {
+        DefaultTableModel mm = (DefaultTableModel) tableDark1.getModel();
+        arr = Reservation_Operations.get_ReservationData();
+        Object[] row = new Object[5];
+         for (int i = 1; i < arr.size(); i++) {
+            row[0] = arr.get(i).getPH_ID(); 
+            row[1] = arr.get(i).getCU_ID();
+            row[2] = arr.get(i).getProduct_Name();
+            row[3] = arr.get(i).getQuantity();
+            row[4] = arr.get(i).getDate();
+            
+            mm.insertRow(i-1, row);
+          
+        }
+    
+        // Mouse Event
+        tableDark1.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                row_number = tableDark1.getSelectedRow();
+            }
+        }
+       );
+ }
+         public void show_table(ArrayList<Reservation_Model> arr) {
+        DefaultTableModel mm = (DefaultTableModel) tableDark1.getModel();
+        Object[] row = new Object[5];
+         for (int i = 1; i < arr.size(); i++) {
+            row[0] = arr.get(i).getPH_ID(); 
+            row[1] = arr.get(i).getCU_ID();
+            row[2] = arr.get(i).getProduct_Name();
+            row[3] = arr.get(i).getQuantity();
+            row[4] = arr.get(i).getDate();
+            mm.insertRow(i-1, row);
+          
+        }
+                tableDark1.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                row_number = tableDark1.getSelectedRow();
+            }
+        }
+       );
+ }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,7 +90,7 @@ public class Reservations extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableDark1 = new tabledark.TableDark();
-        jTextField1 = new javax.swing.JTextField();
+        txtSearch = new javax.swing.JTextField();
         addButton = new button.mybutton();
         searchButton = new button.mybutton();
         deleteButton = new button.mybutton();
@@ -74,13 +126,13 @@ public class Reservations extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 680, 220));
 
-        jTextField1.setText("Pharmacist id");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtSearch.setText("Pharmacist id");
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtSearchActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 150, 30));
+        jPanel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 150, 30));
 
         addButton.setBackground(new java.awt.Color(6, 107, 138));
         addButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,6 +167,11 @@ public class Reservations extends javax.swing.JFrame {
         searchButton.setMinimumSize(new java.awt.Dimension(75, 25));
         searchButton.setPreferredSize(new java.awt.Dimension(75, 25));
         searchButton.setRadius(10);
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, 30));
 
         deleteButton.setBackground(new java.awt.Color(6, 107, 138));
@@ -126,6 +183,11 @@ public class Reservations extends javax.swing.JFrame {
         deleteButton.setMinimumSize(new java.awt.Dimension(75, 25));
         deleteButton.setPreferredSize(new java.awt.Dimension(75, 25));
         deleteButton.setRadius(10);
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, -1, 30));
 
         editButton.setBackground(new java.awt.Color(6, 107, 138));
@@ -140,6 +202,11 @@ public class Reservations extends javax.swing.JFrame {
         editButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 editButtonMouseClicked(evt);
+            }
+        });
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
             }
         });
         jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, -1, 30));
@@ -161,9 +228,9 @@ public class Reservations extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtSearchActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         if (login.Manager) {
@@ -193,10 +260,43 @@ public class Reservations extends javax.swing.JFrame {
     }//GEN-LAST:event_addButtonMouseClicked
 
     private void editButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseClicked
-        reservationEdit obj = new reservationEdit();
+        reservationEdit obj = new reservationEdit(arr.get(row_number).getPH_ID(),arr.get(row_number).getCU_ID(),arr.get(row_number).getProduct_Name());
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_editButtonMouseClicked
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+       if (txtSearch.getText().isEmpty()) {
+        } else {
+            ArrayList<Reservation_Model> obj = Reservation_Operations.Search_Reservation(Integer.parseInt(txtSearch.getText()));
+
+            if (obj != null) {
+               this.dispose();
+                Reservations gg = new Reservations();
+                gg.show_table(obj);
+                gg.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "ID Not Found", "Message", JOptionPane.WARNING_MESSAGE);
+
+            }
+        } 
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+       int PH_id = arr.get(row_number).getPH_ID();
+       int CU_ID =arr.get(row_number).getCU_ID();
+       String productName=arr.get(row_number).getProduct_Name();
+        Reservation_Operations.Delete_Reservation(PH_id, CU_ID, productName);
+        this.dispose(); 
+        Reservations gg = new Reservations();
+        gg.show_table();
+        gg.setVisible(true);
+        JOptionPane.showMessageDialog(null, "reservation has been Deleted Successfully", "Message", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,8 +340,8 @@ public class Reservations extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private button.mybutton searchButton;
     private tabledark.TableDark tableDark1;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -48,7 +48,7 @@ public class rond extends javax.swing.JFrame {
         products = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        orders1 = new javax.swing.JLabel();
+        reservation = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,16 +176,16 @@ public class rond extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/orders_1.jpg"))); // NOI18N
         jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 130));
 
-        orders1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        orders1.setForeground(new java.awt.Color(255, 228, 207));
-        orders1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orders1.setText("Reservations");
-        orders1.addMouseListener(new java.awt.event.MouseAdapter() {
+        reservation.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reservation.setForeground(new java.awt.Color(255, 228, 207));
+        reservation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        reservation.setText("Reservations");
+        reservation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                orders1MouseClicked(evt);
+                reservationMouseClicked(evt);
             }
         });
-        jPanel7.add(orders1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 240, -1));
+        jPanel7.add(reservation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 240, -1));
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, 180));
 
@@ -243,11 +243,12 @@ public class rond extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_suppliersMouseClicked
 
-    private void orders1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orders1MouseClicked
+    private void reservationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reservationMouseClicked
     Reservations obj=new Reservations();
     obj.setVisible(true);
+    obj.show_table();
     this.dispose();
-    }//GEN-LAST:event_orders1MouseClicked
+    }//GEN-LAST:event_reservationMouseClicked
 
     /**
      * @param args the command line arguments
@@ -304,9 +305,9 @@ public class rond extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel orders;
-    private javax.swing.JLabel orders1;
     private javax.swing.JLabel pharmacist;
     private javax.swing.JLabel products;
+    private javax.swing.JLabel reservation;
     private javax.swing.JLabel suppliers;
     // End of variables declaration//GEN-END:variables
 }

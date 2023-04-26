@@ -5,6 +5,9 @@
  */
 package loginform;
 
+import Control.Reservation_Operations;
+import Modeling.Reservation_Model;
+
 /**
  *
  * @author Ahmed Sherif
@@ -81,6 +84,11 @@ public class reservationAdd extends javax.swing.JFrame {
         addButton.setMinimumSize(new java.awt.Dimension(75, 25));
         addButton.setPreferredSize(new java.awt.Dimension(75, 25));
         addButton.setRadius(10);
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,8 +180,17 @@ public class reservationAdd extends javax.swing.JFrame {
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
      Reservations obj=new Reservations();
      obj.setVisible(true);
+     obj.show_table();
      this.dispose();
     }//GEN-LAST:event_backMouseClicked
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        Reservation_Operations.insert_reservation(Integer.parseInt(PharmacistID.getText()),Integer.parseInt(CustomerID.getText()),Product.getText(),(int)Quantity.getValue());
+        Reservations obj=new Reservations();
+        this.dispose();
+        obj.setVisible(true);
+        obj.show_table();
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments

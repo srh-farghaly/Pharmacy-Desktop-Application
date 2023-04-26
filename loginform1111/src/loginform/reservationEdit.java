@@ -5,6 +5,8 @@
  */
 package loginform;
 
+import Control.Reservation_Operations;
+
 /**
  *
  * @author Ahmed Sherif
@@ -14,9 +16,20 @@ public class reservationEdit extends javax.swing.JFrame {
     /**
      * Creates new form reservationEdit
      */
-    public reservationEdit() {
+    public reservationEdit(int PH_ID,int CU_ID,String Product) {
+        initComponents();
+        PharmacistID.setText(Integer.toString(PH_ID));
+        CustomerID.setText(Integer.toString(CU_ID));
+        Producttxt.setText(Product);
+        PharmacistID.setEditable(false);
+        CustomerID.setEditable(false);
+        Producttxt.setEditable(false);
+    }
+    public reservationEdit()
+    {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,7 +43,7 @@ public class reservationEdit extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         addButton = new button.mybutton();
-        Product = new javax.swing.JTextField();
+        Producttxt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         Quantity = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
@@ -62,12 +75,23 @@ public class reservationEdit extends javax.swing.JFrame {
         addButton.setMinimumSize(new java.awt.Dimension(75, 25));
         addButton.setPreferredSize(new java.awt.Dimension(75, 25));
         addButton.setRadius(10);
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Quantity");
 
         Quantity.setModel(new javax.swing.SpinnerNumberModel(0, 0, 20, 1));
 
         jLabel3.setText("Pharmacist ID");
+
+        PharmacistID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PharmacistIDActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Product Name");
 
@@ -102,7 +126,7 @@ public class reservationEdit extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(PharmacistID)
                                 .addComponent(CustomerID)
-                                .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Producttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -120,7 +144,7 @@ public class reservationEdit extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Producttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,12 +189,25 @@ public class reservationEdit extends javax.swing.JFrame {
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         Reservations obj=new Reservations();
         obj.setVisible(true);
+        obj.show_table();
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
 
     private void backKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_backKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_backKeyPressed
+
+    private void PharmacistIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PharmacistIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PharmacistIDActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        Reservation_Operations.Edit_Reservation(Integer.parseInt(PharmacistID.getText()), Integer.parseInt(CustomerID.getText()), Producttxt.getText() ,(int) Quantity.getValue());
+        Reservations obj=new Reservations();
+        obj.setVisible(true);
+        obj.show_table();
+        this.dispose();
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,7 +247,7 @@ public class reservationEdit extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CustomerID;
     private javax.swing.JTextField PharmacistID;
-    private javax.swing.JTextField Product;
+    private javax.swing.JTextField Producttxt;
     private javax.swing.JSpinner Quantity;
     private button.mybutton addButton;
     private javax.swing.JLabel back;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -72,7 +72,7 @@
                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="PharmacistID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="CustomerID" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Product" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="Producttxt" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
                               </Group>
                               <Component id="Quantity" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -98,7 +98,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="Product" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Producttxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -163,8 +163,11 @@
             </Property>
             <Property name="radius" type="int" value="10"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="Product">
+        <Component class="javax.swing.JTextField" name="Producttxt">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
@@ -184,6 +187,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="PharmacistID">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PharmacistIDActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
