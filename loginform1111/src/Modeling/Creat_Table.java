@@ -19,9 +19,9 @@ public class Creat_Table {
         
         /*-------------------------------------------------------------------------------------------------------*/
         /*                                      supplier table                                            */
-      String Query="create table supplier(supplier_id int not null,Company_name varchar(255),city varchar(255),region varchar(255),postal_code varchar(50),phone varchar(100))";
+     // String Query="create table supplier(supplier_id int not null,Company_name varchar(255),city varchar(255),region varchar(255),postal_code varchar(50),phone varchar(100))";
 //      String Query= "CREATE TABLE supplier_prod_rel(prod_name VARCHAR(255),supp_id INT,ph_id INT,date varchar(255), FOREIGN KEY (ph_id) REFERENCES pharmacist(id),FOREIGN KEY (supp_id) REFERENCES supplier(supplier_id),FOREIGN KEY (prod_name) REFERENCES products(med_name))";
-
+        //String Query="create table Reservation(pharmacist_ID int not null,Customer_ID int not null,Product_Name varchar(255)not null,Quantity int not null,Reservation_date varchar(255)not null)";
 //            - Make (supplier_id) in supplier table primary key , AND DON'T MAKE IT AUTO INCREMENT 
 //            - Make (med_name) in products table primary key
         
@@ -55,7 +55,10 @@ public class Creat_Table {
              // String Query="alter table order_relation add constraint fxx FOREIGN KEY (C_ID) REFERENCES customer(customer_id)";             //  ...  > relations of order_relation
              // String Query="alter table order_relation add constraint fxxx FOREIGN KEY (ProductName) REFERENCES products(med_name)";        //  ...  
              // String Query="alter table order_relation add constraint fxxxx FOREIGN KEY (order_ID) REFERENCES orders(order_number)";        //  ...         
-//         5- Run the Follwing queryies as it is: 
+               // String Query="alter table reservation add constraint res FOREIGN KEY (pharmacist_ID) REFERENCES pharmacist(id)" ;    
+              // String Query="alter table reservation add constraint ress FOREIGN KEY (Customer_ID) REFERENCES customer(customer_id)" ;
+               String Query ="alter table reservation add constraint resss FOREIGN KEY (Product_Name) REFERENCES products(med_name)";
+                //5- Run the Follwing queryies as it is: 
                //String Query="insert into customer (customer_firstname,customer_lastname,city,street,gender,phoneNumber_1) values ('No Info' ,' ' ,'No Info' , 'No Info','No Info','No Info')";
               //String Query="insert into delivery (delivery_ID, delivery_phoneNumber , name) values ('0' , 'NO INFO', 'NO INFO')";
               DBOperation.setDataOrDelete(Query,"created"); 
