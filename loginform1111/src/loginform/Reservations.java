@@ -60,13 +60,13 @@ public class Reservations extends javax.swing.JFrame {
          public void show_table(ArrayList<Reservation_Model> arr) {
         DefaultTableModel mm = (DefaultTableModel) tableDark1.getModel();
         Object[] row = new Object[5];
-         for (int i = 1; i < arr.size(); i++) {
+         for (int i = 0; i < arr.size(); i++) {
             row[0] = arr.get(i).getPH_ID(); 
             row[1] = arr.get(i).getCU_ID();
             row[2] = arr.get(i).getProduct_Name();
             row[3] = arr.get(i).getQuantity();
             row[4] = arr.get(i).getDate();
-            mm.insertRow(i-1, row);
+            mm.insertRow(i, row);
           
         }
                 tableDark1.addMouseListener(new java.awt.event.MouseAdapter() {
