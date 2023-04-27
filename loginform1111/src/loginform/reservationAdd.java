@@ -188,8 +188,9 @@ public class reservationAdd extends javax.swing.JFrame {
         Reservation_Operations.insert_reservation(Integer.parseInt(PharmacistID.getText()),Integer.parseInt(CustomerID.getText()),Product.getText(),(int)Quantity.getValue());
         Reservations obj=new Reservations();
         this.dispose();
-        obj.setVisible(true);
         obj.show_table();
+        obj.setVisible(true);
+        
     }//GEN-LAST:event_addButtonActionPerformed
 
     /**

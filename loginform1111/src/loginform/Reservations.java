@@ -37,14 +37,14 @@ public class Reservations extends javax.swing.JFrame {
         DefaultTableModel mm = (DefaultTableModel) tableDark1.getModel();
         arr = Reservation_Operations.get_ReservationData();
         Object[] row = new Object[5];
-         for (int i = 1; i < arr.size(); i++) {
+         for (int i = 0; i < arr.size(); i++) {
             row[0] = arr.get(i).getPH_ID(); 
             row[1] = arr.get(i).getCU_ID();
             row[2] = arr.get(i).getProduct_Name();
             row[3] = arr.get(i).getQuantity();
             row[4] = arr.get(i).getDate();
             
-            mm.insertRow(i-1, row);
+            mm.insertRow(i, row);
           
         }
     
@@ -283,7 +283,7 @@ public class Reservations extends javax.swing.JFrame {
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-       int PH_id = arr.get(row_number).getPH_ID();
+      int PH_id = arr.get(row_number).getPH_ID();
        int CU_ID =arr.get(row_number).getCU_ID();
        String productName=arr.get(row_number).getProduct_Name();
         Reservation_Operations.Delete_Reservation(PH_id, CU_ID, productName);
