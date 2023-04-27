@@ -570,7 +570,9 @@ public class newproduct extends javax.swing.JFrame {
                }
                else 
                {
-                   Products_Operations.Edit_Product(txtname.getText(),  Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Integer.parseInt(txtquantity.getText()));
+                   int StoredQuantity=prod_op.getQuantity();
+                   int Quantity= StoredQuantity+ Integer.parseInt(txtquantity.getText());
+                   Products_Operations.Edit_Product(txtname.getText(),  Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Quantity );
                }
                
                 supplier_operations.insertSupplier_prod_rel(txtname.getText(),Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField7.getText()),jTextField6.getText());
