@@ -95,6 +95,8 @@ public class Reservations extends javax.swing.JFrame {
         searchButton = new button.mybutton();
         deleteButton = new button.mybutton();
         editButton = new button.mybutton();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,7 +109,7 @@ public class Reservations extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         tableDark1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,7 +126,7 @@ public class Reservations extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tableDark1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 680, 220));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 680, 220));
 
         txtSearch.setText("Pharmacist id");
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -132,10 +134,11 @@ public class Reservations extends javax.swing.JFrame {
                 txtSearchActionPerformed(evt);
             }
         });
-        jPanel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 150, 30));
+        jPanel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 150, 30));
 
         addButton.setBackground(new java.awt.Color(6, 107, 138));
         addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-user.png"))); // NOI18N
         addButton.setText("Add");
         addButton.setBorderColor(new java.awt.Color(255, 255, 255));
         addButton.setColorClick(new java.awt.Color(0, 153, 153));
@@ -148,6 +151,11 @@ public class Reservations extends javax.swing.JFrame {
                 addButtonMouseClicked(evt);
             }
         });
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
         addButton.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 addButtonKeyPressed(evt);
@@ -156,7 +164,7 @@ public class Reservations extends javax.swing.JFrame {
                 addButtonKeyReleased(evt);
             }
         });
-        jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, -1, 30));
+        jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 80, 30));
 
         searchButton.setBackground(new java.awt.Color(6, 107, 138));
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -172,10 +180,11 @@ public class Reservations extends javax.swing.JFrame {
                 searchButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, 30));
+        jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 80, 30));
 
         deleteButton.setBackground(new java.awt.Color(6, 107, 138));
         deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/x (2).png"))); // NOI18N
         deleteButton.setText("Delete");
         deleteButton.setBorderColor(new java.awt.Color(255, 255, 255));
         deleteButton.setColorClick(new java.awt.Color(0, 153, 153));
@@ -188,10 +197,11 @@ public class Reservations extends javax.swing.JFrame {
                 deleteButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, -1, 30));
+        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, 90, 30));
 
         editButton.setBackground(new java.awt.Color(6, 107, 138));
         editButton.setForeground(new java.awt.Color(255, 255, 255));
+        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit.png"))); // NOI18N
         editButton.setText("Edit");
         editButton.setBorderColor(new java.awt.Color(255, 255, 255));
         editButton.setColorClick(new java.awt.Color(0, 153, 153));
@@ -209,19 +219,37 @@ public class Reservations extends javax.swing.JFrame {
                 editButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, -1, 30));
+        jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 90, 30));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/booking.png"))); // NOI18N
+        jLabel6.setInheritsPopupMenu(false);
+        jLabel6.setMaximumSize(new java.awt.Dimension(40, 40));
+        jLabel6.setRequestFocusEnabled(false);
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(6, 107, 138));
+        jTextField2.setText("Reservation");
+        jTextField2.setBorder(null);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
         );
 
         pack();
@@ -298,6 +326,14 @@ public class Reservations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_editButtonActionPerformed
 
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -338,8 +374,10 @@ public class Reservations extends javax.swing.JFrame {
     private button.mybutton deleteButton;
     private button.mybutton editButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField2;
     private button.mybutton searchButton;
     private tabledark.TableDark tableDark1;
     private javax.swing.JTextField txtSearch;

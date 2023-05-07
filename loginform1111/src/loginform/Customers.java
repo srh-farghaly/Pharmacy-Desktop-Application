@@ -168,7 +168,7 @@ public class Customers extends javax.swing.JFrame {
                 DeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 410, 100, 49));
+        getContentPane().add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 100, 49));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 23)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(6, 107, 138));
