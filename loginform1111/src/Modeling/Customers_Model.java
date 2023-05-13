@@ -8,7 +8,15 @@ public class Customers_Model {
     
     private String firstname,lastname,city,street,gender,phoneNumber_1;
     private int customer_id; 
+   public Customers_Model()
+{
 
+
+
+
+
+
+}
     public Customers_Model(int customer_id,String firstname, String lastname, String city, String street, String gender, String phoneNumber_1) 
     {
 
