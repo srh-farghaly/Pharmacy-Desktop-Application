@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,15 +24,18 @@ public class supplier_operations {
     public  static void insert_SupplierData(int Company_id, String Company_name, String city, String region, String postal_code, String phone )
    {
        String query="insert into supplier (supplier_id, Company_name,city,region,postal_code,phone) values ('"+Company_id+"','"+Company_name+"' , '"+city+"' , '"+region+"' , '"+postal_code+"', '"+phone+"')";
-       DBOperation.setDataOrDelete(query, "New Supplier has been Inserted Successfully");
+       DBOperation.setDataOrDelete(query, "New Supplier has been Inserted Successfully");  
+       
    }
-               //get data
+    //get data
     public  static ArrayList<Suppliers_Model> get_suppliersData()
     {
           String query="select * from supplier";
+          
           ResultSet rs=DBOperation.getData(query);
+          
           ArrayList<Suppliers_Model> arr= new ArrayList();
-
+          
         try {
             while(rs.next())
             {
@@ -48,12 +53,12 @@ public class supplier_operations {
         finally{
             try {
                 rs.close();
+                  throw new SQLException("check not right");
             } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
             }
         }
-       return null;
-        
+       return null;  
     }
        public static ArrayList<Object> Search_supplier(String Company_name)
     {   
@@ -67,6 +72,7 @@ public class supplier_operations {
               arr.add(new Suppliers_Model(rs.getInt("supplier_id"),rs.getString("Company_name")));
               arr.add(new Products_Model(rs.getString("med_name")));
               arr.add(new supp_prod_rel_Model((rs.getString("date"))));
+              
             }       
         } catch (SQLException ex) {
           JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
@@ -74,11 +80,7 @@ public class supplier_operations {
         }
          return arr;    
     }
-       public static void Delete_supplier(int supplier_id)
-    {
-        String Query="delete from supplier where supplier_id='"+supplier_id+"'";
-       DBOperation.setDataOrDelete(Query, "");
-    }
+
       public  static ArrayList<Object> get_PRodSuppData()
     {
           String query="select supplier.supplier_id, supplier.Company_name, products.med_name, supplier_prod_rel.date from supplier, products, supplier_prod_rel where supplier_prod_rel.supp_id=supplier.supplier_id and supplier_prod_rel.prod_name=products.med_name";
@@ -92,7 +94,7 @@ public class supplier_operations {
                 arr.add(new Products_Model(rs.getString("med_name")));
                 arr.add(new supp_prod_rel_Model((rs.getString("date"))));
             }
-            return arr;
+           return arr; 
         } catch (SQLException ex) {
           JOptionPane.showMessageDialog(null, ex, "Message", JOptionPane.ERROR_MESSAGE);
         }
@@ -134,6 +136,7 @@ public class supplier_operations {
                       rs.getString("phone")));
                 arr.add(new supp_prod_rel_Model(rs.getString("date")));
                 
+                
             }   
             
             return arr;
@@ -172,7 +175,7 @@ public class supplier_operations {
      /*                function search for edit               */
      public static ArrayList<Object> SearchEdit(int Company_id)
     {   
-        String Query="select supplier.*, products.med_name, products.price, products.quantity, products.expired_date from supplier,products where supplier.supplier_id = '"+Company_id+"'";
+        String Query="select supplier.* from supplier where supplier.supplier_id = '"+Company_id+"'  ";
         ResultSet rs=DBOperation.getData(Query);
         ArrayList<Object> arr= new ArrayList();
         try {
@@ -187,8 +190,6 @@ public class supplier_operations {
                         rs.getString("region"),
                         rs.getString("postal_code"),
                       rs.getString("phone")));
-                arr.add(new Products_Model(rs.getString("med_name"),Integer.parseInt(rs.getString("price")),Integer.parseInt(rs.getString("quantity")),rs.getString("expired_date")));
-                
             }   
             return arr;
         } catch (SQLException ex) {
@@ -234,6 +235,5 @@ public class supplier_operations {
        return null;
      }
 
-      
      
 }

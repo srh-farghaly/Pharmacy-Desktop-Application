@@ -6,6 +6,7 @@ package loginform;
 
 import Control.Products_Operations;
 import Control.supplier_operations;
+import GuiFunctions.GuiEditCompProd;
 import Modeling.Products_Model;
 import Modeling.Suppliers_Model;
 import java.time.LocalDateTime;
@@ -28,15 +29,15 @@ public class EditCompProd extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-    public boolean validateFields() {
-        String Company_id=jTextField8.getText();
-        String Company_name = jTextField1.getText();
-        String Telephone = jTextField2.getText();
-        String address = jTextField3.getText();
-      
-        return   !address.equals("") && !Telephone.equals("") && !Company_name.equals("") && !Company_id.equals("");
-
-    }
+//    public boolean validateFields() {
+//        String Company_id=jTextField8.getText();
+//        String Company_name = jTextField1.getText();
+//        String Telephone = jTextField2.getText();
+//        String address = jTextField3.getText();
+//      
+//        return   !address.equals("") && !Telephone.equals("") && !Company_name.equals("") && !Company_id.equals("");
+//
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -237,18 +238,8 @@ public class EditCompProd extends javax.swing.JFrame {
 
     private void EditttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditttActionPerformed
         // TODO add your handling code here:
-        if (validateFields()) {
-            
-                supplier_operations.edit_Supplier(Integer.parseInt(jTextField8.getText()),jTextField1.getText(),jTextField2.getText(), jTextField3.getText());
-                Supplier ob= new Supplier();
-                ob.setVisible(true);
-                ob.show_table();
-                this.dispose();
-            
-            
-        } else {
-            JOptionPane.showMessageDialog(null, "Please Enter Correct information", "Message", JOptionPane.WARNING_MESSAGE);
-        }
+        GuiEditCompProd obj=new GuiEditCompProd();
+        obj.EditAction(jTextField8.getText(), jTextField1.getText(), jTextField2.getText(), jTextField3.getText());
     }//GEN-LAST:event_EditttActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -269,6 +260,7 @@ public class EditCompProd extends javax.swing.JFrame {
         }
         else
         {
+            
             JOptionPane.showMessageDialog(null, "No data for this id ", "Message", JOptionPane.WARNING_MESSAGE);
             jTextField1.setText("");
             jTextField2.setText("");

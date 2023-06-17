@@ -4,7 +4,7 @@ public class Creat_Table {
     public static void main(String []args)
     {
 //      String Query= "create table login_info(ph_id int not null,email varchar(255) not null,password varchar(255) not null)";
-      //String Query="create table pharmacist(id int not null,firstname varchar(255) not null,lastname varchar(255) not null,age int not null,hired_date varchar(50) not null,gender varchar(50) not null,phoneNumber varchar(100) not null,email varchar(255) not null,password varchar(255) not null,salary int not null,mng_id int not null)";
+//      String Query="create table pharmacist(id int not null,firstname varchar(255) not null,lastname varchar(255) not null,age int not null,hired_date varchar(50) not null,gender varchar(50) not null,phoneNumber varchar(100) not null,email varchar(255) not null,password varchar(255) not null,salary int not null,mng_id int not null)";
 //      String  Query="create table products(med_name varchar(255) not null,price int not null,expired_date varchar(50) not null,quantity int not null,category varchar(255) not null,description varchar(255) not null )";
 //      String Query="alter table login_info add constraint fx foreign key(ph_id) references pharmacist(id)";
 //        String Query="ALTER TABLE supplier CHANGE supplier_id supplier_id INT(11) NOT NULL AUTO_INCREMENT";
@@ -15,6 +15,9 @@ public class Creat_Table {
 //        String Query="delete from supplier_prod_rel where date= 12/12/3030";
 //        String Query="alter table supplier drop date ";
 //          String Query="drop table pharmacist";
+//        String Query="delete from supplier_prod_rel where supp_id = 5 ";
+//        String sam="samaa";
+//        String Query="delete from products where med_name =  '"+sam+"' ";
 //        String Query="insert into supplier_prod_rel values('ddaa',1,1,'12/12/3030')";
         
         /*-------------------------------------------------------------------------------------------------------*/
@@ -33,7 +36,7 @@ public class Creat_Table {
         /*-------------------------------------------------------------------------------------------------------*/
        /**** Tables ****/  
 
-  //   String Query="create table pharmacist(id int not null,firstname varchar(255) not null,lastname varchar(255) not null,age int not null,hired_date varchar(50) not null,pharmacist_gender varchar(50) not null,phoneNumber varchar(100) not null,email varchar(255) not null,password varchar(255) not null,salary int not null,mng_id int not null)";
+//     String Query="create table pharmacist(id int not null,firstname varchar(255) not null,lastname varchar(255) not null,age int not null,hired_date varchar(50) not null,pharmacist_gender varchar(50) not null,phoneNumber varchar(100) not null,email varchar(255) not null,password varchar(255) not null,salary int not null,mng_id int not null)";
 
 //     String Query="create table pharmacist(id int not null,firstname varchar(255) not null,lastname varchar(255) not null,age int not null,hired_date varchar(50) not null,pharmacist_gender varchar(50) not null,phoneNumber varchar(100) not null,email varchar(255) not null,password varchar(255) not null,salary int not null,mng_id int not null)";
 //      String Query="create table products(med_name varchar(255) not null,price int not null,expired_date varchar(50) not null,quantity int not null,category varchar(255) not null,description varchar(255) not null )";
@@ -42,12 +45,6 @@ public class Creat_Table {
 //      String Query="create table order_relation(Ph_ID int not null, C_ID int not null, ProductName varchar(255) not null , order_ID int not null )";
 //      String Query="create table delivery (delivery_ID int not null, delivery_phoneNumber varchar(50) not null, name varchar(100) not null)";
 
-  // String Query="create table pharmacist(id int not null,firstname varchar(255) not null,lastname varchar(255) not null,age int not null,hired_date varchar(50) not null,pharmacist_gender varchar(50) not null,phoneNumber varchar(100) not null,email varchar(255) not null,password varchar(255) not null,salary int not null,mng_id int not null)";
-      //String Query="create table products(med_name varchar(255) not null,price int not null,expired_date varchar(50) not null,quantity int not null,category varchar(255) not null,description varchar(255) not null )";
-     //String Query="create table customer(customer_id int not null,customer_firstname varchar(255) not null,customer_lastname varchar(255) not null,city varchar(255) not null,street varchar(255) not null,gender varchar(50) not null,phoneNumber_1 varchar(100) not null)";
-     //String Query="create table orders (order_number int not null,order_price int not null,date varchar(50) not null,Payment_Type varchar(50) not null,delivery_ID int not null)";     
-      //String Query="create table order_relation(Ph_ID int not null, C_ID int not null, ProductName varchar(255) not null , order_ID int not null )";
-      //String Query="create table delivery (delivery_ID int not null, delivery_phoneNumber varchar(50) not null, name varchar(100) not null)";
 
      
 
@@ -73,22 +70,11 @@ public class Creat_Table {
 //               String Query="alter table reservation add constraint ress FOREIGN KEY (Customer_ID) REFERENCES customer(customer_id)" ;
 //               String Query ="alter table reservation add constraint resss FOREIGN KEY (Product_Name) REFERENCES products(med_name)";
 
-              //String Query="alter table orders add constraint ppx FOREIGN KEY (delivery_ID) REFERENCES Delivery(delivery_ID)";  // relation between order and delivery
-              //String Query="alter table order_relation add constraint fx FOREIGN KEY (Ph_ID) REFERENCES pharmacist(id)";                    //  ...
-              //String Query="alter table order_relation add constraint fxx FOREIGN KEY (C_ID) REFERENCES customer(customer_id)";             //  ...  > relations of order_relation
-             // String Query="alter table order_relation add constraint fxxx FOREIGN KEY (ProductName) REFERENCES products(med_name)";        //  ...  
-              //String Query="alter table order_relation add constraint fxxxx FOREIGN KEY (order_ID) REFERENCES orders(order_number)";        //  ...         
-                //String Query="alter table reservation add constraint res FOREIGN KEY (pharmacist_ID) REFERENCES pharmacist(id)" ;    
-              // String Query="alter table reservation add constraint ress FOREIGN KEY (Customer_ID) REFERENCES customer(customer_id)" ;
-               //String Query ="alter table reservation add constraint resss FOREIGN KEY (Product_Name) REFERENCES products(med_name)";
-
                 //5- Run the Follwing queryies as it is: 
 
 //               String Query="insert into customer (customer_firstname,customer_lastname,city,street,gender,phoneNumber_1) values ('No Info' ,' ' ,'No Info' , 'No Info','No Info','No Info')";
-//              String Query="insert into delivery (delivery_ID, delivery_phoneNumber , name) values ('0' , 'NO INFO', 'NO INFO')";
-
-               //String Query="insert into customer (customer_firstname,customer_lastname,city,street,gender,phoneNumber_1) values ('No Info' ,' ' ,'No Info' , 'No Info','No Info','No Info')";
               String Query="insert into delivery (delivery_ID, delivery_phoneNumber , name) values ('0' , 'NO INFO', 'NO INFO')";
+
 
               DBOperation.setDataOrDelete(Query,"created"); 
         

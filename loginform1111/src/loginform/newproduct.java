@@ -4,6 +4,7 @@ import Control.Pharmacist_operations;
 import Control.Products_Operations;
 import Modeling.supp_prod_rel_Model;
 import Control.supplier_operations;
+import GuiFunctions.GuiSupplier;
 import Modeling.DBOperation;
 import Modeling.Pharmacist_Model;
 import Modeling.Products_Model;
@@ -31,28 +32,7 @@ public class newproduct extends javax.swing.JFrame {
         Add.setEnabled(false);
     }
 
-    public boolean validateFields() {
-       
-        String med_name = txtname.getText();
-        String price = txtprice.getText();
-        String quantity = txtquantity.getText();
-        String expired_date = txtexpireddate.getText();
-        String categ = (String)category.getSelectedItem();
-        String desc= txtdescription.getText();
-        
-        /*     new              */
-        String Company_id= jTextField3.getText().trim();
-        String Company_name= jTextField1.getText();
-        String Telephone=jTextField2.getText();
-        String region=jTextField4.getText();
-        String postal_code=jTextField5.getText();
-        String city = (String)jComboBox1.getSelectedItem();
-        String date=jTextField6.getText();
-//        int ph_id=Integer.parseInt(jTextField7.getText());
-        String ph_id=jTextField7.getText();
-        return expired_date.matches(DatePattern) && Telephone.matches(mobileNumberPattern) &&  !med_name.equals("")   &&  !ph_id.equals("") &&  !date.equals("") && !price.equals("") && !quantity.equals("") && !expired_date.equals("") && !Company_name.equals("") && !city.equals("") && !region.equals("") && !Telephone.equals("") && !postal_code.equals("")  && !desc.equals("") && !categ.equals("") ;
 
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -368,115 +348,11 @@ public class newproduct extends javax.swing.JFrame {
         ob.show_table();
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
-    public boolean IsVaildExpiredDate1() {
-        boolean vaild = true;
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDateTime now = LocalDateTime.now();
-        String entered_date = txtexpireddate.getText();
-        StringTokenizer entered = new StringTokenizer(entered_date, "/");
-        StringTokenizer Now = new StringTokenizer(dtf.format(now), "/");
-        int DayEntered = Integer.parseInt(entered.nextToken());
-        int MonthEntered = Integer.parseInt(entered.nextToken());
-        int YearEntered = Integer.parseInt(entered.nextToken());
-        int YearNow = Integer.parseInt(Now.nextToken());
-        int MonthNow = Integer.parseInt(Now.nextToken());
-        int DayNow = Integer.parseInt(Now.nextToken());
-        if (YearNow > YearEntered) // not vaild
-        {
-            vaild = false;
-        } else if (YearNow == YearEntered) {
-            if (MonthNow > MonthEntered) {
-                vaild = false;
-            } else if (MonthNow == MonthEntered) {
-                if (DayNow >= DayEntered) {
-                    vaild = false;
-                }
-            }
-        }
-        return vaild;
-    }
-    public boolean IsVaildExpiredDate2() {
-        boolean vaild = true;
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDateTime now = LocalDateTime.now();
-        String entered_date = jTextField6.getText();
-        StringTokenizer entered = new StringTokenizer(entered_date, "/");
-        StringTokenizer Now = new StringTokenizer(dtf.format(now), "/");
-        int DayEntered = Integer.parseInt(entered.nextToken());
-        int MonthEntered = Integer.parseInt(entered.nextToken());
-        int YearEntered = Integer.parseInt(entered.nextToken());
-        int YearNow = Integer.parseInt(Now.nextToken());
-        int MonthNow = Integer.parseInt(Now.nextToken());
-        int DayNow = Integer.parseInt(Now.nextToken());
-        if (YearNow > YearEntered) // not vaild
-        {
-            vaild = false;
-        } else if (YearNow == YearEntered) {
-            if (MonthNow > MonthEntered) {
-                vaild = false;
-            } else if (MonthNow == MonthEntered) {
-                if (DayNow >= DayEntered) {
-                    vaild = false;
-                }
-            }
-        }
-        return vaild;
-    }
+
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
-
-        if (validateFields()) {
-            if (IsVaildExpiredDate1() && IsVaildExpiredDate2() && txtexpireddate.getText().matches(DatePattern) && jTextField6.getText().matches(DatePattern)  && jTextField2.getText().matches(mobileNumberPattern)) {
-               boolean terminated = false;
-               
-               /*                         search pharamcist                           */
-               int pharmacist_id =Integer.parseInt(jTextField7.getText().trim());
-             Pharmacist_Model pharmacist_op = Pharmacist_operations.Search_Pharmacist(pharmacist_id);
-             if ( pharmacist_op == null)
-             {
-                JOptionPane.showMessageDialog(null, "There's No Pharmacist with This ID", "Message", JOptionPane.WARNING_MESSAGE);
-                 terminated = true;
-             }
-             else
-             {
-                 /*                             search supplier and product                        */
-               int supplier_id=Integer.parseInt(jTextField3.getText());
-               ArrayList<Object> supplier_op = supplier_operations.SearchToCheck(supplier_id);
-               String med_name=txtname.getText();
-               Products_Model prod_op=Products_Operations.Search_Product(med_name);
-                if( supplier_op == null) // supplier not exist 
-               {
-                   supplier_operations.insert_SupplierData(Integer.parseInt(jTextField3.getText()),jTextField1.getText(), (String)jComboBox1.getSelectedItem(), jTextField4.getText(), jTextField5.getText(), jTextField2.getText());
-               }
-                if(prod_op == null) // product not exist
-               {
-                    Products_Operations.insert_ProductData(txtname.getText(), Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Integer.parseInt(txtquantity.getText()), (String) category.getSelectedItem(), txtdescription.getText());
-               }
-               else 
-               {
-                   int StoredQuantity=prod_op.getQuantity();
-                   int Quantity= StoredQuantity+ Integer.parseInt(txtquantity.getText());
-                   Products_Operations.Edit_Product(txtname.getText(),  Integer.parseInt(txtprice.getText()), txtexpireddate.getText(), Quantity );
-               }
-               
-                supplier_operations.insertSupplier_prod_rel(txtname.getText(),Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField7.getText()),jTextField6.getText());
-                products obj = new products();
-                obj.show_table();
-                Supplier ob= new Supplier();
-                ob.setVisible(true);
-                ob.show_table();
-                this.dispose();
-               }
-             }
-             
-               
-            else 
-            {
-              JOptionPane.showMessageDialog(null, "Expired Date or Date is not Vaild", "Message", JOptionPane.WARNING_MESSAGE);
-
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Please Enter Correct information", "Message", JOptionPane.WARNING_MESSAGE);
-        }
+        
+        GuiSupplier supplier= new GuiSupplier();
+        supplier.addButton(jTextField3.getText().trim(), jTextField2.getText(), jTextField1.getText(), (String)jComboBox1.getSelectedItem(), jTextField4.getText(), jTextField5.getText(), txtname.getText(), jTextField7.getText(), jTextField6.getText(), txtquantity.getText(), txtprice.getText(), txtexpireddate.getText(), (String)category.getSelectedItem(), txtdescription.getText());
     }//GEN-LAST:event_AddMouseClicked
 
     private void txtnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyReleased
