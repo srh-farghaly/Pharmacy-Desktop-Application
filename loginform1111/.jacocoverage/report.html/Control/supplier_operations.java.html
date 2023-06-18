@@ -67,11 +67,11 @@ import javax.swing.JOptionPane;
 <span class="fc" id="L67">        ResultSet rs=DBOperation.getData(Query);</span>
 <span class="fc" id="L68">        ArrayList&lt;Object&gt; arr= new ArrayList();</span>
         try {
-<span class="fc bfc" id="L70" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">            while(rs.next())</span>
             {
-<span class="fc" id="L72">              arr.add(new Suppliers_Model(rs.getInt(&quot;supplier_id&quot;),rs.getString(&quot;Company_name&quot;)));</span>
-<span class="fc" id="L73">              arr.add(new Products_Model(rs.getString(&quot;med_name&quot;)));</span>
-<span class="fc" id="L74">              arr.add(new supp_prod_rel_Model((rs.getString(&quot;date&quot;))));</span>
+<span class="nc" id="L72">              arr.add(new Suppliers_Model(rs.getInt(&quot;supplier_id&quot;),rs.getString(&quot;Company_name&quot;)));</span>
+<span class="nc" id="L73">              arr.add(new Products_Model(rs.getString(&quot;med_name&quot;)));</span>
+<span class="nc" id="L74">              arr.add(new supp_prod_rel_Model((rs.getString(&quot;date&quot;))));</span>
               
             }       
 <span class="nc" id="L77">        } catch (SQLException ex) {</span>

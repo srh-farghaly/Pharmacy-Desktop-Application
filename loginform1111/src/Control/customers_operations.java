@@ -22,7 +22,7 @@ public class customers_operations {
        DBOperation.setDataOrDelete(query, "New customer has been Inserted Successfully");
    }
                //get data
-      public  static ArrayList<Customers_Model> get_customersData()
+      public  static ArrayList<Customers_Model> get_customersData() 
     {
           String query="select * from customer";
           ResultSet rs=DBOperation.getData(query);

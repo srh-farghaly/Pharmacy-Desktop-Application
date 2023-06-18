@@ -2,6 +2,7 @@ package Control;
 import Modeling.DBOperation;
 import java.sql.ResultSet;
 import Modeling.Pharmacist_Model;
+import java.awt.List;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -86,4 +87,89 @@ public class Pharmacist_operations {
        DBOperation.setDataOrDelete(Query, "");
     }
     
+//    public static double getPharmacistSalaryFromDatabase(int id )
+//    {
+//        String Query="select salary from pharmacist where id ='"+id"'"; 
+//        DBOperation.setDataOrDelete(Query, "");
+//        
+//    
+//    }
+//    
+//    public static double getPharmacistSalaryFromDatabase(int id) {
+//    int salary = 0;
+//    
+//    // Construct the SQL query
+//    String query = "SELECT salary FROM pharmacist WHERE id = " + id;
+//    
+//    // Execute the query and retrieve the result set
+//    ResultSet rs = DBOperation.getData(query);
+//    
+//    try {
+//        // Retrieve the salary from the result set
+//        if (rs.next()) {
+//            salary = rs.getInt("salary");
+//        }
+//    } catch (SQLException e) {
+//        e.printStackTrace();
+//    } finally {
+//        // Close the result set
+//        try {
+//            if (rs != null) {
+//                rs.close();
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    
+//    return salary;
+//}
+       
+   public static ArrayList<Integer> sumSalaries() 
+   {
+    ArrayList<Integer> salaries = new ArrayList<>();
+
+    String query = "SELECT salary FROM pharmacist";
+
+    // Execute the query and retrieve the result set
+    ResultSet rs = DBOperation.getData(query);
+
+    try {
+        // Loop through all the records and add up the salaries
+        while (rs.next()) {
+            int salary = rs.getInt("salary");
+            salaries.add(salary);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        // Close the result set
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Convert the list of salaries to an array
+    return salaries;
+}
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 }

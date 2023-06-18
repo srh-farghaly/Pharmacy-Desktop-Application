@@ -7,6 +7,9 @@ package Control;
 
 import Modeling.Customers_Model;
 import Control.customers_operations;
+import Modeling.DBOperation;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,6 +17,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.eq;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 
 
@@ -104,13 +115,7 @@ private boolean verifyCustomerData(String firstname, String lastname, String cit
     @Test
     public void testGet_customersData() {
         System.out.println("get_customersData");
-       // ArrayList<Customers_Model> expResult = null;
-       // ArrayList<Customers_Model> result = customers_operations.get_customersData();
-        //assertEquals(expResult, result);
-        
-        
-    
-    // Call the method to get the customers data
+      
     ArrayList<Customers_Model> result = customers_operations.get_customersData();
     
     // Verify that the result is not null and not empty
@@ -121,6 +126,40 @@ private boolean verifyCustomerData(String firstname, String lastname, String cit
      
     }
 
+//    @Test
+//    public void test_catch_get()
+//    {   customers_operations mok= mock(customers_operations.class);
+//        Mockito.doThrow(new SQLException()).when(mok).get_customersData();
+//        
+//        mok.get_customersData(); // expected exception was thrown
+//// expected exception was thrown
+//fail("Expected SQLException was not thrown");
+//    }
+//    
+    
+    // Test case for empty data
+
+    /**
+     *
+     * @return
+     * @throws SQLException
+     */
+
+    
+    
+    // Test case for SQLException
+//@Test
+//public void testGetCustomersDataSQLException() throws SQLException {
+//     when(DBOperation.getData("select * from customer")).thenThrow(new SQLException());
+//    
+//    ArrayList<Customers_Model> result = customers_operations.get_customersData();
+//    
+//    // Verify that the function displays an error message and returns null
+//    assertNull(result);
+//    verify(System.err, times(1)).println("SQLException: Failed to retrieve customer data.");
+//}
+    
+   
     /**
      * Test of Search_customer method, of class customers_operations.
      */

@@ -1,7 +1,9 @@
 package loginform;
 
 import Control.Pharmacist_operations;
+import GuiFunctions.GUI_Login;
 import Modeling.Pharmacist_Model;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -298,6 +300,20 @@ public class Signup extends javax.swing.JFrame {
                 if(pharmacist_obj == null)
                 {   
                     Pharmacist_operations.insert_pharmacistData(Integer.parseInt(ph_id.getText()),txtName1.getText(), txtName2.getText(), (String)gender.getSelectedItem(), txtphone.getText(), txtEmail.getText(), txtpass.getText(), Integer.parseInt(txtsalary.getText().trim()),Integer.parseInt(txtAge.getText().trim()));
+                    
+//                    ArrayList<Integer> recieve = new ArrayList();
+//                    recieve = Pharmacist_operations.sumSalaries();
+//                   int totalSalary = 0;
+//                for (int i = 0; i <  recieve.size(); i++) 
+//                {
+//                    int salary =  recieve.get(i);
+//                    totalSalary += salary;
+//                 }
+
+                    GUI_Login sum = new GUI_Login();
+                    int salary = sum.calculateTotalSalary();
+                   System.out.print("total salaris is   "+salary);
+                    
                     pharmacist obj = new pharmacist();
                     obj.setVisible(true);
                     obj.show_table();

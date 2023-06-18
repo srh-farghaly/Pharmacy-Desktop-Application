@@ -1,5 +1,6 @@
 package loginform;
 import Control.Pharmacist_operations;
+import GuiFunctions.GUI_Login;
 import javax.swing.JOptionPane;
 /**
  *
@@ -8,11 +9,17 @@ import javax.swing.JOptionPane;
 public class login extends javax.swing.JFrame {
 
      public static Boolean Manager;
-    /**
+         /**
      * Creates new form login
      */
     public login() {
-        initComponents();
+        
+     
+
+      initComponents();
+        
+
+
         /*txtusername.setBackground(new java.awt.Color(0,0,0,1));
         txtpassword.setBackground(new java.awt.Color(0,0,0,1));*/
          Login.setEnabled(false);
@@ -30,6 +37,10 @@ public class login extends javax.swing.JFrame {
             Login.setEnabled(false);
         }    
     }
+    
+//                       GUI_Login log2=new GUI_Login();
+      
+//                       log2.validateFields(email, password);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -270,28 +281,11 @@ public class login extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
      
-         String email=txtusername.getText();
-         String password=txtpassword.getText();
-         int error_status= Pharmacist_operations.check_Pharmacist_Acc(email, password);
-        if(email.equals("admin@gmail.com") && password.equals("admin")) // manager
-        { 
-            rond obj=new rond();
-            obj.setVisible(true);
-            this.dispose();
-            Manager=true;
-        }
-        else if(error_status == 0) // pharmacist
-        {
-            phar_rond obj=new phar_rond();
-            obj.setVisible(true);
-            this.dispose();
-            Manager=false;
-        }
-        else
-        {
-          JOptionPane.showMessageDialog(null, "Wrong Email or Password!","Message", JOptionPane.ERROR_MESSAGE);
-
-        }
+         GUI_Login log = new GUI_Login();
+         log.check_info(txtusername.getText(), txtpassword.getText());
+         this.dispose();
+         
+         
     }//GEN-LAST:event_LoginActionPerformed
  
     private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
@@ -299,11 +293,20 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginMouseClicked
 
     private void txtusernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusernameKeyReleased
-        validateFields();
+       validateFields();
+
+//  GUI_Login log1= new GUI_Login();
+//  log1.validateFields(txtusername.getText(), txtpassword.getText());
+
+
     }//GEN-LAST:event_txtusernameKeyReleased
 
     private void txtpasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpasswordKeyReleased
-        validateFields();
+       validateFields();
+
+// GUI_Login log1= new GUI_Login();
+// log1.validateFields(txtusername.getText(), txtpassword.getText());
+
     }//GEN-LAST:event_txtpasswordKeyReleased
 
     /**
