@@ -19,22 +19,22 @@ import static org.junit.Assert.*;
  * @author ahmed
  */
 public class Reservation_OperationsTest {
-    
+
     public Reservation_OperationsTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -45,28 +45,31 @@ public class Reservation_OperationsTest {
     @Test
     public void testInsert_reservation() {
         System.out.println("insert_reservation");
-        int PH_ID = 10;
-        int CU_ID = 2;
+        int PH_ID = 25;
+        int CU_ID = 10;
         String Product_Name = "Panadol";
         int Quantity = 1;
         Reservation_Operations.insert_reservation(PH_ID, CU_ID, Product_Name, Quantity);
-         boolean isInserted = verifyReservationData(PH_ID, CU_ID, Product_Name, Quantity);
-        
+        boolean isInserted = verifyReservationData(PH_ID, CU_ID, Product_Name, Quantity);
+        System.out.println(isInserted);
+        assertEquals(true,isInserted);
+
     }
-    private boolean verifyCustomerData(int PH_ID, int CU_ID, String Product_Name, int Quantity) {
-    ArrayList<Reservation_Model> reservations = Reservation_Operations.get_ReservationData();
-    for (Reservation_Model reserv : reservations) {
-        if (reserv.getPH_ID().equals(PH_ID) &&
-            reserv.getCU_ID().equals(CU_ID) &&
-            customer.getCity().equals(city) &&
-            customer.getStreet().equals(street) &&
-            customer.getGender().equals(gender) &&
-            customer.getPhoneNumber_1().equals(phoneNumber_1)) {
-            return true;
+
+    private boolean verifyReservationData(int PH_ID, int CU_ID, String Product_Name, int Quantity) {
+        ArrayList<Reservation_Model> reservations = Reservation_Operations.get_ReservationData();
+        for (Reservation_Model reserv : reservations) {
+            if (reserv.getPH_ID()==PH_ID
+                    && reserv.getCU_ID() == CU_ID
+                    && reserv.getProduct_Name().equals(Product_Name)
+                    && reserv.getQuantity() == Quantity) {
+                return true;
+            }
         }
+       
+        return false;
     }
-    return false;
-}
+    
 
     /**
      * Test of get_ReservationData method, of class Reservation_Operations.
@@ -88,14 +91,14 @@ public class Reservation_OperationsTest {
     public void testSearch_Reservation() {
         System.out.println("Search_Reservation");
         int PH_ID = 0;
-        ArrayList<Reservation_Model> expResult = null;
-        ArrayList<Reservation_Model> result = Reservation_Operations.Search_Reservation(PH_ID);
+       ArrayList<Reservation_Model> expResult = null;
+       ArrayList<Reservation_Model> result = Reservation_Operations.Search_Reservation(PH_ID);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    /**
+   /**
      * Test of Delete_Reservation method, of class Reservation_Operations.
      */
     @Test
@@ -114,14 +117,14 @@ public class Reservation_OperationsTest {
      */
     @Test
     public void testEdit_Reservation() {
-        System.out.println("Edit_Reservation");
-        int PH_ID = 0;
+       System.out.println("Edit_Reservation");
+       int PH_ID = 0;
         int CU_ID = 0;
         String productName = "";
-        int quantity = 0;
-        Reservation_Operations.Edit_Reservation(PH_ID, CU_ID, productName, quantity);
-        // TODO review the generated test code and remove the default call to fail.
+       int quantity = 0;
+       Reservation_Operations.Edit_Reservation(PH_ID, CU_ID, productName, quantity);
+      // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
