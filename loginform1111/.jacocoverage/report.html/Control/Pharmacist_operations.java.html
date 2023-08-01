@@ -2,89 +2,175 @@
 import Modeling.DBOperation;
 import java.sql.ResultSet;
 import Modeling.Pharmacist_Model;
+import java.awt.List;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-<span class="nc" id="L11">public class Pharmacist_operations {</span>
+<span class="nc" id="L12">public class Pharmacist_operations {</span>
 
    public  static void insert_pharmacistData(int ID,String firstname,String lastname,String gender,String phonenumber,String email,String password,int salary, int age )
    {
-<span class="nc" id="L15">       DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd &quot;);</span>
-<span class="nc" id="L16">       LocalDateTime now = LocalDateTime.now();</span>
+<span class="nc" id="L16">       DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&quot;yyyy/MM/dd &quot;);</span>
+<span class="nc" id="L17">       LocalDateTime now = LocalDateTime.now();</span>
    
-<span class="nc" id="L18">       String query=&quot;insert into pharmacist (id,firstname,lastname,age,hired_date,pharmacist_gender,phoneNumber,email,password,salary,mng_id) values ('&quot;+ID+&quot;','&quot;+firstname+&quot;' , '&quot;+lastname+&quot;' , '&quot;+age+&quot;' , '&quot;+ dtf.format(now)+&quot;' , '&quot;+gender+&quot;' , '&quot;+phonenumber+&quot;', '&quot;+email+&quot;', '&quot;+password+&quot;' ,'&quot;+salary+&quot;',1)&quot;;</span>
-<span class="nc" id="L19">       DBOperation.setDataOrDelete(query, &quot;New employee has been Inserted Successfully&quot;);</span>
-<span class="nc" id="L20">   }</span>
+<span class="nc" id="L19">       String query=&quot;insert into pharmacist (id,firstname,lastname,age,hired_date,pharmacist_gender,phoneNumber,email,password,salary,mng_id) values ('&quot;+ID+&quot;','&quot;+firstname+&quot;' , '&quot;+lastname+&quot;' , '&quot;+age+&quot;' , '&quot;+ dtf.format(now)+&quot;' , '&quot;+gender+&quot;' , '&quot;+phonenumber+&quot;', '&quot;+email+&quot;', '&quot;+password+&quot;' ,'&quot;+salary+&quot;',1)&quot;;</span>
+<span class="nc" id="L20">       DBOperation.setDataOrDelete(query, &quot;New employee has been Inserted Successfully&quot;);</span>
+<span class="nc" id="L21">   }</span>
 
     public  static ArrayList&lt;Pharmacist_Model&gt; get_pharmacistData()
     {
-<span class="nc" id="L24">          String query=&quot;select * from pharmacist&quot;;</span>
-<span class="nc" id="L25">          ResultSet rs=DBOperation.getData(query);</span>
-<span class="nc" id="L26">          ArrayList&lt;Pharmacist_Model&gt; arr= new ArrayList();</span>
+<span class="nc" id="L25">          String query=&quot;select * from pharmacist&quot;;</span>
+<span class="nc" id="L26">          ResultSet rs=DBOperation.getData(query);</span>
+<span class="nc" id="L27">          ArrayList&lt;Pharmacist_Model&gt; arr= new ArrayList();</span>
 
         try {
-<span class="nc bnc" id="L29" title="All 2 branches missed.">            while(rs.next())</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">            while(rs.next())</span>
             {
-<span class="nc" id="L31">                arr.add(new Pharmacist_Model(rs.getInt(&quot;id&quot;),rs.getString(&quot;hired_date&quot;),rs.getString(&quot;firstname&quot;),rs.getString(&quot;lastname&quot;),rs.getString(&quot;pharmacist_gender&quot;),rs.getString(&quot;phonenumber&quot;),rs.getString(&quot;email&quot;),rs.getString(&quot;password&quot;),rs.getInt(&quot;salary&quot;),rs.getInt(&quot;age&quot;)));</span>
+<span class="nc" id="L32">                arr.add(new Pharmacist_Model(rs.getInt(&quot;id&quot;),rs.getString(&quot;hired_date&quot;),rs.getString(&quot;firstname&quot;),rs.getString(&quot;lastname&quot;),rs.getString(&quot;pharmacist_gender&quot;),rs.getString(&quot;phonenumber&quot;),rs.getString(&quot;email&quot;),rs.getString(&quot;password&quot;),rs.getInt(&quot;salary&quot;),rs.getInt(&quot;age&quot;)));</span>
             }
-<span class="nc" id="L33">            return arr;</span>
-<span class="nc" id="L34">        } catch (SQLException ex) {</span>
-<span class="nc" id="L35">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L34">            return arr;</span>
+<span class="nc" id="L35">        } catch (SQLException ex) {</span>
+<span class="nc" id="L36">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
         }
         finally{
-<span class="nc" id="L38">            try {</span>
-<span class="nc" id="L39">                rs.close();</span>
-<span class="nc" id="L40">            } catch (SQLException ex) {</span>
-<span class="nc" id="L41">             JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L42">            }</span>
-<span class="nc" id="L43">        }</span>
-<span class="nc" id="L44">       return null;</span>
+<span class="nc" id="L39">            try {</span>
+<span class="nc" id="L40">                rs.close();</span>
+<span class="nc" id="L41">            } catch (SQLException ex) {</span>
+<span class="nc" id="L42">             JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L43">            }</span>
+<span class="nc" id="L44">        }</span>
+<span class="nc" id="L45">       return null;</span>
         
     }
     
    public  static int check_Pharmacist_Acc(String email,String password)
     {
-<span class="fc" id="L50">        int error_status=1;</span>
-<span class="fc" id="L51">        String Query=&quot;select *from pharmacist where email='&quot;+email+&quot;'and password='&quot;+password+&quot;'&quot;;        </span>
-<span class="fc" id="L52">         ResultSet rs=DBOperation.getData(Query);</span>
+<span class="fc" id="L51">        int error_status=1;</span>
+<span class="fc" id="L52">        String Query=&quot;select *from pharmacist where email='&quot;+email+&quot;'and password='&quot;+password+&quot;'&quot;;        </span>
+<span class="fc" id="L53">         ResultSet rs=DBOperation.getData(Query);</span>
         try {
-<span class="fc bfc" id="L54" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            while(rs.next())</span>
             {
-<span class="fc" id="L56">                error_status=0;</span>
+<span class="fc" id="L57">                error_status=0;</span>
             }       
-<span class="nc" id="L58">        } catch (SQLException ex) {</span>
-<span class="nc" id="L59">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L60">          error_status=1;</span>
-<span class="fc" id="L61">        }</span>
+<span class="nc" id="L59">        } catch (SQLException ex) {</span>
+<span class="nc" id="L60">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L61">          error_status=1;</span>
+<span class="fc" id="L62">        }</span>
  
-<span class="fc" id="L63">       return error_status;    </span>
+<span class="fc" id="L64">       return error_status;    </span>
     }
 
     public static Pharmacist_Model Search_Pharmacist(int id)
     {   
-<span class="fc" id="L68">        Pharmacist_Model obj=null;</span>
-<span class="fc" id="L69">        String Query=&quot;select *from pharmacist where id='&quot;+id+&quot;'&quot;;</span>
-<span class="fc" id="L70">        ResultSet rs=DBOperation.getData(Query);</span>
+<span class="fc" id="L69">        Pharmacist_Model obj=null;</span>
+<span class="fc" id="L70">        String Query=&quot;select *from pharmacist where id='&quot;+id+&quot;'&quot;;</span>
+<span class="fc" id="L71">        ResultSet rs=DBOperation.getData(Query);</span>
         try {
-<span class="fc bfc" id="L72" title="All 2 branches covered.">            while(rs.next())</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">            while(rs.next())</span>
             {
-<span class="fc" id="L74">                obj= new Pharmacist_Model(rs.getInt(&quot;id&quot;),rs.getString(&quot;hired_date&quot;),rs.getString(&quot;firstname&quot;),rs.getString(&quot;lastname&quot;),rs.getString(&quot;pharmacist_gender&quot;),rs.getString(&quot;phonenumber&quot;),rs.getString(&quot;email&quot;),rs.getString(&quot;password&quot;),rs.getInt(&quot;salary&quot;),rs.getInt(&quot;age&quot;));  </span>
+<span class="fc" id="L75">                obj= new Pharmacist_Model(rs.getInt(&quot;id&quot;),rs.getString(&quot;hired_date&quot;),rs.getString(&quot;firstname&quot;),rs.getString(&quot;lastname&quot;),rs.getString(&quot;pharmacist_gender&quot;),rs.getString(&quot;phonenumber&quot;),rs.getString(&quot;email&quot;),rs.getString(&quot;password&quot;),rs.getInt(&quot;salary&quot;),rs.getInt(&quot;age&quot;));  </span>
             }       
-<span class="nc" id="L76">        } catch (SQLException ex) {</span>
-<span class="nc" id="L77">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L78">         obj=null;</span>
-<span class="fc" id="L79">        }</span>
-<span class="fc" id="L80">         return obj;    </span>
+<span class="nc" id="L77">        } catch (SQLException ex) {</span>
+<span class="nc" id="L78">          JOptionPane.showMessageDialog(null, ex, &quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L79">         obj=null;</span>
+<span class="fc" id="L80">        }</span>
+<span class="fc" id="L81">         return obj;    </span>
     }
     
     public static void Delete_Pharmacist(int id)
     {
-<span class="nc" id="L85">        String Query=&quot;delete from pharmacist where id='&quot;+id+&quot;'&quot;;</span>
-<span class="nc" id="L86">       DBOperation.setDataOrDelete(Query, &quot;&quot;);</span>
-<span class="nc" id="L87">    }</span>
+<span class="nc" id="L86">        String Query=&quot;delete from pharmacist where id='&quot;+id+&quot;'&quot;;</span>
+<span class="nc" id="L87">       DBOperation.setDataOrDelete(Query, &quot;&quot;);</span>
+<span class="nc" id="L88">    }</span>
     
+//    public static double getPharmacistSalaryFromDatabase(int id )
+//    {
+//        String Query=&quot;select salary from pharmacist where id ='&quot;+id&quot;'&quot;; 
+//        DBOperation.setDataOrDelete(Query, &quot;&quot;);
+//        
+//    
+//    }
+//    
+//    public static double getPharmacistSalaryFromDatabase(int id) {
+//    int salary = 0;
+//    
+//    // Construct the SQL query
+//    String query = &quot;SELECT salary FROM pharmacist WHERE id = &quot; + id;
+//    
+//    // Execute the query and retrieve the result set
+//    ResultSet rs = DBOperation.getData(query);
+//    
+//    try {
+//        // Retrieve the salary from the result set
+//        if (rs.next()) {
+//            salary = rs.getInt(&quot;salary&quot;);
+//        }
+//    } catch (SQLException e) {
+//        e.printStackTrace();
+//    } finally {
+//        // Close the result set
+//        try {
+//            if (rs != null) {
+//                rs.close();
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    
+//    return salary;
+//}
+       
+   public static ArrayList&lt;Integer&gt; sumSalaries() 
+   {
+<span class="fc" id="L130">    ArrayList&lt;Integer&gt; salaries = new ArrayList&lt;&gt;();</span>
+
+<span class="fc" id="L132">    String query = &quot;SELECT salary FROM pharmacist&quot;;</span>
+
+    // Execute the query and retrieve the result set
+<span class="fc" id="L135">    ResultSet rs = DBOperation.getData(query);</span>
+
+    try {
+        // Loop through all the records and add up the salaries
+<span class="fc bfc" id="L139" title="All 2 branches covered.">        while (rs.next()) {</span>
+<span class="fc" id="L140">            int salary = rs.getInt(&quot;salary&quot;);</span>
+<span class="fc" id="L141">            salaries.add(salary);</span>
+<span class="fc" id="L142">        }</span>
+<span class="nc" id="L143">    } catch (SQLException e) {</span>
+<span class="nc" id="L144">        e.printStackTrace();</span>
+    } finally {
+        // Close the result set
+<span class="nc" id="L147">        try {</span>
+<span class="pc bpc" id="L148" title="5 of 6 branches missed.">            if (rs != null) {</span>
+<span class="pc" id="L149">                rs.close();</span>
+            }
+<span class="nc" id="L151">        } catch (SQLException e) {</span>
+<span class="nc" id="L152">            e.printStackTrace();</span>
+<span class="pc" id="L153">        }</span>
+<span class="nc" id="L154">    }</span>
+
+    // Convert the list of salaries to an array
+<span class="fc" id="L157">    return salaries;</span>
+}
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

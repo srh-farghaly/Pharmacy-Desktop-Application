@@ -6,6 +6,7 @@
 package GuiFunctions;
 
 import Control.Pharmacist_operations;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import loginform.login;
 import static loginform.login.Manager;
@@ -17,64 +18,84 @@ import loginform.rond;
  *
  * @author ASUS
  */
-<span class="fc" id="L20">public class GUI_Login</span>
+<span class="fc" id="L21">public class GUI_Login</span>
 {
     
     public int check_info(String Email,String Password)
-    {
-    
-<span class="fc" id="L26">        int flag=0;</span>
-<span class="fc" id="L27">        int error_status= Pharmacist_operations.check_Pharmacist_Acc(Email, Password);</span>
-         
-<span class="fc bfc" id="L29" title="All 4 branches covered.">        if(Email.equals(&quot;admin@gmail.com&quot;) &amp;&amp; Password.equals(&quot;admin&quot;)) // manager</span>
-        { 
-<span class="fc" id="L31">            flag=1;</span>
-<span class="fc" id="L32">            rond obj=new rond();</span>
-<span class="fc" id="L33">            obj.setVisible(true);</span>
-<span class="fc" id="L34">            Manager=true;</span>
-<span class="fc" id="L35">        }</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        else if(error_status == 0) // pharmacist</span>
-        {
-<span class="fc" id="L38">            flag=2;</span>
-            
-<span class="fc" id="L40">            phar_rond obj=new phar_rond();</span>
-<span class="fc" id="L41">            obj.setVisible(true);</span>
-<span class="fc" id="L42">            Manager=false;</span>
-<span class="fc" id="L43">        }</span>
+<span class="fc" id="L25">    {     int flag=0; </span>
+<span class="fc" id="L26">        int error_status= Pharmacist_operations.check_Pharmacist_Acc(Email, Password);</span>
+<span class="fc bfc" id="L27" title="All 4 branches covered.">         if(Email.equals(&quot;admin@gmail.com&quot;) &amp;&amp; Password.equals(&quot;admin&quot;)) // manager</span>
+<span class="fc" id="L28">        {   flag=1;</span>
+<span class="fc" id="L29">            rond obj=new rond();</span>
+<span class="fc" id="L30">            obj.setVisible(true);</span>
+<span class="fc" id="L31">            Manager=true;}</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        else if(error_status == 0) // pharmacist</span>
+<span class="fc" id="L33">        {   flag=2;</span>
+<span class="fc" id="L34">            phar_rond obj=new phar_rond();</span>
+<span class="fc" id="L35">            obj.setVisible(true);</span>
+<span class="fc" id="L36">            Manager=false;}</span>
         else
-        {
-<span class="fc" id="L46">            flag=0;</span>
-<span class="fc" id="L47">          JOptionPane.showMessageDialog(null, &quot;Wrong Email or Password!&quot;,&quot;Message&quot;, JOptionPane.ERROR_MESSAGE);</span>
-
-        
-        }
-<span class="fc" id="L51">        return flag;</span>
-    }         
+<span class="fc" id="L38">        {  flag=0;</span>
+<span class="fc" id="L39">          JOptionPane.showMessageDialog(null, &quot;Wrong Email or Password!&quot;,&quot;Message&quot;, JOptionPane.ERROR_MESSAGE);}</span>
+<span class="fc" id="L40">        return flag;}         </span>
     
     // -------------------------------------------------------------------------------------------------------------- //
      public boolean validateFields(String Email,String Password)
     {
-<span class="fc" id="L57">        boolean  isvalid = false;</span>
+<span class="fc" id="L45">       boolean  isvalid = false;</span>
         
-<span class="fc" id="L59">        login log2=new login();</span>
-<span class="fc" id="L60">        String email=Email;</span>
-<span class="fc" id="L61">        String password=Password;</span>
-<span class="fc bfc" id="L62" title="All 4 branches covered.">        if(!email.equals(&quot;&quot;)&amp;&amp;!password.equals(&quot;&quot;))</span>
+<span class="fc" id="L47">       login log2=new login();</span>
+<span class="fc" id="L48">       String email=Email;</span>
+<span class="fc" id="L49">       String password=Password;</span>
+<span class="fc bfc" id="L50" title="All 4 branches covered.">       if(!email.equals(&quot;&quot;)&amp;&amp;!password.equals(&quot;&quot;))</span>
         {
-<span class="fc" id="L64">            isvalid = true;</span>
-<span class="fc" id="L65">            log2.setEnabled(true);</span>
+<span class="fc" id="L52">            isvalid = true;</span>
+<span class="fc" id="L53">            log2.setEnabled(true);</span>
         }
-        else
+       else
         {
-<span class="fc" id="L69">            log2.setEnabled(false);</span>
-        }    
-<span class="fc" id="L71">        return isvalid;</span>
-    }
+<span class="fc" id="L57">           log2.setEnabled(false);</span>
+       }    
+<span class="fc" id="L59">       return isvalid;</span>
+   }
      
   
- 
+ // -----------------------------------------------------------  salary checking ------------------------------------- //
+//      ArrayList&lt;Integer&gt; recieve = new ArrayList();
+//          recieve = Pharmacist_operations.sumSalaries();
+//                   int totalSalary = 0;
+//               for (int i = 0; i &lt;  recieve.size(); i++) 
+//                {
+//                    int salary =  recieve.get(i);
+//                  totalSalary += salary;
+//                }
     
     
+                
+                
+    public  int calculateTotalSalary() 
+   {
+<span class="fc" id="L78">       ArrayList&lt;Integer&gt; recieve = new ArrayList();</span>
+<span class="fc" id="L79">       recieve = Pharmacist_operations.sumSalaries();</span>
+
+<span class="fc" id="L81">   int totalSalary = 0;</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">   for (int i = 0; i &lt; recieve.size(); i++) {</span>
+<span class="fc" id="L83">        int salary = recieve.get(i);</span>
+<span class="fc" id="L84">        totalSalary += salary;</span>
+    }
+<span class="fc" id="L86">   return totalSalary;</span>
+} 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
     }
     
     
